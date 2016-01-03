@@ -1,0 +1,38 @@
+﻿@using BiosealMVCWeb.Models
+@model BiosealMVCWeb.Models.Pagination
+@{
+    ViewBag.Title = "_Pagination";
+}
+
+<div class="pager">
+    <ul>
+    @if (Model.HasPreviousPage)
+    {
+      <li><a class="prev" href="@Html.UrlSet(Request, "pageIndex", (Model.PageIndex -1))">上一页</a></li>
+    }
+     @for (int i = Model.Start; i <= Model.End; i++)
+        {
+            string url = Html.UrlSet(Request, "pageIndex", i - 1);
+            if (i == Model.PageIndex + 1)
+            {
+                //在当前页面的几个页号中寻找当前页号                
+               <li class="cur">
+                  <a title="当前第 @i.ToString() 页" href="@url"> @i.ToString()</a> 
+               </li>          
+            }
+            else
+            { 
+                <li>
+                  <a title="第 @i.ToString() 页" href="@url"> @i.ToString()</a> 
+               </li>            
+            }
+        }
+      
+    @if (Model.HasNextPage)
+    {
+        <li><a class="next" href="@Html.UrlSet(Request, "pageIndex", (Model.PageIndex +1))">下一页</a></li>
+    }
+        <li>共有 @Model.TotalCount 条记录</li>
+    </ul>
+</div>
+

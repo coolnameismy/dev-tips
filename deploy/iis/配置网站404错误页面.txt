@@ -1,0 +1,5 @@
+<system.web>
+    <customErrors defaultRedirect="/Error" mode="On" redirectMode="ResponseRedirect">
+      <error redirect="/Error" statusCode="404" />
+    </customErrors>
+  </system.web>

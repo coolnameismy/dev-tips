@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <string-array name="books">
+        <item>java</item>
+        <item>android</item>
+        <item>c++</item>
+        <item>c#.net</item>
+        <item>php</item>
+        <item>Objective C</item>
+        <item>Ruby</item>
+    </string-array>
+
+</resources>

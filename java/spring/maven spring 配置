@@ -1,0 +1,19 @@
+maven spring 配置
+
+
+
+Spring Web Services
+<dependencies>
+    <dependency>
+        <groupId>org.springframework.ws</groupId>
+        <artifactId>spring-ws-core</artifactId>
+        <version>2.2.0.RELEASE</version>
+    </dependency>
+</dependencies>
+
+
+
+
+=================引用==================
+使用Eclipse构建Maven的SpringMVC项目
+http://limingnihao.iteye.com/blog/830409

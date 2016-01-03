@@ -1,0 +1,12 @@
+public class Constant {
+        public static int displayWidth;  //屏幕宽度
+        public static int displayHeight; //屏幕高度
+}
+然后在第一个Activity启动的时候，获取这两个值
+
+ 
+
+                DisplayMetrics displayMetrics = new DisplayMetrics();
+                getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+                Constant.displayWidth = displayMetrics.widthPixels;
+                Constant.displayHeight = displayMetrics.heightPixels;

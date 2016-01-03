@@ -1,0 +1,101 @@
+package com.example.hello;
+
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import android.R.string;
+import android.app.Activity;
+import android.content.DialogInterface.OnClickListener;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable.Orientation;
+import android.net.Uri;
+import android.os.Bundle;
+import android.support.v4.widget.SimpleCursorAdapter.ViewBinder;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+import android.widget.TextView;
+
+
+public class TestActivity extends Activity {
+
+	String[] name = {"liu","wang","li","dsad","fdsf","fdfewer"};
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_test);
+        
+        ListView list1 = (ListView)findViewById(R.id.list1);
+        BaseAdapter adapter = new BaseAdapter() {
+        	
+			@Override
+			public View getView(int position, View convertView, ViewGroup parent) {
+				Context context = TestActivity.this;
+	        	LinearLayout line = new LinearLayout(context);
+	        	line.setOrientation(LinearLayout.HORIZONTAL);
+	        	line.setLayoutParams(
+	        			new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT));
+				 ImageView image = new ImageView(context);
+				 
+				 image.setImageResource(R.drawable.ic_launcher);
+				 TextView text = new TextView(context);
+				 text.setText("this is " + position + "th");
+				 text.setTextColor(Color.RED);
+				 text.setTextSize(20);
+				 line.addView(image);
+				 line.addView(text);
+				 return line;
+			}
+			
+			@Override
+			public long getItemId(int position) {
+				return position;
+			}
+			
+			@Override
+			public Object getItem(int position) {
+				return null;
+			}
+			
+			@Override
+			public int getCount() {
+				return 40;
+			}
+		};
+        
+        
+         
+         
+        list1.setAdapter(adapter);
+        list1.setOnItemClickListener(new OnItemClickListener(){
+        	@Override
+        	public void onItemClick(AdapterView<?> parent, View view, int position,
+        			long id) {
+        		System.out.println(name[position]);
+        	}
+        	
+        });
+    }
+
+    
+}

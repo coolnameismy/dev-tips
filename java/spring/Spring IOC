@@ -1,0 +1,50 @@
+Spring IOC
+=======================xml方式=================================
+//初始化context
+ApplicationContext ctx =  new ClassPathXmlApplicationContext("classpath:/springConfig.xml"); //通过xml得到的context
+//获取bean
+Team liuTeam = (Team) ctx.getBean("team");
+//xml 
+1：注册bean 2：bean属性注入和构造函数注入方式 3：默认
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+ xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"  
+ xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                     http://www.springframework.org/schema/beans/spring-beans.xsd">
+      
+      <!-- <context:component-scan base-package="com.liu.*"></context:component-scan> -->         
+      <bean id="team" class="com.liu.LearningSpring.Team">
+      		<property name="captain" ref="person"/>
+			<!-- <constructor-arg></constructor-arg> -->
+      </bean>    
+      <bean id="person" class="com.liu.LearningSpring.Person"></bean>    
+</beans>
+
+=======================注解方式=================================
+//初始化context
+ApplicationContext  ctx =  new AnnotationConfigApplicationContext(AppContext.class); //通过注解得到的context
+//配置bean的类
+@Configuration
+public class AppContext {
+
+	@Bean
+	Team team() {
+		Team team = new Team();
+		team.setCaptain(person());
+        return team;         
+    }
+	@Bean
+	Person person() {
+        return new Person();         
+    }
+    //@Bean(initMethod = "setup", destroyMethod = "cleanup")
+    //@Scope("prototype")
+}
+//获取bean
+Team liuTeam = ctx.getBean(Team.class);
+
+=======================引用文章=================================
+http://www.ibm.com/developerworks/cn/webservices/ws-springjava/

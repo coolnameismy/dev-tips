@@ -1,0 +1,12 @@
+ //使用事物机制，2次处理数据若有一次失败就会滚
+                using (TransactionScope scope = new TransactionScope()) {
+                  //Do something
+                     //保存点赞数量
+                T_IPLimit iplimit = new T_IPLimit { IPAddress = userIP, TaskName = "MissionZan",Date = DateTime.Now };
+                //保存用户点赞ip
+                db.T_IPLimit.Add(iplimit);
+                db.SaveChanges();
+                scope.Complete();
+                return "您已点赞成功，谢谢支持";
+
+                }

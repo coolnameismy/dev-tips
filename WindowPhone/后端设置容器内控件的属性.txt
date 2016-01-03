@@ -1,0 +1,3 @@
+   //把球放在中间
+            ball.SetValue(Canvas.LeftProperty,ContentGird.Width/2);
+            ball.SetValue(Canvas.TagProperty,ContentGird.Height/2);

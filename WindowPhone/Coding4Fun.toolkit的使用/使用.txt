@@ -1,0 +1,6 @@
+1：项目添加Codeing4Fun开装包
+在nutget中直接搜索添加
+2：页面中引用命名空间
+ xmlns:c4f="clr-namespace:Coding4Fun.Toolkit.Controls;assembly=Coding4Fun.Toolkit.Controls"
+3：页面中的使用示例
+   <c4f:Tile></c4f:Tile>

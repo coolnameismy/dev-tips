@@ -1,0 +1,25 @@
+ //打开照相机拍照任务
+        private void Camera_Click(object sender, RoutedEventArgs e)
+        {
+            CameraCaptureTask task = new CameraCaptureTask();
+            task.Completed += OnCompleted;
+            task.Show();
+        }
+        //从相册选择图片任务
+        private void Choose_Click(object sender, RoutedEventArgs e)
+        {
+            PhotoChooserTask task = new PhotoChooserTask();
+            task.Completed += OnCompleted1;
+            task.Show();
+        }
+        //选择完成任务
+        private void OnCompleted(object sender, PhotoResult e)
+        {
+            if (e.TaskResult == TaskResult.OK)
+            {
+                BitmapImage image = new BitmapImage();
+                image.SetSource(e.ChosenPhoto);
+
+                Image1.Source = image;
+            }
+        }

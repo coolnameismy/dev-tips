@@ -1,0 +1,26 @@
+  public static void SnycRedisData(CarModel gps)
+        {
+             if (redisClient == null)
+             {
+                 redisClient = new RedisClient("221.226.150.180", 6379);
+
+             }
+             Type t = gps.GetType();
+             foreach(var field in t.GetFields())
+             {
+                 try
+                 {
+                      //存入数据至redis
+                     string fieldValue = t.InvokeMember(field.Name, System.Reflection.BindingFlags.GetField, null, gps, null).ToString();;
+                     redisClient.HSet(gps.carNo + "_" + gps.carColor,
+                     System.Text.Encoding.Default.GetBytes(field.Name),
+                     System.Text.Encoding.Default.GetBytes(fieldValue));
+                     //发布数据更新通知
+                     redisClient.Publish("GpsInfoChangeNofitication", System.Text.Encoding.Default.GetBytes(gps.carNo + "_" + gps.carColor));
+                 }
+                 catch(Exception e)
+                 {
+                     Console.WriteLine(e.ToString());
+                 }
+                
+        }

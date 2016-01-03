@@ -1,0 +1,314 @@
+mysql错误代码集合.txt
+
+1005：创建表失败
+1006：创建数据库失败
+1007：数据库已存在，创建数据库失败
+1008：数据库不存在，删除数据库失败
+1009：不能删除数据库文件导致删除数据库失败
+1010：不能删除数据目录导致删除数据库失败
+1011：删除数据库文件失败
+1012：不能读取系统表中的记录
+1020：记录已被其他用户修改
+1021：硬盘剩余空间不足，请加大硬盘可用空间
+1022：关键字重复，更改记录失败
+1023：关闭时发生错误
+1024：读文件错误
+1025：更改名字时发生错误
+1026：写文件错误
+1032：记录不存在
+1036：数据表是只读的，不能对它进行修改
+1037：系统内存不足，请重启数据库或重启服务器
+1038：用于排序的内存不足，请增大排序缓冲区
+1040：已到达数据库的最大连接数，请加大数据库可用连接数
+1041：系统内存不足
+1042：无效的主机名
+1043：无效连接
+1044：当前用户没有访问数据库的权限
+1045：不能连接数据库，用户名或密码错误
+1048：字段不能为空
+1049：数据库不存在
+1050：数据表已存在
+1051：数据表不存在
+1054：字段不存在
+1065：无效的SQL语句，SQL语句为空
+1081：不能建立Socket连接
+1114：数据表已满，不能容纳任何记录
+1116：打开的数据表太多
+1129：数据库出现异常，请重启数据库
+1130：连接数据库失败，没有连接数据库的权限
+1133：数据库用户不存在
+1141：当前用户无权访问数据库
+1142：当前用户无权访问数据表
+1143：当前用户无权访问数据表中的字段
+1146：数据表不存在
+1147：未定义用户对数据表的访问权限
+1149：SQL语句语法错误
+1158：网络错误，出现读错误，请检查网络连接状况
+1159：网络错误，读超时，请检查网络连接状况
+1160：网络错误，出现写错误，请检查网络连接状况
+1161：网络错误，写超时，请检查网络连接状况
+1062：字段值重复，入库失败
+1169：字段值重复，更新记录失败
+1177：打开数据表失败
+1180：提交事务失败
+1181：回滚事务失败
+1203：当前用户和数据库建立的连接已到达数据库的最大连接数，请增大可用的数据库连接数或重启数据库
+1205：加锁超时
+1211：当前用户没有创建用户的权限
+1216：外键约束检查失败，更新子表记录失败
+1217：外键约束检查失败，删除或修改主表记录失败
+1226：当前用户使用的资源已超过所允许的资源，请重启数据库或重启服务器
+1227：权限不足，您无权进行此操作
+1235：MySQL版本过低，不具有本功能
+错误：1236 SQLSTATE: HY000 (ER_MASTER_FATAL_ERROR_READING_BINLOG) 消息：从二进制日志读取数据时，获得来自主服务器的致命错误%d: ’%s’。
+错误：1237 SQLSTATE: HY000 (ER_SLAVE_IGNORED_TABLE) 消息：由于“replicate-*-table”规则，从SQL线程忽略了查询。。
+错误：1238 SQLSTATE: HY000 (ER_INCORRECT_GLOBAL_LOCAL_VAR) 消息：变量’%s’是一种%s变量。
+错误：1239 SQLSTATE: 42000 (ER_WRONG_FK_DEF) 消息：对于 ’%s’: %s， 外键定义不正确。 [Page]
+错误：1240 SQLSTATE: HY000 (ER_KEY_REF_DO_NOT_MATCH_TABLE_REF) 消息：键引用和表引用不匹配。
+错误：1241 SQLSTATE: 21000 (ER_OPERAND_COLUMNS) 消息：操作数应包含%d列。
+错误：1242 SQLSTATE: 21000 (ER_SUBQUERY_NO_1_ROW) 消息：子查询返回1行以上。
+错误：1243 SQLSTATE: HY000 (ER_UNKNOWN_STMT_HANDLER) 消息：指定给%s的未知预处理语句句柄。
+错误：1244 SQLSTATE: HY000 (ER_CORRUPT_HELP_DB) 消息：帮助数据库崩溃或不存在。
+错误：1245 SQLSTATE: HY000 (ER_CYCLIC_REFERENCE) 消息：对子查询的循环引用。
+错误：1246 SQLSTATE: HY000 (ER_AUTO_CONVERT) 消息：将列’%s’从%s转换为%s。
+错误：1247 SQLSTATE: 42S22 (ER_ILLEGAL_REFERENCE) 消息：引用’%s’不被支持 (%s)。
+错误：1248 SQLSTATE: 42000 (ER_DERIVED_MUST_HAVE_ALIAS) 消息：所有的导出表必须有自己的别名。
+错误：1249 SQLSTATE: 01000 (ER_SELECT_REDUCED) 消息：在优化期间简化了选择%u。
+错误：1250 SQLSTATE: 42000 (ER_TABLENAME_NOT_ALLOWED_HERE) 消息：来自某一SELECT的表’%s’不能在%s中使用。
+错误：1251 SQLSTATE: 08004 (ER_NOT_SUPPORTED_AUTH_MODE) 消息：客户端不支持服务器请求的鉴定协议，请考虑升级MySQL客户端。
+错误：1252 SQLSTATE: 42000 (ER_SPATIAL_CANT_HAVE_NULL) 消息：SPATIAL索引的所有部分必须是NOT NULL。
+错误：1253 SQLSTATE: 42000 (ER_COLLATION_CHARSET_MISMATCH) 消息：对于CHARACTER SET ’%s’，COLLATION ’%s’无效。
+错误：1254 SQLSTATE: HY000 (ER_SLAVE_WAS_RUNNING) 消息：从服务器正在运行。
+错误：1255 SQLSTATE: HY000 (ER_SLAVE_WAS_NOT_RUNNING) 消息：从服务器已停止。
+错误：1256 SQLSTATE: HY000 (ER_TOO_BIG_FOR_UNCOMPRESS) 消息：解压的数据过大，最大大小为%d（也可能是，解压数据的长度已损坏）。
+错误：1257 SQLSTATE: HY000 (ER_ZLIB_Z_MEM_ERROR) 消息：ZLIB，无足够内存。
+错误：1258 SQLSTATE: HY000 (ER_ZLIB_Z_BUF_ERROR) 消息：ZLIB，输出缓冲区内无足够空间（也可能是，解压数据的长度已损坏）。
+错误：1259 SQLSTATE: HY000 (ER_ZLIB_Z_DATA_ERROR) 消息：ZLIB，输入数据已损坏。
+错误：1260 SQLSTATE: HY000 (ER_CUT_VALUE_GROUP_CONCAT) 消息：%d行被GROUP_CONCAT()截去。
+错误：1261 SQLSTATE: 01000 (ER_WARN_TOO_FEW_RECORDS) 消息：行%ld不包含所有列的数据。
+错误：1262 SQLSTATE: 01000 (ER_WARN_TOO_MANY_RECORDS) 消息：行%ld被解短，它包含的数据大于输入列中的数据。
+错误：1263 SQLSTATE: 22004 (ER_WARN_NULL_TO_NOTNULL) 消息：列被设为默认值，在行%ld上将NULL提供给了NOT NULL列。
+错误：1264 SQLSTATE: 22003 (ER_WARN_DATA_OUT_OF_RANGE) 消息：为行%ld上的列’%s’调整超出范围的值。
+错误：1265 SQLSTATE: 01000 (WARN_DATA_TRUNCATED) 消息：为行%ld上的列’%s’截短数据。
+错误：1266 SQLSTATE: HY000 (ER_WARN_USING_OTHER_HANDLER) 消息：为表%s使用存储引擎%s。 [Page]
+错误：1267 SQLSTATE: HY000 (ER_CANT_AGGREGATE_2COLLATIONS) 消息：对于操作’%s’，非法混合了校对(%s,%s)和(%s,%s)。
+错误：1268 SQLSTATE: HY000 (ER_DROP_USER) 消息：无法撤销1个或多个请求的用户。
+错误：1269 SQLSTATE: HY000 (ER_REVOKE_GRANTS) 消息：无法撤销所有权限，为1个或多个请求的用户授权。
+错误：1270 SQLSTATE: HY000 (ER_CANT_AGGREGATE_3COLLATIONS) 消息：对于操作’%s’，非法混合了校对(%s,%s)、(%s,%s)和(%s,%s)。
+错误：1271 SQLSTATE: HY000 (ER_CANT_AGGREGATE_NCOLLATIONS) 消息：对于操作’%s’，非法混合了校对。
+错误：1272 SQLSTATE: HY000 (ER_VARIABLE_IS_NOT_STRUCT) 消息：变量’%s’不是变量组分（不能用作XXXX.variable_name）。
+错误：1273 SQLSTATE: HY000 (ER_UNKNOWN_COLLATION) 消息：未知校对’%s’。
+错误：1274 SQLSTATE: HY000 (ER_SLAVE_IGNORED_SSL_PARAMS) 消息：由于该MySQL从服务器是在不支持SSL的情况下编译的，CHANGE MASTER中的SSL参数被忽略，随后，如果启动了具备SSL功能的MySQL，可使用这些参数。
+错误：1275 SQLSTATE: HY000 (ER_SERVER_IS_IN_SECURE_AUTH_MODE) 消息：服务器正运行在“--secure-auth”模式下，但 ’%s’@’%s’ 有1个采用旧格式的密码，请将密码更改为新格式。
+错误：1276 SQLSTATE: HY000 (ER_WARN_FIELD_RESOLVED) 消息：SELECT #%d的字段或引用’%s%s%s%s%s’是在SELECT #%d中确定的。
+错误：1277 SQLSTATE: HY000 (ER_BAD_SLAVE_UNTIL_COND) 消息：对于START SLAVE UNTIL，不正确的参数或参数组合。
+错误：1278 SQLSTATE: HY000 (ER_MISSING_SKIP_SLAVE) 消息：与START SLAVE UNTIL一起执行按步复制时，建议使用“--skip-slave-start”，否则，如果发生未预料的从服务器mysqld重启，间出现问题。
+错误：1279 SQLSTATE: HY000 (ER_UNTIL_COND_IGNORED) 消息：SQL线程未启动，因而UNTIL选项被忽略。
+错误：1280 SQLSTATE: 42000 (ER_WRONG_NAME_FOR_INDEX) 消息：不正确的索引名’%s’。
+错误：1281 SQLSTATE: 42000 (ER_WRONG_NAME_FOR_CATALOG) 消息：不正确的目录名’%s’。
+错误：1282 SQLSTATE: HY000 (ER_WARN_QC_RESIZE) 消息：查询高速缓冲设置大小%lu时失败，新的查询高速缓冲的大小是%lu。
+错误：1283 SQLSTATE: HY000 (ER_BAD_FT_COLUMN) 消息：列’%s’不能是FULLTEXT索引的一部分。
+错误：1284 SQLSTATE: HY000 (ER_UNKNOWN_KEY_CACHE) 消息：未知的键高速缓冲’%s’。
+错误：1285 SQLSTATE: HY000 (ER_WARN_HOSTNAME_WONT_WORK) 消息：MySQL是在“--skip-name-resolve”模式下启动的，必须在不使用该开关的情况下重启它，以便该授权能起作用。
+错误：1286 SQLSTATE: 42000 (ER_UNKNOWN_STORAGE_ENGINE) 消息：未知的表引擎’%s’。
+错误：1287 SQLSTATE: HY000 (ER_WARN_DEPRECATED_SYNTAX) 消息：’%s’已过时，请使用’%s’取而代之。
+错误：1288 SQLSTATE: HY000 (ER_NON_UPDATABLE_TABLE) 消息：%s的目标表%s不可更新。
+错误：1289 SQLSTATE: HY000 (ER_FEATURE_DISABLED) 消息：’%s’特性已被禁止，要想使其工作，需要用’%s’创建MySQL。 [Page]
+错误：1290 SQLSTATE: HY000 (ER_OPTION_PREVENTS_STATEMENT) 消息：MySQL正使用%s选项运行，因此不能执行该语句。
+错误：1291 SQLSTATE: HY000 (ER_DUPLICATED_VALUE_IN_TYPE) 消息：列’%s’在%s中有重复值’%s’。
+错误：1292 SQLSTATE: 22007 (ER_TRUNCATED_WRONG_VALUE) 消息：截短了不正确的%s值: ’%s’ 
+错误：1293 SQLSTATE: HY000 (ER_TOO_MUCH_AUTO_TIMESTAMP_COLS) 消息：不正确的表定义，在DEFAULT或ON UPDATE子句中，对于CURRENT_TIMESTAMP，只能有一个TIMESTAMP列。
+错误：1294 SQLSTATE: HY000 (ER_INVALID_ON_UPDATE) 消息：对于’%s’列，ON UPDATE子句无效
+错误：1295 SQLSTATE: HY000 (ER_UNSUPPORTED_PS) 消息：在预处理语句协议中，尚不支持该命令。
+错误：1296 SQLSTATE: HY000 (ER_GET_ERRMSG) 消息：从%s获得错误%d ’%s’。
+错误：1297 SQLSTATE: HY000 (ER_GET_TEMPORARY_ERRMSG) 消息：从%s获得临时错误%d ’%s’。
+错误：1298 SQLSTATE: HY000 (ER_UNKNOWN_TIME_ZONE) 消息：未知或不正确的时区: ’%s’ 
+错误：1299 SQLSTATE: HY000 (ER_WARN_INVALID_TIMESTAMP) 消息：在行%ld的列’%s’中存在无效的TIMESTAMP值。
+错误：1300 SQLSTATE: HY000 (ER_INVALID_CHARACTER_STRING) 消息：无效的%s字符串: ’%s’ 
+错误：1301 SQLSTATE: HY000 (ER_WARN_ALLOWED_PACKET_OVERFLOWED) 消息：%s()的结果大于max_allowed_packet (%ld)，已截短
+错误：1302 SQLSTATE: HY000 (ER_CONFLICTING_DECLARATIONS) 消息：冲突声明：’%s%s’和’%s%s’ 
+错误：1303 SQLSTATE: 2F003 (ER_SP_NO_RECURSIVE_CREATE) 消息：不能从另一个存储子程序中创建%s。
+错误：1304 SQLSTATE: 42000 (ER_SP_ALREADY_EXISTS) 消息：%s %s已存在。
+错误：1305 SQLSTATE: 42000 (ER_SP_DOES_NOT_EXIST) 消息：%s %s不存在。
+错误：1306 SQLSTATE: HY000 (ER_SP_DROP_FAILED) 消息：DROP %s %s失败
+错误：1307 SQLSTATE: HY000 (ER_SP_STORE_FAILED) 消息：CREATE %s %s失败。
+错误：1308 SQLSTATE: 42000 (ER_SP_LILABEL_MISMATCH) 消息：%s无匹配标签: %s 
+错误：1309 SQLSTATE: 42000 (ER_SP_LABEL_REDEFINE) 消息：重新定义标签%s 
+错误：1310 SQLSTATE: 42000 (ER_SP_LABEL_MISMATCH) 消息：末端标签%s无匹配项
+错误：1311 SQLSTATE: 01000 (ER_SP_UNINIT_VAR) 消息：正在引用未初始化的变量%s。
+错误：1312 SQLSTATE: 0A000 (ER_SP_BADSELECT) 消息：PROCEDURE %s不能在给定场景下返回结果集。
+错误：1313 SQLSTATE: 42000 (ER_SP_BADRETURN) 消息：仅在FUNCTION中允许RETURN。
+错误：1314 SQLSTATE: 0A000 (ER_SP_BADSTATEMENT) 消息：在存储程序中不允许%s。
+错误：1315 SQLSTATE: 42000 (ER_UPDATE_LOG_DEPRECATED_IGNORED) 消息：更新日志已被放弃，并用二进制日志取代，SET SQL_LOG_UPDATE被忽略。
+错误：1316 SQLSTATE: 42000 (ER_UPDATE_LOG_DEPRECATED_TRANSLATED) 消息：更新日志已被放弃，并用二进制日志取代，SET SQL_LOG_UPDATE已被截短为SET SQL_LOG_BIN。 [Page]
+错误：1317 SQLSTATE: 70100 (ER_QUERY_INTERRUPTED) 消息：查询执行被中断。
+错误：1318 SQLSTATE: 42000 (ER_SP_WRONG_NO_OF_ARGS) 消息：对于%s %s，参量数目不正确，预期为%u，但却是%u。
+错误：1319 SQLSTATE: 42000 (ER_SP_COND_MISMATCH) 消息：未定义的CONDITION: %s 
+错误：1320 SQLSTATE: 42000 (ER_SP_NORETURN) 消息：在FUNCTION %s中未发现RETURN。
+错误：1321 SQLSTATE: 2F005 (ER_SP_NORETURNEND) 消息：FUNCTION %s结束时缺少RETURN。
+错误：1322 SQLSTATE: 42000 (ER_SP_BAD_CURSOR_QUERY) 消息：光标语句必须是SELECT。
+错误：1323 SQLSTATE: 42000 (ER_SP_BAD_CURSOR_SELECT) 消息：光标SELECT不得有INTO。
+错误：1324 SQLSTATE: 42000 (ER_SP_CURSOR_MISMATCH) 消息：未定义的CURSOR: %s 
+错误：1325 SQLSTATE: 24000 (ER_SP_CURSOR_ALREADY_OPEN) 消息：光标已打开 
+错误：1326 SQLSTATE: 24000 (ER_SP_CURSOR_NOT_OPEN) 消息：光标未打开 
+错误：1327 SQLSTATE: 42000 (ER_SP_UNDECLARED_VAR) 消息：未声明的变量：%s 
+错误：1328 SQLSTATE: HY000 (ER_SP_WRONG_NO_OF_FETCH_ARGS) 消息：不正确的FETCH变量数目。
+错误：1329 SQLSTATE: 02000 (ER_SP_FETCH_NO_DATA) 消息：FETCH无数据。
+错误：1330 SQLSTATE: 42000 (ER_SP_DUP_PARAM) 消息：重复参数: %s 
+错误：1331 SQLSTATE: 42000 (ER_SP_DUP_VAR) 消息：重复变量: %s 错误：1332 SQLSTATE: 42000 (ER_SP_DUP_COND) 消息：重复条件: %s 
+错误：1333 SQLSTATE: 42000 (ER_SP_DUP_CURS) 消息：重复光标: %s 
+错误：1334 SQLSTATE: HY000 (ER_SP_CANT_ALTER) 消息：ALTER %s %s失败。
+错误：1335 SQLSTATE: 0A000 (ER_SP_SUBSELECT_NYI) 消息：不支持Subselect值。
+错误：1336 SQLSTATE: 0A000 (ER_STMT_NOT_ALLOWED_IN_SF_OR_TRG) 消息：在存储函数或触发程序中，不允许%s。
+错误：1337 SQLSTATE: 42000 (ER_SP_VARCOND_AFTER_CURSHNDLR) 消息：光标或句柄声明后面的变量或条件声明。
+错误：1338 SQLSTATE: 42000 (ER_SP_CURSOR_AFTER_HANDLER) 消息：句柄声明后面的光标声明。
+错误：1339 SQLSTATE: 20000 (ER_SP_CASE_NOT_FOUND) 消息：对于CASE语句，未发现Case。
+错误：1340 SQLSTATE: HY000 (ER_FPARSER_TOO_BIG_FILE) 消息：配置文件’%s’过大。
+错误：1341 SQLSTATE: HY000 (ER_FPARSER_BAD_HEADER) 消息：文件’%s’中存在残缺的文件类型标题。
+错误：1342 SQLSTATE: HY000 (ER_FPARSER_EOF_IN_COMMENT) 消息：解析’%s’时，文件意外结束。
+错误：1343 SQLSTATE: HY000 (ER_FPARSER_ERROR_IN_PARAMETER) 消息：解析参数’%s’时出错（行：’%s’）。
+错误：1344 SQLSTATE: HY000 (ER_FPARSER_EOF_IN_UNKNOWN_PARAMETER) 消息：跳过未知参数’%s’时，文件意外结束。
+错误：1345 SQLSTATE: HY000 (ER_VIEW_NO_EXPLAIN) 消息：EXPLAIN/SHOW无法发出，缺少对基本表的权限。
+错误：1346 SQLSTATE: HY000 (ER_FRM_UNKNOWN_TYPE) 消息：文件’%s’在其题头中有未知的类型’%s’。 [Page]
+错误：1347 SQLSTATE: HY000 (ER_WRONG_OBJECT) 消息：’%s.%s’不是%s。
+错误：1348 SQLSTATE: HY000 (ER_NONUPDATEABLE_COLUMN) 消息：列’%s’不可更新。
+错误：1349 SQLSTATE: HY000 (ER_VIEW_SELECT_DERIVED) 消息：视图的SELECT在FROM子句中包含子查询。
+错误：1350 SQLSTATE: HY000 (ER_VIEW_SELECT_CLAUSE) 消息：视图的SELECT包含’%s’子句。
+错误：1351 SQLSTATE: HY000 (ER_VIEW_SELECT_VARIABLE) 消息：视图的SELECT包含1个变量或参数。
+错误：1352 SQLSTATE: HY000 (ER_VIEW_SELECT_TMPTABLE) 消息：视图的SELECT引用了临时表’%s’。
+错误：1353 SQLSTATE: HY000 (ER_VIEW_WRONG_LIST) 消息：视图的SELECT和视图的字段列表有不同的列计数。
+错误：1354 SQLSTATE: HY000 (ER_WARN_VIEW_MERGE) 消息：此时，不能在这里使用视图合并算法（假定未定义算法）。
+错误：1355 SQLSTATE: HY000 (ER_WARN_VIEW_WITHOUT_KEY) 消息：正在更新的视图没有其基本表的完整键。
+错误：1356 SQLSTATE: HY000 (ER_VIEW_INVALID) 消息：视图’%s.%s’引用了无效的表、列、或函数，或视图的定义程序／调用程序缺少使用它们的权限。
+错误：1357 SQLSTATE: HY000 (ER_SP_NO_DROP_SP) 消息：无法从另一个存储子程序中撤销或更改%s。
+错误：1358 SQLSTATE: HY000 (ER_SP_GOTO_IN_HNDLR) 消息：在存储子程序句柄中不允许GOTO。
+错误：1359 SQLSTATE: HY000 (ER_TRG_ALREADY_EXISTS) 消息：触发程序已存在。
+错误：1360 SQLSTATE: HY000 (ER_TRG_DOES_NOT_EXIST) 消息：触发程序不存在。
+错误：1361 SQLSTATE: HY000 (ER_TRG_ON_VIEW_OR_TEMP_TABLE) 消息：触发程序的’%s’是视图或临时表。
+错误：1362 SQLSTATE: HY000 (ER_TRG_CANT_CHANGE_ROW) 消息：在%strigger中，不允许更新%s行。
+错误：1363 SQLSTATE: HY000 (ER_TRG_NO_SUCH_ROW_IN_TRG) 消息：在%s触发程序中没有%s行。
+错误：1364 SQLSTATE: HY000 (ER_NO_DEFAULT_FOR_FIELD) 消息：字段’%s’没有默认值。 
+错误：1365 SQLSTATE: 22012 (ER_DIVISION_BY_ZERO) 消息：被0除。
+错误：1366 SQLSTATE: HY000 (ER_TRUNCATED_WRONG_VALUE_FOR_FIELD) 消息：不正确的%s值，’%s’，对于行%ld 上的列’%s’。
+错误：1367 SQLSTATE: 22007 (ER_ILLEGAL_VALUE_FOR_TYPE) 消息：解析过程中发现非法%s ’%s’值。
+错误：1368 SQLSTATE: HY000 (ER_VIEW_NONUPD_CHECK) 消息：不可更新视图’%s.%s’上的CHECK OPTION。
+错误：1369 SQLSTATE: HY000 (ER_VIEW_CHECK_FAILED) 消息：CHECK OPTION失败，’%s.%s’ 
+错误：1370 SQLSTATE: 42000 (ER_PROCACCESS_DENIED_ERROR) 消息：对于子程序’%s’，拒绝用户 ’%s’@’%s’ 使用%s命令。
+错误：1371 SQLSTATE: HY000 (ER_RELAY_LOG_FAIL) 消息：清除旧中继日志失败，%s 
+错误：1372 SQLSTATE: HY000 (ER_PASSWD_LENGTH) 消息：密码混编应是%d位的十六进制数。
+错误：1373 SQLSTATE: HY000 (ER_UNKNOWN_TARGET_BINLOG) 消息：在binlog索引中未发现目标日志。 [Page]
+错误：1374 SQLSTATE: HY000 (ER_IO_ERR_LOG_INDEX_READ) 消息：读取日志索引文件时出现I/O错误。
+错误：1375 SQLSTATE: HY000 (ER_BINLOG_PURGE_PROHIBITED) 消息：服务器配置不允许binlog清除。
+错误：1376 SQLSTATE: HY000 (ER_FSEEK_FAIL) 消息：fseek()失败。
+错误：1377 SQLSTATE: HY000 (ER_BINLOG_PURGE_FATAL_ERR) 消息：在日志清除过程中出现致命错误。
+错误：1378 SQLSTATE: HY000 (ER_LOG_IN_USE) 消息：可清除的日志正在使用，不能清除。
+错误：1379 SQLSTATE: HY000 (ER_LOG_PURGE_UNKNOWN_ERR) 消息：在日志清除过程中出现未知错误。
+错误：1380 SQLSTATE: HY000 (ER_RELAY_LOG_INIT) 消息：初始化中继日志位置失败，%s 
+错误：1381 SQLSTATE: HY000 (ER_NO_BINARY_LOGGING) 消息：未使用二进制日志功能。
+错误：1382 SQLSTATE: HY000 (ER_RESERVED_SYNTAX) 消息：’%s’语法保留给MySQL服务器内部使用。
+错误：1383 SQLSTATE: HY000 (ER_WSAS_FAILED) 消息：WSAStartup失败。
+错误：1384 SQLSTATE: HY000 (ER_DIFF_GROUPS_PROC) 消息：尚不能用不同的组处理过程。
+错误：1385 SQLSTATE: HY000 (ER_NO_GROUP_FOR_PROC) 消息：对于该过程，SELECT必须有1个组。
+错误：1386 SQLSTATE: HY000 (ER_ORDER_WITH_PROC) 消息：不能与该过程一起使用ORDER子句。
+错误：1387 SQLSTATE: HY000 (ER_LOGGING_PROHIBIT_CHANGING_OF) 消息：二进制日志功能和复制功能禁止更改全局服务器%s。
+错误：1388 SQLSTATE: HY000 (ER_NO_FILE_MAPPING) 消息：无法映射文件: %s, errno: %d 
+错误：1389 SQLSTATE: HY000 (ER_WRONG_MAGIC) 消息：%s中有错
+错误：1390 SQLSTATE: HY000 (ER_PS_MANY_PARAM) 消息：预处理语句包含过多的占位符。
+错误：1391 SQLSTATE: HY000 (ER_KEY_PART_0) 消息：键部分’%s’的长度不能为0。
+错误：1392 SQLSTATE: HY000 (ER_VIEW_CHECKSUM) 消息：视图文本校验和失败。
+错误：1393 SQLSTATE: HY000 (ER_VIEW_MULTIUPDATE) 消息：无法通过联合视图’%s.%s’更改1个以上的基本表。
+错误：1394 SQLSTATE: HY000 (ER_VIEW_NO_INSERT_FIELD_LIST) 消息：不能在没有字段列表的情况下插入联合视图’%s.%s’。
+错误：1395 SQLSTATE: HY000 (ER_VIEW_DELETE_MERGE_VIEW) 消息：不能从联合视图’%s.%s’中删除。
+错误：1396 SQLSTATE: HY000 (ER_CANNOT_USER) 消息：对于%s的操作%s失败。
+错误：1397 SQLSTATE: XAE04 (ER_XAER_NOTA) 消息：XAER_NOTA: 未知XID 
+错误：1398 SQLSTATE: XAE05 (ER_XAER_INVAL) 消息：XAER_INVAL: 无效参量（或不支持的命令）
+错误：1399 SQLSTATE: XAE07 (ER_XAER_RMFAIL) 消息：XAER_RMFAIL: 当全局事务处于%s状态时，不能执行命令。
+错误：1400 SQLSTATE: XAE09 (ER_XAER_OUTSIDE) 消息：XAER_OUTSIDE: 某些工作是在全局事务外完成的。
+错误：1401 SQLSTATE: XAE03 (ER_XAER_RMERR) 消息：XAER_RMERR: 在事务分支中出现致命错误，请检查数据一致性。
+错误：1402 SQLSTATE: XA100 (ER_XA_RBROLLBACK) 消息：XA_RBROLLBACK: 回滚了事务分支。 [Page]
+错误：1403 SQLSTATE: 42000 (ER_NONEXISTING_PROC_GRANT) 消息：在子程序’%s’上没有为主机’%s’上的用户’%s’定义的这类授权。
+错误：1404 SQLSTATE: HY000 (ER_PROC_AUTO_GRANT_FAIL) 消息：无法授予EXECUTE和ALTER ROUTINE权限。
+错误：1405 SQLSTATE: HY000 (ER_PROC_AUTO_REVOKE_FAIL) 消息：无法撤销已放弃子程序上的所有权限。
+错误：1406 SQLSTATE: 22001 (ER_DATA_TOO_LONG) 消息：对于行%ld上的列’%s’来说，数据过长。
+错误：1407 SQLSTATE: 42000 (ER_SP_BAD_SQLSTATE) 消息：不良SQLSTATE: ’%s’ 
+错误：1408 SQLSTATE: HY000 (ER_STARTUP) 消息：%s，连接就绪；版本，’%s’；套接字，’%s’；端口，%d %s 
+错误：1409 SQLSTATE: HY000 (ER_LOAD_FROM_FIXED_SIZE_ROWS_TO_VAR) 消息：不能从具有固定大小行的文件中将值加载到变量。
+错误：1410 SQLSTATE: 42000 (ER_CANT_CREATE_USER_WITH_GRANT) 消息：不允许用GRANT创建用户。
+错误：1411 SQLSTATE: HY000 (ER_WRONG_VALUE_FOR_TYPE) 消息：不正确的%s值，’%s’，对于函数%s 
+错误：1412 SQLSTATE: HY000 (ER_TABLE_DEF_CHANGED) 消息：表定义已更改，请再次尝试事务。
+错误：1413 SQLSTATE: 42000 (ER_SP_DUP_HANDLER) 消息：在相同块中声明了重复句柄。
+错误：1414 SQLSTATE: 42000 (ER_SP_NOT_VAR_ARG) 消息：子程序%s的OUT或INOUT参量不是变量。
+错误：1415 SQLSTATE: 0A000 (ER_SP_NO_RETSET) 消息：不允许从%s返回结果集。
+错误：1416 SQLSTATE: 22003 (ER_CANT_CREATE_GEOMETRY_OBJECT) 消息：不能从发送给GEOMETRY字段的数据中获取几何对象。
+错误：1417 SQLSTATE: HY000 (ER_FAILED_ROUTINE_BREAK_BINLOG) 消息：1个子程序失败，在其声明没有NO SQL或READS SQL DATA，而且二进制日志功能已启用，如果更新了非事务性表，二进制日志将丢失其变化信息。
+错误：1418 SQLSTATE: HY000 (ER_BINLOG_UNSAFE_ROUTINE) 消息：在该子程序的在其声明没有DETERMINISTIC、NO SQL或READS SQL DATA，而且二进制日志功能已启用（你或许打算使用不太安全的log_bin_trust_routine_creators变量）。
+错误：1419 SQLSTATE: HY000 (ER_BINLOG_CREATE_ROUTINE_NEED_SUPER) 消息：你没有SUPER权限，而且二进制日志功能已启用（你或许打算使用不太安全的log_bin_trust_routine_creators变 量）。
+错误：1420 SQLSTATE: HY000 (ER_EXEC_STMT_WITH_OPEN_CURSOR) 消息：不能执行该预处理语句，该预处理语句有与之相关的打开光标。请复位语句并再次执行。
+错误：1421 SQLSTATE: HY000 (ER_STMT_HAS_NO_OPEN_CURSOR) 消息：语句(%lu)没有打开的光标。 
+错误：1422 SQLSTATE: HY000 (ER_COMMIT_NOT_ALLOWED_IN_SF_OR_TRG) 消息：在存储函数或触发程序中，不允许显式或隐式提交。
+错误：1423 SQLSTATE: HY000 (ER_NO_DEFAULT_FOR_VIEW_FIELD) 消息：视图’%s.%s’基本表的字段没有默认值。
+错误：1424 SQLSTATE: HY000 (ER_SP_NO_RECURSION) 消息：不允许递归存储子程序。 [Page]
+错误：1425 SQLSTATE: 42000 (ER_TOO_BIG_SCALE) 消息：为列’%s’指定了过大的标度%d。最大为%d。
+错误：1426 SQLSTATE: 42000 (ER_TOO_BIG_PRECISION) 消息：为列’%s’指定了过高的精度%d。最大为%d。
+错误：1427 SQLSTATE: 42000 (ER_M_BIGGER_THAN_D) 消息：对于float(M,D)、double(M,D)或decimal(M,D)，M必须>= D (列’%s’)。
+错误：1428 SQLSTATE: HY000 (ER_WRONG_LOCK_OF_SYSTEM_TABLE) 消息：不能将系统’%s.%s’表的写锁定与其他表结合起来。
+错误：1429 SQLSTATE: HY000 (ER_CONNECT_TO_FOREIGN_DATA_SOURCE) 消息：无法连接到外部数据源，数据库’%s’！
+错误：1430 SQLSTATE: HY000 (ER_QUERY_ON_FOREIGN_DATA_SOURCE) 消息：处理作用在外部数据源上的查询时出现问题。数据源错误：’%s’ 
+错误：1431 SQLSTATE: HY000 (ER_FOREIGN_DATA_SOURCE_DOESNT_EXIST) 消息：你试图引用的外部数据源不存在。数据源错误：’%s’ 
+错误：1432 SQLSTATE: HY000 (ER_FOREIGN_DATA_STRING_INVALID_CANT_CREATE) 消息：无法创建联合表。数据源连接字符串’%s’格式不正确。
+错误：1433 SQLSTATE: HY000 (ER_FOREIGN_DATA_STRING_INVALID) 消息：数据源连接字符串’%s’格式不正确。
+错误：1434 SQLSTATE: HY000 (ER_CANT_CREATE_FEDERATED_TABLE) 消息：无法创建联合表。外部数据源错误：’%s’ 
+错误：1435 SQLSTATE: HY000 (ER_TRG_IN_WRONG_SCHEMA) 消息：触发程序位于错误的方案中。
+错误：1436 SQLSTATE: HY000 (ER_STACK_OVERRUN_NEED_MORE) 消息：线程堆栈溢出，%ld字节堆栈用了%ld字节，并需要%ld字节。请使用’mysqld -O thread_stack=#’指定更大的堆栈。
+错误：1437 SQLSTATE: 42000 (ER_TOO_LONG_BODY) 消息：’%s’的子程序主体过长。
+错误：1438 SQLSTATE: HY000 (ER_WARN_CANT_DROP_DEFAULT_KEYCACHE) 消息：无法撤销默认的keycache。
+错误：1439 SQLSTATE: 42000 (ER_TOO_BIG_DISPLAYWIDTH) 消息：对于列’%s’，显示宽度超出范围(max = %d) 
+错误：1440 SQLSTATE: XAE08 (ER_XAER_DUPID) 消息：XAER_DUPID: XID已存在
+错误：1441 SQLSTATE: 22008 (ER_DATETIME_FUNCTION_OVERFLOW) 消息：日期时间函数，%s字段溢出。
+错误：1442 SQLSTATE: HY000 (ER_CANT_UPDATE_USED_TABLE_IN_SF_OR_TRG) 消息：由于它已被调用了该存储函数／触发程序的语句使用，不能在存储函数／触发程序中更新表’%s’。
+错误：1443 SQLSTATE: HY000 (ER_VIEW_PREVENT_UPDATE) 消息：表’%s’的定义不允许在表’%s上执行操作%s。
+错误：1444 SQLSTATE: HY000 (ER_PS_NO_RECURSION) 消息：预处理语句包含引用了相同语句的存储子程序调用。不允许以这类递归方式执行预处理语句。
+错误：1445 SQLSTATE: HY000 (ER_SP_CANT_SET_AUTOCOMMIT) 消息：不允许从存储函数或触发程序设置autocommit。
+错误：1446 SQLSTATE: HY000 (ER_NO_VIEW_USER) 消息：视图定义人不完全合格。
+错误：1447 SQLSTATE: HY000 (ER_VIEW_FRM_NO_USER) 消息：视图%s.%s没有定义人信息（旧的表格式）。当前用户将被当作定义人。请重新创建视图！ [Page]
+错误：1448 SQLSTATE: HY000 (ER_VIEW_OTHER_USER) 消息：需要SUPER权限才能创建具有 %s@%s 定义器的视图。
+错误：1449 SQLSTATE: HY000 (ER_NO_SUCH_USER) 消息：没有注册的 %s@%s 。
+错误：1450 SQLSTATE: HY000 (ER_FORBID_SCHEMA_CHANGE) 消息：不允许将方案从’%s’变为’%s’。
+错误：1451 SQLSTATE: 23000 (ER_ROW_IS_REFERENCED_2) 消息：不能删除或更新父行，外键约束失败(%s)。
+错误：1452 SQLSTATE: 23000 (ER_NO_REFERENCED_ROW_2) 消息：不能添加或更新子行，外键约束失败(%s)。
+错误：1453 SQLSTATE: 42000 (ER_SP_BAD_VAR_SHADOW) 消息：必须用`...`引用变量，或重新命名变量。
+错误：1454 SQLSTATE: HY000 (ER_PARTITION_REQUIRES_VALUES_ERROR) 消息：对于每个分区，%s PARTITIONING需要VALUES %s的定义。
+错误：1455 SQLSTATE: HY000 (ER_PARTITION_WRONG_VALUES_ERROR) 消息：在分区定义中，只有%s PARTITIONING能使用VALUES %s。
+错误：1456 SQLSTATE: HY000 (ER_PARTITION_MAXVALUE_ERROR) 消息：MAXVALUE只能在最后1个分区定义中使用。
+错误：1457 SQLSTATE: HY000 (ER_PARTITION_SUBPARTITION_ERROR) 消息：子分区只能是哈希分区，并按键分区。
+错误：1458 SQLSTATE: HY000 (ER_PARTITION_WRONG_NO_PART_ERROR) 消息：定义了错误的分区数，与前面的设置不匹配。
+错误：1459 SQLSTATE: HY000 (ER_PARTITION_WRONG_NO_SUBPART_ERROR) 消息：定义了错误的子分区数，与前面的设置不匹配。
+错误：1460 SQLSTATE: HY000 (ER_CONST_EXPR_IN_PARTITION_FUNC_ERROR) 消息：在分区（子分区）函数中不允许使用常量／随机表达式。
+错误：1461 SQLSTATE: HY000 (ER_NO_CONST_EXPR_IN_RANGE_OR_LIST_ERROR) 消息：RANGE/LIST VALUES中的表达式必须是常量。
+错误：1462 SQLSTATE: HY000 (ER_FIELD_NOT_FOUND_PART_ERROR) 消息：在表中未发现分区函数字段列表中的字段。
+错误：1463 SQLSTATE: HY000 (ER_LIST_OF_FIELDS_ONLY_IN_HASH_ERROR) 消息：仅在KEY分区中允许使用字段列表。
+错误：1464 SQLSTATE: HY000 (ER_INCONSISTENT_PARTITION_INFO_ERROR) 消息：frm文件中的分区信息与能够写入到frm文件中的不一致。
+错误：1465 SQLSTATE: HY000 (ER_PARTITION_FUNC_NOT_ALLOWED_ERROR) 消息：%s函数返回了错误类型。
+错误：1466 SQLSTATE: HY000 (ER_PARTITIONS_MUST_BE_DEFINED_ERROR) 消息：对于%s分区，必须定义每个分区。
+错误：1467 SQLSTATE: HY000 (ER_RANGE_NOT_INCREASING_ERROR) 消息：对于各分区，VALUES LESS THAN值必须严格增大。
+错误：1468 SQLSTATE: HY000 (ER_INCONSISTENT_TYPE_OF_FUNCTIONS_ERROR) 消息：VALUES值必须与分区函数具有相同的类型。
+错误：1469 SQLSTATE: HY000 (ER_MULTIPLE_DEF_CONST_IN_LIST_PART_ERROR) 消息：Multiple definition of same constant in list partitioning 
+错误：1470 SQLSTATE: HY000 (ER_PARTITION_ENTRY_ERROR) 消息：在查询中，不能独立使用分区功能。
+错误：1471 SQLSTATE: HY000 (ER_MIX_HANDLER_ERROR) 消息：在该MySQL版本中，不允许分区中的句柄组合。 [Page]
+错误：1472 SQLSTATE: HY000 (ER_PARTITION_NOT_DEFINED_ERROR) 消息：对于分区引擎，有必要定义所有的%s。
+错误：1473 SQLSTATE: HY000 (ER_TOO_MANY_PARTITIONS_ERROR) 消息：定义了过多分区。
+错误：1474 SQLSTATE: HY000 (ER_SUBPARTITION_ERROR) 消息：对于子分区，仅能将RANGE/LIST分区与HASH/KEY分区混合起来。
+错误：1475 SQLSTATE: HY000 (ER_CANT_CREATE_HANDLER_FILE) 消息：无法创建特定的句柄文件。
+错误：1476 SQLSTATE: HY000 (ER_BLOB_FIELD_IN_PART_FUNC_ERROR) 消息：在分区函数中，不允许使用BLOB字段。
+错误：1477 SQLSTATE: HY000 (ER_CHAR_SET_IN_PART_FIELD_ERROR) 消息：如果为分区函数选择了二进制校对，才允许使用VARCHAR。
+错误：1478 SQLSTATE: HY000 (ER_UNIQUE_KEY_NEED_ALL_FIELDS_IN_PF) 消息：在分区函数中，%s需要包含所有文件。
+错误：1479 SQLSTATE: HY000 (ER_NO_PARTS_ERROR) 消息：%s的数目= 0不是允许的值。
+错误：1480 SQLSTATE: HY000 (ER_PARTITION_MGMT_ON_NONPARTITIONED) 消息：无法在非分区表上进行分区管理。
+错误：1481 SQLSTATE: HY000 (ER_DROP_PARTITION_NON_EXISTENT) 消息：分区列表中的错误出现变化。
+错误：1482 SQLSTATE: HY000 (ER_DROP_LAST_PARTITION) 消息：不能删除所有分区，请使用DROP TABLE取而代之。
+错误：1483 SQLSTATE: HY000 (ER_COALESCE_ONLY_ON_HASH_PARTITION) 消息：COALESCE PARTITION仅能在HASH/KEY分区上使用。
+错误：1484 SQLSTATE: HY000 (ER_ONLY_ON_RANGE_LIST_PARTITION) 消息：%s PARTITION仅能在RANGE/LIST分区上使用。
+错误：1485 SQLSTATE: HY000 (ER_ADD_PARTITION_SUBPART_ERROR) 消息：试图用错误的子分区数增加分区。
+错误：1486 SQLSTATE: HY000 (ER_ADD_PARTITION_NO_NEW_PARTITION) 消息：必须至少添加1个分区。
+错误：1487 SQLSTATE: HY000 (ER_COALESCE_PARTITION_NO_PARTITION) 消息：必须至少合并1个分区。
+错误：1488 SQLSTATE: HY000 (ER_REORG_PARTITION_NOT_EXIST) 消息：重组的分区数超过了已有的分区数。

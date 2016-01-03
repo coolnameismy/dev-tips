@@ -1,0 +1,71 @@
+1：接口的设置和设置说明
+ [OperationContract]
+[WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.WrappedResponse, ResponseFormat = WebMessageFormat.Json,RequestFormat = WebMessageFormat.Json)]
+One testpackage(One packages);
+
+
+2：接口的实现
+  public One testpackage(One packages)
+        {
+          
+            return packages;
+        }
+测试: fireFox RESTClient 
+1：请求时要设置 Content-Type:application/json
+2:发送数据包：
+    {
+       "age": "2",
+       "name": "刘彦玮"
+    }
+
+//发批量包
+
+    [
+       {
+           "age": "99",
+           "name": "1"
+       },
+       {
+           "age": "99",
+           "name": "2"
+       },
+       {
+           "age": "99",
+           "name": "3"
+       },
+       {
+           "age": "99",
+           "name": "4"
+       }
+    ]
+
+
+
+
+
+
+3：地址：http://localhost:2999/GPSINFO.svc/testpackage
+
+
+
+
+说明：
+
+2: 设置WebMessageBodyStyle.WrappedResponse（为不包裹请求，但包裹返回）
+
+{
+"token":"hong",
+"termCompany":"libin",
+"termStatus":"0",
+"gpsTime":"20140331183841",
+"latitude":"30.587115",
+"longitude":"114.182810",
+"speed":"86",
+"direction":"180",
+"distance":"400",
+"carColor":"1",
+"carNo":"苏A00001",
+"acc":"0",
+"location":"0",
+"OperatorsName":"常州"
+}

@@ -1,0 +1,29 @@
+using Microsoft.Phone.Tasks;
+
+1：发送邮件
+  private void appbar_buttonFinish_Click(object sender, EventArgs e)
+        {
+            //创建一个邮件任务
+            EmailComposeTask emailComposeTask = new EmailComposeTask();
+            //设置收件人
+            emailComposeTask.To = textBox_To.Text;
+            //设置邮件标题
+            emailComposeTask.Subject = textBox_Subject.Text;
+            //设置邮件内容
+            emailComposeTask.Body = textBox_Content.Text;
+            emailComposeTask.Show();
+        }
+
+2:选择联系人
+ //选择邮件联系人
+        private void appbar_buttonChoose_Click(object sender, EventArgs e)
+        {
+            EmailAddressChooserTask emailAddressChooserTask = new EmailAddressChooserTask();
+            emailAddressChooserTask.Show();
+            emailAddressChooserTask.Completed += OnCompleted;
+        }
+        //选择邮件联系人完成后
+        private void OnCompleted(object sender, EmailResult args)
+        {
+            MessageBox.Show("Email：" + args.Email + "&&Name:" + args.DisplayName);
+        }

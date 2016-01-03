@@ -1,0 +1,76 @@
+magento网站搭建
+
+Magento系统要求与安装环境
+
+服务器系统:
+	Linux x86, x86-64，window
+Web服务器:
+	iis
+	Apache 1.3.x
+	Apache 2.0.x
+	Apache 2.2.x
+	Nginx－不支持htaccess,需重写URL规则，见 如何在nginx上运行magento
+兼容浏览器:
+	Microsoft Internet Explorer 7 and above
+	Mozilla Firefox 3.5 and above
+	Apple Safari 5 and above on Mac only
+	Google Chrome 7 and above
+	Adobe Flash browser plug-in should be installed
+PHP:
+	5.2.13+
+	PHP扩展:
+	PDO_MySQL
+	simplexml
+	mcrypt
+	hash
+	GD
+	DOM
+	iconv
+	curl
+	SOAP (开启API功能时用到)
+	Safe_mode off
+	Memory_limit 最少 256Mb (preferably 512)
+	MySQL:
+	4.1.20 以上
+	InnoDB 存储引擎
+SSL:
+	开启HTTPS需安装SSL服务
+	服务器其他要求:
+	可以配置自动执行程序如Cron
+	可配置URL重写规则如：.htaccess
+
+Mageto 安装步骤：
+
+1:官网下载Magento源代码http://www.magentocommerce.com/download，可以到选择magento版本
+2:下载window环境下magento运行套件－WAMP,获取自己部署php，mysql环境，服务器用apache或者是iis
+3：检测是否满足magento运行条件,下载检测代码http://www.magentocommerce.com/_media/magento-check.zip,解压运行magento－check.php,会有问题提示你环境十分ok。
+4：安装演示数据
+到http://www.magentocommerce.com/download下载magento演示数据
+解压演示数据包，将解压之后的media文件覆盖到magento源代码的media下
+创建magento数据库，导入解压出来之后的演示数据文件*.sql
+5：安装：进入你配置网站的根目录，若没有安装会进入安装界面，安装提示填入内容。再安装数据库时，大于需要5分钟左右，这时候很容易出现超时的错误，需要单独设置中间件的超时时间，可以看后面的错误处理。完成后就会出现前台和后台的地址
+
+错误处理===========
+1：出现内存不足现象：
+修改ini_set(‘memory_limit’,’128M’); // 出现脚本运行时间过期
+修改php.ini配置文件 max_execution_time = 300　//
+
+
+2：Fatal error: Maximum execution time of 30 seconds exceeded in /app/code/core/xx/xx.php on line xxx
+ 
+-修改php.ini的虚拟主机
+找到max_execution_time = 30;
+
+3：C:\Program Files\PHP\php-cgi.exe - FastCGI 进程超过了配置的请求超时时限
+【环境】：php + IIS7.5
+方法1：IIS7->FastCGI设置->双击"php-cgi.exe"->"活动超时" 项默认是设置为70(秒)，改为600(10分钟，此处根据需求设置可以略高~)
+方法2：iis中找到网站，右键- 管理网站- 高级设置  然后展开连接限制，修改连接超时时间，默认值是120，最大值是3600
+说明：我是使用方法1解决问题的，方法2好像没说明效果
+
+4：出现一大堆代码，显示什么数据库已存在，可以用文字”常用的sql“节中的SQL语句去把数据库删除了再重新建。
+
+
+
+常用sql==========
+CREATE DATABASE IF NOT EXISTS magento DEFAULT CHARSET utf8 COLLATE utf8_general_ci;
+drop database if exists magento

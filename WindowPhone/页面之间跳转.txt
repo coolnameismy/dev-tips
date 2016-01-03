@@ -1,0 +1,6 @@
+页面之间跳转 
+NavigationService.Navigate(new Uri("/AddAccount.xaml?Type=0", UriKind.Relative));  //第二个参数表明是相对路径还是绝对路径 
+返回上一页
+base.NavigationService.GoBack();
+返回前一页
+base.NavigationService.GoForward       

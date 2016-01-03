@@ -1,0 +1,59 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="PhoneApp2.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:localConverter="clr-namespace:PhoneApp2.Converter;assembly=PhoneApp2"
+    xmlns:local="clr-namespace:PhoneApp2;assembly=PhoneApp2"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    
+    <phone:PhoneApplicationPage.Resources>
+        <localConverter:MyConverter  x:Key="Converter1"/>
+        <local:Clock x:Key="clock"> </local:Clock>
+    </phone:PhoneApplicationPage.Resources>
+    
+    <!--LayoutRoot 是包含所有页面内容的根网格-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28" DataContext="{StaticResource clock}">
+           <TextBlock x:Name="ApplicationTitle" Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="三种绑定类型" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock FontSize="25" Height="43" HorizontalAlignment="Left" Text="当前时间："  Width="185" />
+            <TextBlock FontSize="25" Height="43" HorizontalAlignment="Left"  Name="textBlockHour" Text="{Binding Hour}"  Width="185" />
+            <TextBlock FontSize="25" Height="43" HorizontalAlignment="Left"  Name="textBlockMinute" Text="{Binding Min}"  Width="185" />
+            <TextBlock FontSize="25" Height="43" HorizontalAlignment="Left"  Name="textBlockSecond" Text="{Binding Second}"  Width="185" />
+         
+        </StackPanel>
+
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Slider Name="slider" 
+                    Value="50" Maximum="400"
+                    Margin="9,20,39,496" SmallChange="1" />
+            <TextBlock FontSize="25" Height="41" HorizontalAlignment="Left" Margin="34,238,0,0" Name="textBlock1" Text="OneTime" VerticalAlignment="Top" Width="112" />
+            <TextBox  Height="72" HorizontalAlignment="Left" Margin="152,220,0,0" Name="textBox1" Text="{Binding ElementName=slider, Path=Value,Mode=OneTime}" VerticalAlignment="Top" Width="269" />
+            <TextBlock FontSize="25" Height="46" HorizontalAlignment="Left" Margin="34,338,0,0" Name="textBlock2" Text="OneWay" VerticalAlignment="Top" Width="99" />
+            <TextBox Height="72" HorizontalAlignment="Left" Margin="151,323,0,0" Name="textBox2" Text="{Binding ElementName=slider, Path=Value,Mode=OneWay}" VerticalAlignment="Top" Width="269" />
+            <TextBlock FontSize="25" Height="40" HorizontalAlignment="Left" Margin="39,436,0,0" Name="textBlock3" Text="TwoWay" VerticalAlignment="Top" Width="94" />
+            <TextBox Height="72" HorizontalAlignment="Left" Margin="152,420,0,0" Name="textBox3" Text="{Binding ElementName=slider, Path=Value,Mode=TwoWay,Converter={StaticResource Converter1}}"  VerticalAlignment="Top" Width="268" />
+            <TextBlock FontSize="25" Height="43" HorizontalAlignment="Left" Margin="12,142,0,0" Name="textBlock4" Text="slider控件的值：" VerticalAlignment="Top" />
+            <TextBlock FontSize="25" Height="43" HorizontalAlignment="Left" Margin="203,142,0,0" Name="textBlock5" Text="{Binding ElementName=slider, Path=Value}" VerticalAlignment="Top" Width="185" />
+
+           
+
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

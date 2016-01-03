@@ -1,0 +1,17 @@
+控制器传递参数
+return RedirectToAction("Manage", new { Message = ManageMessageId.ChangePasswordSuccess })
+
+
+控制器接受参数
+ public ActionResult Manage(ManageMessageId? message)
+        {
+            ViewBag.StatusMessage =
+                message == ManageMessageId.ChangePasswordSuccess ? "已更改你的密码。"
+                : message == ManageMessageId.SetPasswordSuccess ? "已设置你的密码。"
+                : message == ManageMessageId.RemoveLoginSuccess ? "已删除外部登录。"
+                : "";
+            
+            ViewBag.HasLocalPassword = OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
+            ViewBag.ReturnUrl = Url.Action("Manage");
+            return View();
+        }

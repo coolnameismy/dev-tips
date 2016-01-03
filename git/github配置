@@ -1,0 +1,8 @@
+github配置：
+1:生成ssh证书
+ssh-keygen -t rsa -C "your_email@youremail.com"  
+2:在github网站 https://github.com/settings/ssh 设置ssh证书
+
+//建立远程git项目
+$ git remote add origin git@github.com:yourName/yourRepo.git  
+

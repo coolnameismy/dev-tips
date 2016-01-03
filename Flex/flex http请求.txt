@@ -1,0 +1,69 @@
+/**
+			 * 加载车辆GPS数据
+			 */
+			public function LoadGPSData(url:String,callback:Function,carIds:String):void
+			{
+				 			
+				//要请求的URL
+				var request:URLRequest = new URLRequest(url) ;
+				var load:URLLoader = new URLLoader() ;
+				configureListeners(load);
+				//URL参数
+				var variables:URLVariables = new URLVariables();
+				
+				//variables.+后面的参数 表示要提交的参数。
+				variables.keyid = carIds;
+				
+				variables.no = 1001 ;
+				//提交的方式
+				request.method=URLRequestMethod.POST;
+				
+				//提交的数据
+				request.data=variables ;
+				
+				load.dataFormat = URLLoaderDataFormat.TEXT ;
+				load.load(request) ;
+				
+			}
+			function configureListeners(dispatcher:IEventDispatcher):void {
+				　dispatcher.addEventListener(Event.COMPLETE, completeHandler);
+				　dispatcher.addEventListener(Event.OPEN, openHandler);
+				　dispatcher.addEventListener(ProgressEvent.PROGRESS, progressHandler);
+				　dispatcher.addEventListener(SecurityErrorEvent.SECURITY_ERROR, securityErrorHandler);
+				　dispatcher.addEventListener(HTTPStatusEvent.HTTP_STATUS, httpStatusHandler);
+				　dispatcher.addEventListener(IOErrorEvent.IO_ERROR, ioErrorHandler);
+			}
+			//加载完成时，将触发
+			function completeHandler(event:Event):void {
+				　var loader:URLLoader=URLLoader(event.target);
+				　trace("completeHandler: " + loader.data);
+				Alert.show(loader.data);
+				　 
+				　var vars:URLVariables=new URLVariables(loader.data);
+				　trace("The Method is " + vars.Method); //服务端返回的字符串中如果有 Method=xxx 这样的字符，则Flash中可以直接用vars.Method进行访问
+			}
+			
+			//刚开始请求时，将触发
+			function openHandler(event:Event):void {
+				　trace("openHandler: " + event);
+			}
+			
+			//下载进度发生变化时，将触发(可利用这个做加载进度条)
+			function progressHandler(event:ProgressEvent):void {
+				　trace("progressHandler loaded:" + event.bytesLoaded + " total: " + event.bytesTotal);
+			}
+			
+			//因安全原因出现错误时，将触发
+			function securityErrorHandler(event:SecurityErrorEvent):void {
+				　trace("securityErrorHandler: " + event);
+			}
+			
+			//http请求状态变化时，将触发
+			function httpStatusHandler(event:HTTPStatusEvent):void {
+				　trace("httpStatusHandler: " + event);
+			}
+			
+			//io错误时，将触发
+			function ioErrorHandler(event:IOErrorEvent):void {
+				　trace("ioErrorHandler: " + event);
+			}

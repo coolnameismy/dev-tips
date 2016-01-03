@@ -1,0 +1,11 @@
+//实例化类
+Peple peple = new Peple();
+peple.Name = "daliuyanwei";
+//创建绑定对象，命名空间为：using System.Windows.Data;
+Binding binding = new Binding();
+//对绑定设置属性
+binding.Source = peple;//或者使用DataContext属性绑定
+binding.Path = new PropertyPath("Name");
+binding.Mode = BindingMode.OneWay;
+//将绑定附加到UI元素上去
+textBlockHour.SetBinding(TextBlock.TextProperty,binding);

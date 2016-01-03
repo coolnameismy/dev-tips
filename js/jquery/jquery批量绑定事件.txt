@@ -1,0 +1,14 @@
+<script type="text/javascript">
+       $(function () {
+           //  alert();        
+           $(".slidesImgs ul li ").each(function () {
+               var link = $(this).attr("data-link");
+              
+                   $(this).bind("click", function () {
+                          alert(""); 
+                   })
+              
+              
+           })
+       })
+   </script>

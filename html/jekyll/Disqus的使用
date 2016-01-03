@@ -1,0 +1,8 @@
+Disqus的使用
+
+Disqus的主要目标是通过提供功能强大的第三评论系统
+
+配置:
+1：https://disqus.com/ 注册账户
+2：add Disqus to site，记住xxx的shortname
+3：参考我的github主页网站，在_config.yml找到# disqus 设置，把shortname 改成 xxx

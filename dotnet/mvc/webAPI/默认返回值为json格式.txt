@@ -1,0 +1,7 @@
+解决方案：
+
+在Global.asax.cs的Application_Start中
+
+加入
+
+GlobalConfiguration.Configuration.Formatters.XmlFormatter.SupportedMediaTypes.Clear();

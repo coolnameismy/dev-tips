@@ -1,0 +1,15 @@
+//设置按钮点击监听
+setting_btn.setOnClickListener(this); 
+//批量处理点击事件
+  @Override  
+    public void onClick(View v) {  
+        switch (v.getId()) {  
+        case R.id.setting_btn:  
+            activity.startActivity(new Intent(activity,SettingsActivity.class));  
+            activity.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);  
+            break;  
+  
+        default:  
+            break;  
+        }  
+    }  

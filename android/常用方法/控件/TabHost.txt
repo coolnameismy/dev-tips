@@ -1,0 +1,20 @@
+前台：
+直接拖入控件
+
+后台：
+1：activity 继承TabActivity
+2：设置tab标题和容器
+// user code
+TabHost tabhost = getTabHost();
+tabhost.addTab(
+	 tabhost.newTabSpec("tab1").
+	 setIndicator("呼出电话",getResources().getDrawable(R.drawable.ic_launcher)).setContent(R.id.tab1)
+	 );
+tabhost.addTab(
+	 tabhost.newTabSpec("tab2").
+	 setIndicator("呼入电话").setContent(R.id.tab2)
+	 );
+tabhost.addTab(
+	 tabhost.newTabSpec("tab2").
+	 setIndicator("其他").setContent(R.id.tab3)
+	 );

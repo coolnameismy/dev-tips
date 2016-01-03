@@ -1,0 +1,26 @@
+ function addMap(){
+        var flashvars = {};
+        flashvars.ActiveMQ_CONNECT = activeMQ_CONNECT;
+        flashvars.ActiveMQ_CLIENTID = activeMQ_CLIENTID;
+        flashvars.ActiveMQ_IP = activeMQ_IP;
+        flashvars.ActiveMQ_PORT = activeMQ_PORT;
+        flashvars.ActiveMQ_LOGIN = activeMQ_LOGIN;
+        flashvars.ActiveMQ_PASSCODE = activeMQ_PASSCODE;
+        flashvars.mapTypeState = mapTypeState;地图类型
+        flashvars.center = '111.00, 33.00';'经度，纬度';如果不设置，默认级别7，中心点(116.400146484375, 39.911842984749946)
+        flashvars.zoom = '4';1-17
+        flashvars.showCarMark = showCarMark == 1  true  false;车辆图标
+        flashvars.showPlatform = showPlatform == 1  true  false;平台链路信息
+        flashvars.showEF = _showElct == 1  true  false ;电子围栏
+        flashvars.showOnOver = _showonover == 1  true  false ;电子围栏
+        flashvars.showAlarm = showAlarm == 1  true  false ;告警栏信息
+        flashvars.urlPrefix = 'flex';
+        var params = {};
+        params.wmode = transparent;Opaque;window;transparent;
+        params.allowScriptAccess = sameDomain;
+        var attributes = {};
+        attributes.align = middle;
+        var h = '100%';$('#MapControl1').height()+'px';
+        swfobject.embedSWF(flexMain.swf, MapControl1, 100%, h, 9.0.0, flexexpressInstall.swf, flashvars, params, attributes);
+        
+    }

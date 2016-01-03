@@ -1,0 +1,4 @@
+  $("#Download").click(function (e) {
+                window.location.href = "/admin/Download";
+                e.stopPropagation();
+            });

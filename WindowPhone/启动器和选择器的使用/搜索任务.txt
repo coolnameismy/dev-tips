@@ -1,0 +1,7 @@
+  //ËÑË÷ÈÎÎñ
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+             SearchTask st = new SearchTask();
+             st.SearchQuery = textBox1.Text;
+             st.Show();
+        }

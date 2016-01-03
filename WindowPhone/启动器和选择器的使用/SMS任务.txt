@@ -1,0 +1,9 @@
+
+        //SMSÈÎÎñ
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+             SmsComposeTask st = new SmsComposeTask();
+             st.Body = textBox1.Text;
+             st.To = "18951603033";
+             st.Show();
+        }

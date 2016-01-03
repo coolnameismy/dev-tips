@@ -1,0 +1,9 @@
+CODE DEsCRiPTiOn
+400 The request is not understood (unintelligible).
+403 The user does not have access to the requested resource.
+404 The file is not found at the requested URL.
+405 The request method is not supported.
+406 The requested Multipurpose Internet Mail Extensions (MIME) type is not accepted.
+408 The request has timed out.
+500 An internal server error has occurred.
+503 The capacity of the server has been reached.

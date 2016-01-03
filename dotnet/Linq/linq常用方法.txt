@@ -1,0 +1,95 @@
+﻿
+1：linq延迟加载和提前加载
+            IEnumerable<string> results = (from c in colors
+                                          where c.StartsWith("B")
+                                          orderby c
+                                          select c).ToList();
+            foreach (string str in results)
+            {
+                Console.WriteLine(str);
+            }
+            colors[4] = "Slate";
+            Console.WriteLine("---------" + Environment.NewLine);
+            foreach (string str in results)
+            {
+                Console.WriteLine(str);
+            }
+            var x = new {Mode = "fire",Model="BMW"};
+2：linq扩展All,Any方法示例
+			GetCars().All(c => c.Year > 1960)
+
+3:linq扩展方法AsEnumerable使用
+			DataTable table = new DataTable();
+            table.Columns.Add("ID");
+            table.Columns.Add("ProductName");
+            table.Rows.Add("1", "Chai");
+            table.Rows.Add("2", "Queso Cabrales");
+            table.Rows.Add("3", "Tofu");
+
+		var produce = from c in table.AsEnumerable()
+                         select c.Field<string>("ProductName");
+         Console.WriteLine("Product Names: ");
+         foreach (string productName in produce)
+         {
+           Console.WriteLine(productName);
+         }
+4:linq扩展方法Average
+      var averageYear = mycar.GetCars().Average(c => c.Price);
+5:linq扩张方法Cast 和 OfType（区别在于oftype遇到不符合类型时跳过，不抛出异常）
+	    Cast<T> 方法通过提供必要的类型信息，可在IEnumerable(非泛型)的派生对象上调用Cast<T> 方法来获得一个IEnumerable<T>对象
+		System.Collections.ArrayList fruits = new System.Collections.ArrayList();
+		fruits.Add("apple");
+		fruits.Add("mango");
+ 
+		IEnumerable<string> query =
+		fruits.Cast<string>().Select(fruit => fruit);
+6: linq扩展方法ToDictionary和ToLookup
+//Lookup<TKey, TElement> 类似于 Dictionary<TKey, TValue>。不同之处在于：
+Dictionary<TKey, TValue> 将各个键映射到单个值，而 Lookup<TKey, TElement> 将各个键映射到值的集合。
+Lookup<TKey, TElement> 对象创建后，无法向其添加或从中移除元素或键
+		 var q =  
+				db.Categories  
+				.ToDictionary  
+				(  
+					c => c.CategoryID,  
+					c => c.CategoryName  
+				);  
+7: linq扩展方法Concat、Count、DefaultIfEmpty、Distinct、ElementAt(n)、min、max、sum、REVERSE、select、selectmany
+         .Where(v=>v.Item2=="Ford") 
+         .Select(v=>new Car 
+         { 
+             VIN=v.Item1,  
+             Make=v.Item2,  
+             Year=v.Item3 
+         }); 
+8：linq扩展方法Except、Intersect、union、FIRST、FIRSTORDEFAULT、GROUPBY、GROUPJOIN（类似left outer）、JOIN、SequenceEqual（长度和元素都相同返回ture）
+  var cars = GetCars(); 
+  var query = cars.GroupBy(c => c.Make); 
+  foreach (IGrouping<string,Car> group in query) 
+  { 
+      txtLog.WriteLine("Key:{0}", group.Key); 
+      foreach (Car c in group) 
+      { 
+          txtLog.WriteLine("Car VIN:{0} Make:{1}", c.VIN, c.Make); 
+      } 
+  } 
+9：linq扩展方法single、where、zip（超级有味道的方法）
+  List<String> firstName = new List<String> { "Freesc", "Joshua", "Ken" };
+            List<String> lastName = new List<String> { "Huang", "Guan", "Wang" };
+            foreach (var name in firstName.Zip(lastName, (fname, lname) => fname + " " + lname))
+            {
+                Console.WriteLine(name);
+            }
+10:LET 的使用（let子句可以创建一个新的范围变量，并且使用该变量保存表达式中的结果）
+（You can use the let keyword to create a temporary variable within the LINQ query）
+
+            var result = from c in colors
+                         let colorr = "new" + c
+                         select new
+                         {
+                             colorr
+                         };
+            foreach (var item in result)
+            {
+                Console.WriteLine(item.colorr);
+            }

@@ -1,0 +1,37 @@
+
+
+1.你的开源库发布之后，需要打上版本号tag，否则后续不能完成
+
+2.注册pod trunk
+
+pod trunk register coolnameismy@hotmail.com 'coolnameismy' --description='coolnameismy'
+
+2.cd到项目目录下，创建podspec文件
+
+pod spec createYourPodProjectName
+
+3.修改podspec文件中的相关信息，这很重要，校验，不能有任何警告或错误
+
+pod spec lint
+
+4.发布到pod trunk
+
+pod trunk push
+
+5.更新pod库
+pod setup
+
+==========================后续==========================
+
+补充 Claim your Pod
+
+如果你之前提交过pod，那么trunk之后你需要去(Claim your Pod)认领
+
+在这个页面: https://trunk.cocoapods.org/claims/new
+
+=============错误处理====================
+There was an error pushing a new version to trunk: getaddrinfo: nodename nor servname provided, or not known
+
+[!] CocoaPods was not able to update the `master` repo. If this is an unexpected issue and persists you can inspect it running `pod repo update --verbose`
+
+执行：pod repo update --verbos

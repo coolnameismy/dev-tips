@@ -1,0 +1,36 @@
+1: 查询后导出为XXXCollection类
+ TSysAreaprivilegeCollection allprivilegeList = DB.Select().From<TSysAreaprivilege>().ExecuteAsCollection<TSysAreaprivilegeCollection>();2
+
+
+2：查询后添加Where语句
+ TSysAreauserRoleCollection rolesList = DB.Select().From<TSysAreauserRole>()
+                    .Where(TSysAreauserRole.AreaAdminIdColumn).IsEqualTo(userID)
+
+
+3：查询中多个条件判断的语句
+ TMsgAlarminfo alarminfo = DB.Select()
+                .From<TMsgAlarminfo>()
+                .Where(TMsgAlarminfo.ComesolaridColumn).IsEqualTo(term.Comesolarid)
+                .And(TMsgAlarminfo.AlarmEnddateColumn).IsGreaterThan(DateTime.Now.AddMinutes(-2))
+                .And(TMsgAlarminfo.AlarmTypeColumn).IsEqualTo(alarmType)
+                .OrderDesc(TMsgAlarminfo.AlarmDateColumn.ColumnName)
+                .ExecuteSingle<TMsgAlarminfo>();
+
+
+4：查询中排序
+ TMsgAlarminfo alarminfo = DB.Select()
+                .From<TMsgAlarminfo>()
+                .Where(TMsgAlarminfo.ComesolaridColumn).IsEqualTo(term.Comesolarid)
+                .And(TMsgAlarminfo.AlarmEnddateColumn).IsGreaterThan(DateTime.Now.AddMinutes(-2))
+                .And(TMsgAlarminfo.AlarmTypeColumn).IsEqualTo(alarmType)
+                .OrderDesc(TMsgAlarminfo.AlarmDateColumn.ColumnName)
+                .ExecuteSingle<TMsgAlarminfo>();
+
+5：查询后导出单一数据集
+ TMsgAlarminfo alarminfo = DB.Select()
+                .From<TMsgAlarminfo>()
+                .Where(TMsgAlarminfo.ComesolaridColumn).IsEqualTo(term.Comesolarid)
+                .And(TMsgAlarminfo.AlarmEnddateColumn).IsGreaterThan(DateTime.Now.AddMinutes(-2))
+                .And(TMsgAlarminfo.AlarmTypeColumn).IsEqualTo(alarmType)
+                .OrderDesc(TMsgAlarminfo.AlarmDateColumn.ColumnName)
+                .ExecuteSingle<TMsgAlarminfo>();

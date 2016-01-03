@@ -1,0 +1,7 @@
+   //ä¯ÀÀÆ÷ÈÎÎñ
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            WebBrowserTask webBrowserTask = new WebBrowserTask();
+            webBrowserTask.Uri = new Uri("http://www.baidu.com");
+            webBrowserTask.Show();
+        }

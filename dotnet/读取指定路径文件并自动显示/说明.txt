@@ -1,0 +1,27 @@
+日期：2013年2月8日
+使用记录：linkmedIquiry项目sitemap
+说明：读取指定目录中指定后缀名的文件并列表
+
+示例程序：
+程序用于mvc3 所有代码写在前台cshtml中
+
+代码段：
+ <div>
+        <ui>项目文档</ui>
+         @if (System.IO.Directory.Exists(Server.MapPath("~/")+ "Assets"))
+                 {
+                     foreach (string filename in System.IO.Directory.GetFiles(Server.MapPath("~/") + "Assets"))
+                     {
+                      
+                        if(filename.EndsWith(".pdf")){
+						<li><a href="@filename.Replace((Server.MapPath("~/")),"")" target="_blank">@filename.Replace((Server.MapPath("~/") + "Assets"),"")</a>
+							@*@(new System.IO.FileInfo(filename).Length)&nbsp;bytes*@
+                            @*获取文件大小*@
+						</li>}
+                     }
+                 }
+                else{
+                    
+                 }
+				
+    </div>

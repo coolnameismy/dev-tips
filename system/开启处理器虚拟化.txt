@@ -1,0 +1,1 @@
+你可以在主板BIOS设置里，找到Intel VT Feature之类的选项，将它的值改为Enabled，然后保存BIOS重启电脑即可。

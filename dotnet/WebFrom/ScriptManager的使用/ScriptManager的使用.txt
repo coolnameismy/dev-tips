@@ -1,0 +1,63 @@
+步骤1：
+建立web服务程序 ，例如：
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Services;
+
+/// <summary>
+/// MyWebService 的摘要说明
+/// </summary>
+[WebService(Namespace = "http://tempuri.org/")]
+[WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
+// 若要允许使用 ASP.NET AJAX 从脚本中调用此 Web 服务，请取消注释以下行。 
+[System.Web.Script.Services.ScriptService]
+public class MyWebService : System.Web.Services.WebService {
+
+    public MyWebService () {
+
+        //如果使用设计的组件，请取消注释以下行 
+        //InitializeComponent(); 
+    }
+
+    [WebMethod]
+    public string HelloWorld() {
+        return "Hello World";
+    }
+    
+}
+步骤2：
+页面配置ScriptManger
+(1)如果方法在外部
+   <asp:ScriptManager ID="ScriptManager1" runat="server">
+        <Services>
+            <asp:ServiceReference Path="~/MyWebService.asmx" />
+        </Services>
+    </asp:ScriptManager>
+（2）如果方法在页面托管代码中，需要声明EnablePageMethods="true"，并把方法定义为静态方法
+
+步骤3：
+页面使用ScriptManger
+    <asp:Button ID="Button1" runat="server" Text="Button" OnClientClick ="myclick()"/>
+   <input type="button"  onclick="myclick()" value="Button2" ID="Button2"/>
+		
+步骤4：
+页面定义客户端js方法，调用服务器端定义的服务
+   <script>
+        function myclick()
+        {
+            //alert("test");
+            MyWebService.HelloWorld(OnRequsetComplete, OnRequsetError);//第一个为成功后的方法的委托，第二个为失败后方法的委托
+			//如果是服务来自本身托管代码，则使用PageMethods.HelloWorld(OnRequsetComplete, OnRequsetError);
+            alert(msg);
+        }
+        function OnRequsetComplete(result) {
+            alert("成功");
+            alert(result);
+        }
+        function OnRequsetError() {
+            alert("失败");
+        }
+    </script>		

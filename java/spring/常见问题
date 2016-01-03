@@ -1,0 +1,11 @@
+常见问题
+
+================================================================================
+cannot change version of project facet Dynamic web module to 2.5
+
+在工程目录下有一个.settings文件夹,打开org.eclipse.wst.common.project.facet.core.xml做如下修改:
+<installed facet="jst.web" version="2.5"/>
+
+================================================================================
+Spring 加载项目启动少log类库
+引入log相关类库

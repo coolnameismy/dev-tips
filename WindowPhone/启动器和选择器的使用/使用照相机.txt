@@ -1,0 +1,16 @@
+
+private CameraCaptureTask cc;
+  //private void ButtonAddPic_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        //{
+        //    this.cc = new CameraCaptureTask();
+        //    this.cc.Completed += (delegate(object ss, PhotoResult arg)
+        //    {
+        //        if (arg.ChosenPhoto != null)
+        //        {
+        //            BitmapImage image = new BitmapImage();
+        //            image.SetSource(arg.ChosenPhoto);
+        //            this.ImagePic.Source = image;
+        //        }
+        //    });
+        //    this.cc.Show();
+        //}

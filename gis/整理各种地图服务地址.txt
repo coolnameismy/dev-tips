@@ -1,0 +1,8 @@
+1:鸿信地图
+http://202.102.112.17:6080/arcgis/rest/services/mapmercator/MapServer
+2：街景地图
+ var osmLayers = new esri.layers.OpenStreetMapLayer();
+3：地形地图
+http://server.arcgisonline.com/ArcGIS/rest/services/NGS_Topo_US_2D/MapServer
+4：arcgis地图
+http://www.arcgisonline.cn/ArcGIS/rest/services/ChinaOnlineCommunity/MapServer

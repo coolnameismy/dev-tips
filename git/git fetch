@@ -1,0 +1,6 @@
+git fetch
+
+说明：尽量使用fetch不要使用pull，pull相当于fetch + merge
+git fetch origin master:temp
+git diff temp 
+git merge temp

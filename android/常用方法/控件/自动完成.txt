@@ -1,0 +1,33 @@
+<AutoCompleteTextView 
+        android:id="@+id/AutoText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:completionHint="选择开发语言"
+        android:dropDownHorizontalOffset="10dp"
+        android:completionThreshold="1"
+        />
+    
+     <MultiAutoCompleteTextView 
+        android:id="@+id/mAutoText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:completionHint="选择开发语言"
+        android:dropDownHorizontalOffset="10dp"
+        android:completionThreshold="1"
+        />
+
+
+
+=========================================================
+
+//获取资源文件定义的数组
+        String[] items = this.getResources().getStringArray(R.array.books);
+        //自动完成文件
+        AutoCompleteTextView autoText = (AutoCompleteTextView) findViewById(R.id.AutoText);
+    	ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.array_item,items);
+    	autoText.setAdapter(adapter);
+    	//多重自动完成文件
+    	MultiAutoCompleteTextView mAutoText = (MultiAutoCompleteTextView) findViewById(R.id.mAutoText);
+    	mAutoText.setAdapter(adapter);
+    	//设置分隔符
+    	mAutoText.setTokenizer(new MultiAutoCompleteTextView.CommaTokenizer());

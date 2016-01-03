@@ -1,0 +1,14 @@
+=========================主要=======================================
+1：安装IIS
+2：安装framework （有的已安装的需要重新注册一下.进入C:\Windows\Microsoft.NET\Framework\v4.0.30319 ，cmd运行 aspnet_regiis.exe -i）
+3：注意查看端口是否开放
+4：安装MVC
+
+=========================参考=======================================
+1. NET Framework4下载地址：
+http://www.microsoft.com/downloads/zh-cn/details.aspx?FamilyID=0A391ABD-25C1-4FC0-919F-B21F31AB88B7
+
+2. MVC 3 下载地址：
+http://www.microsoft.com/downloads/en/details.aspx?FamilyID=d2928bc1-f48c-4e95-a064-2a455a22c8f6
+
+注意：设置IIS的“ISAPI和CGI限制”中的“ASP.NET v4.0.0.30319”为允许，如下图所示：

@@ -1,0 +1,13 @@
+emacs风格快捷键
+
+==常用文本编辑器都支持
+control-F => 后一个字符
+control-B => 前一个字符
+control-P => 上一行
+control-N => 下一行
+control-A => 光标移到行的首位
+control-E => 光标移到行的结尾
+control-T => 交换2个字符
+control-D => 删除光标后一个字符
+control-K => 删除整行
+control-L => 讲光标位于屏幕中央

@@ -1,0 +1,7 @@
+首先安装package control
+
+安装方式：1直接下载文件放入插件包
+2：通过lackage contral进行安装
+	ctrl + alt + p 输入 package control：install
+	然后查找自己想要安装的包
+	

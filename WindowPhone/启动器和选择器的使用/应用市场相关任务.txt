@@ -1,0 +1,25 @@
+ 	 //进入Marketplace市场
+        private void intoMarket()
+        {
+            MarketplaceHubTask task = new MarketplaceHubTask();
+            task.ContentType = MarketplaceContentType.Applications;
+            task.Show();
+        }
+        //通过ID查询应用详情
+        private void FindAppInMarketByID(string contentIdentifier="")
+        {
+            MarketplaceDetailTask task = new MarketplaceDetailTask();
+            task.ContentType = MarketplaceContentType.Applications; //只能设置为Applications
+            //没有指定id则为当前app
+            //task.ContentIdentifier = contentIdentifier;
+            task.Show();
+        }
+        //通过ID关键字查询应用详情
+        private void FindAppInMarketByKeyword(string Keyword = "")
+        {
+            MarketplaceSearchTask task = new MarketplaceSearchTask();
+            task.ContentType = MarketplaceContentType.Applications; //设置为Applications 或者Music
+            //测试随便指定一个关键字
+            task.SearchTerms = "账本";
+            task.Show();
+        }

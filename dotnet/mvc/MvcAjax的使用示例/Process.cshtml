@@ -1,0 +1,180 @@
+﻿@model IEnumerable<BiosealMVCWeb.Models.Recruit>
+@{
+    ViewBag.Title = "Process";
+    Layout = "~/Views/Careers/_CareersLayout.cshtml";
+    IEnumerable<BiosealMVCWeb.Models.Contract> Contracts = ViewBag.Contracts;
+}
+<div class="career tabbed">
+    <div class="tabbedHd">
+        <a class="stetp1 cur" href="#">招聘流程</a> <a class="stetp2" href="#">招聘</a> <a class="stetp3"
+            href="#">签约、实习和报到</a>
+    </div>
+    <div class="tabbedBd">
+        <div class="tabbedCon step1">
+            <h4>
+                <a name="stetp1">招聘流程</a></h4>
+            <div class="content">
+                <img src="/Content/img/jobs_process.jpg" alt="招聘流程指示图" />
+            </div>
+        </div>
+        <div class="tabbedCon step2">
+            <h4>
+                <a name="stetp2">招聘</a></h4>
+            <div class="content" id="ajaxcontent1">
+                <ul class="faq" id="ajaxfaq1">
+                    @foreach (var item in Model)
+                    {
+                        <li>
+                            
+                            <p class="q">
+                                @item.Q
+                            </p>
+                            <p class="a">
+                                @item.A
+                            </p>
+                        </li>
+                    }
+
+
+                </ul>
+                @Html.Partial("_AjaxPagination", (BiosealMVCWeb.Models.Pagination)ViewBag.Pagination)
+
+            </div>
+        </div>
+        <div class="tabbedCon step3">
+            <h4>
+                <a name="stetp3">签约、实习和报到</a></h4>
+            <div class="content" id="ajaxcontent2">
+                <ul class="faq" id="ajaxfaq2">
+                     @foreach (var item in Contracts)
+                    {
+                        <li>
+                            
+                            <p class="q">
+                                @item.Q
+                            </p>
+                            <p class="a">
+                                @item.A
+                            </p>
+                        </li>
+                    }
+                </ul>
+                 @Html.Partial("_AjaxPagination", (BiosealMVCWeb.Models.Pagination)ViewBag.Pagination1)
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../Scripts/jquery-1.5.1.min.js"></script>
+<script type="text/javascript"> 
+    $(function () {
+        $("#ajaxcontent1 .pager ul li a").each(function () {
+            $(this).bind("click", function () {
+                //获取pagIndex
+          
+             
+                var pagIndex = $(this).attr("data-pagindex");
+                //设置当前页面样式
+                // class="cur"
+                $("#ajaxcontent1 .pager ul li").removeClass("cur");
+                $(this).parent().addClass("cur");
+
+                 //alert(pagIndex);
+                if (pagIndex != '') {
+                 
+                    //执行 ajax post 
+                    //Perform the ajax post 
+
+                    $.post("/Careers/AjaxRecruits/?pageIndex="+pagIndex, { "pagIndex": pagIndex },
+                        function (data) {
+                            // Successful requests get here 
+                            // Update the page elements 
+                            content = "";
+                            //  alert("开始post");
+                            if (data == "") {
+                                //    alert("无数据显示");
+                                //无数据显示
+                            } else {
+                                //     alert("成功获取数据");
+
+                                for (var i = 0; i < data.length; i++) {
+                                    content += " <li><p class='q'>" + data[i].Id + data[i].Q + "</p> <p class='a'>" + data[i].A + "</p> </li>"
+                                }
+
+                                $("#ajaxfaq1").html(content);
+
+                                //设置问答js效果
+                                $('ul.faq > li').each(function () {
+                                  
+                                    $(this).children('p.a').hide();
+                                    $(this).click(function () {
+                                        $(this).children('p.a').toggle();
+                                        $(this).siblings().find('p.a').hide();
+                                    })
+                                })
+                            }
+
+                            //设置页码
+
+                        });
+                }
+
+            });
+        });
+        $("#ajaxcontent2 .pager ul li a").each(function () {
+            $(this).bind("click", function () {
+                //获取pagIndex
+
+
+                var pagIndex = $(this).attr("data-pagindex");
+                //设置当前页面样式
+                // class="cur"
+                $("#ajaxcontent2 .pager ul li").removeClass("cur");
+                $(this).parent().addClass("cur");
+
+                //alert(pagIndex);
+                if (pagIndex != '') {
+
+                    //执行 ajax post 
+                    //Perform the ajax post 
+
+                    $.post("/Careers/AjaxContract/?pageIndex=" + pagIndex, { "pagIndex": pagIndex },
+                        function (data) {
+                            // Successful requests get here 
+                            // Update the page elements 
+                            content = "";
+                            //  alert("开始post");
+                            if (data == "") {
+                                //    alert("无数据显示");
+                                //无数据显示
+                            } else {
+                                //     alert("成功获取数据");
+
+                                for (var i = 0; i < data.length; i++) {
+                                    content += " <li><p class='q'>" + data[i].Id + data[i].Q + "</p> <p class='a'>" + data[i].A + "</p> </li>"
+                                }
+
+                                $("#ajaxfaq2").html(content);
+
+                                //设置问答js效果
+                                $('ul.faq > li').each(function () {
+
+                                    $(this).children('p.a').hide();
+                                    $(this).click(function () {
+                                        $(this).children('p.a').toggle();
+                                        $(this).siblings().find('p.a').hide();
+                                    })
+                                })
+                            }
+
+                            //设置页码
+
+                        });
+                }
+
+            });
+        });
+ 
+    }); 
+ </script>

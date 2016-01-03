@@ -1,0 +1,19 @@
+1：使用[ComVisible(true)]  属性
+ //  <--此处为重点，表示此类能对COM类型公开。
+    [ComVisible(true)]      
+    public class LiutestDB
+    {
+        public string  ReturnToDb()
+        {
+            return "liuyw";
+        }
+    }
+2:AssemblyInfo将 值改为true
+// 将 ComVisible 设置为 false 使此程序集中的类型
+// 对 COM 组件不可见。如果需要从 COM 访问此程序集中的类型，
+// 则将该类型上的 ComVisible 特性设置为 true。
+[assembly: ComVisible(true)]
+
+
+3：使用管理员身份打开cmd
+4：执行  gacutil -i C:\Windows\System32\test.dll 注册

@@ -1,0 +1,45 @@
+ListView listView;
+	SearchView searchView;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_test);
+		
+		// user code
+		listView = (ListView) findViewById(R.id.listView);
+		listView.setAdapter(new ArrayAdapter<String>(this,R.layout.array_item,getResources().getStringArray(R.array.books)));
+		listView.setTextFilterEnabled(true);
+		
+	    searchView = (SearchView) findViewById(R.id.searchView);
+		searchView.setIconifiedByDefault(true);
+		searchView.setSubmitButtonEnabled(true);
+		searchView.setQueryHint("search");
+		//设置字体颜色
+		int id = searchView.getContext().getResources().getIdentifier("android:id/search_src_text", null, null);
+		TextView textView = (TextView) searchView.findViewById(id);
+		textView.setTextColor(Color.WHITE);
+		//设置查询事件监听
+		searchView.setOnQueryTextListener(new OnQueryTextListener() {
+			
+			@Override
+			public boolean onQueryTextSubmit(String query) {
+				
+				Toast toast = Toast.makeText(TestActivity.this, "this is toast", Toast.LENGTH_LONG);
+				//Toast toast = Toast.makeText(this, "", Toast.LENGTH_SHORT);
+				toast.show();
+				return true;
+			}
+			
+			@Override
+			public boolean onQueryTextChange(String newText) {
+				if(TextUtils.isEmpty(newText)){
+					listView.clearTextFilter();
+				}
+				else{
+					listView.setFilterText(newText);
+				}
+				return true;
+			}
+		});
+	}

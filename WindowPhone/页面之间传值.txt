@@ -1,0 +1,17 @@
+ 
+1查询字符串传值
+发送：
+ NavigationService.Navigate(new Uri("/AddAccount.xaml?Type=0", UriKind.Relative));
+接收类型，并根据类型选择pivot索引：
+  	if (NavigationContext.QueryString.ContainsKey("Type"))
+            {
+                if (NavigationContext.QueryString["Type"].ToString() == "0")
+                {
+                    pivot.SelectedIndex = 0;
+
+                }
+                else
+                {
+                    pivot.SelectedIndex = 1;
+                }
+            }

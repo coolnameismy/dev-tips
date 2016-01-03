@@ -1,0 +1,12 @@
+ public MouthReport()
+        {
+            InitializeComponent();
+            base.Loaded += new RoutedEventHandler(this.PhoneApplicationPage_Loaded);
+        }
+        // 处理页面加载事件
+        private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            mouth = DateTime.Now.Month;
+            year = DateTime.Now.Year;
+            DisplayVoucherData();
+        }

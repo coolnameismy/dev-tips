@@ -1,0 +1,51 @@
+记得刚学flex的时候，常常被Image和Bitmap、Bitmapdata搞得七荤八素的，现在看来，其实如果只想简单应用，其实也是很简单的：
+Image  ---- 可视化控件
+Bitmap ---- 通常我们所见的文件，如jpg,gif
+BitmapData  ---- 从字面上也可以理解了，同时看看官方的解释：可以看作是加载的或动态创建的位图图像中包含的像素的照片快照。此快照用对象
+中的像素数据的数组表示。BitmapData 类还包含一系列内置方法，可用于创建和处理像素数据。
+因此，从以下代码也可以看出bitmap和bitmapdata的关系
+
+var myBitmapDataObject:BitmapData = new BitmapData(150, 150, false, 0xFF0000);
+var myImage:Bitmap = new Bitmap(myBitmapDataObject);
+addChild(myImage);
+那么常用的图像加载方式主要有以下几种:
+
+复制代码
+代码
+<?xml version="1.0" encoding="utf-8"?>   
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" applicationComplete="InitApp()">   
+    <mx:Script>   
+        <!--[CDATA[   
+           
+            //第一种方式 这种方式编译以后1.jpg 会直接编译进swf文件中 所以swf可以独立存在   
+            [Bindable]   
+            [Embed(source="1.jpg")]   
+            private var imgClass:Class;   
+               
+            //第2种方式   
+            private var _loader:Loader;   
+               
+            private function InitApp():void{   
+                   
+                //第一种方式的代码   
+                _img.source = imgClass;   
+                   
+                //第二种方式的代码   
+                _loader = new Loader();   
+                //这里需要注意的是 不是_loader.addEventListener  这样是没有效果的   
+                _loader.contentLoaderInfo.addEventListener(Event.COMPLETE,function(e:Event):void{   
+                 //source既可以指向地址，也可以直接指向位图
+                    _img.source = e.currentTarget.content;   
+                });     
+                _loader.load(new URLRequest(encodeURI("1.jpg")));   
+                   
+                   
+                //第三种方式比较简单   
+                _img.source = "1.jpg";  //注意这里必须设置img autoLoad属性为true   
+                   
+                //最后说明 其中第2 第3种方式中swf都不能独立存在 必须配合1.jpg文件的存在 而第一种方式则不需要   
+            }   
+        ]]-->   
+    </mx:Script>   
+    <mx:Image x="51" y="62" width="298" height="245" autoLoad="true" id="_img"/>   
+</mx:Application> 

@@ -1,0 +1,71 @@
+使用xml方式:==========================================================================================================================================================================
+
+第一步：
+@array/books文件
+ <?xml version="1.0" encoding="UTF-8"?>
+    <resources xmlns:android="http://schemas.android.com/apk/res/android">
+        <string-array name="books">
+            <item>java</item>
+            <item>android</item>
+            <item>c++</item>
+             <item>c#.net</item>
+              <item>php</item>
+        </string-array>
+    </resources>
+
+
+
+第二步
+<ListView
+    android:id="@+id/list2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:divider="@color/green"
+    android:dividerHeight="2px" 
+    android:entries="@array/books"
+    >
+</ListView>
+
+
+后台使用适配器方式==========================================================================================================================================================================
+第一步，定义页面ListView
+
+    <ListView
+        android:id="@+id/list1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/red"
+        android:dividerHeight="2px" >
+    </ListView>
+
+ 第二步，定义展示的适配器模型
+ <?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textSize="18sp"
+    android:textColor="@color/blueviolet"
+    android:padding="5dp"
+    android:drawableLeft="@drawable/ic_launcher"
+     >
+</TextView>
+
+第三步：后台java代码定义适配器
+	ListView list1 = (ListView)findViewById(R.id.list1);
+	String[] arr1 = {"liu","wang","li","dsad","fdsf","fdfewer"};
+	ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.array_item,arr1);
+	list1.setAdapter(adapter);
+
+
+继承ListActivity方式========================================================================================================================================================================
+
+说明：1：继承ListActivity 2：实现setListAdapter方法
+public class TestActivity extends ListActivity{
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        String[] arr1 = {"liu","wang","li","dsad","fdsf","1"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.array_item,arr1);
+        this.setListAdapter(adapter);
+    }

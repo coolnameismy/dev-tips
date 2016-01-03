@@ -1,0 +1,74 @@
+@if(Request.IsAuthenticated) {
+    if (User.IsInRole("超级管理员"))
+    {
+       <div class="nav" style="display:none">
+    <div class="nav_back">back</div>
+    <div class="nav_level1" id="nva1">公司新闻</div>
+    <div class="nav_level2">
+        <a href="/Admin/news" id="nva1_1">新闻维护</a>
+        <a href="/Admin/Category" id="nva1_2">分类维护</a>
+        <a href="/Admin/topnews" id="nva1_3">置顶新闻设置</a>
+    </div>
+    <div class="nav_level1" id="Download">资料下载</div>
+    <div class="nav_level1" id="Other">其他信息</div>
+    <div class="nav_level2">
+        <a href="/Admin/IndexSlide" id="nva3_1">首页背景设置</a>
+        <a href="/Account/ChangePassword" id="nva3_2">修改管理员密码</a>
+        <a href="/Account/Register " id="nva3_3">添加管理员账号</a>
+    </div>
+
+    <div class="nav_level1" id="Process">人才招娉</div>
+    <div class="nav_level2">
+        <a href="/Admin/Recruit" id="nva4_1">招聘问答</a>
+        <a href="/Admin/Contract" id="nva4_2">签约、实习和报到</a>
+    </div>
+
+    <div class="nav_level1" id="InBioseal">人在倍绣</div>
+</div>
+    }
+    else if (User.IsInRole("HR"))
+    {
+      @Html.Partial("~/Areas/Admin/Views/Shared/HRLeftNav.cshtml")
+    }
+    else if (User.IsInRole("信息员"))
+    {
+      @Html.Partial("~/Areas/Admin/Views/Shared/InformationLeftNav.cshtml")
+    }
+        
+}
+
+
+
+
+    <script type="text/javascript">
+        $(function () {
+            //人在倍绣点击
+            $("#InBioseal").click(function (e) {
+                window.location.href = "/admin/InBioseal";
+                //取消点击冒泡
+                e.stopPropagation();
+            });
+            //资料下载点击
+            $("#Download").click(function (e) {
+                window.location.href = "/admin/Download";
+                e.stopPropagation();
+            });
+            $(".nav_level1").hover(function () {
+                $(this).addClass('hover')
+            }, function () {
+                $(this).removeClass('hover')
+            })
+            $(".nav_level2,.nav_back").hide();
+            $(".nav_level1").click(function () {
+                $(".nav_level2").hide();
+                $(".nav_back").show(500);
+                $(this).show();
+                $(this).next().show(500);
+            })
+            $(".nav_back").click(function () {
+                $(".nav_level2,.nav_back").hide();
+                $(".nav_level1").show(500);
+            })
+            $(".nav").css("display", "block")
+        })
+    </script>

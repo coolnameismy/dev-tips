@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "FindPWD";
+}
+
+
+<div class="wrap breadcrumbs">
+
+    <a href="/NewLifescan/Home">首页</a>
+    <span class="gt">&gt;</span>
+    <span>找回密码</span>
+
+</div>
+<!-- //breadcrumbs -->
+
+<div class="wrap form">
+@using (Html.BeginForm("FindPWDByEmail", "Account", FormMethod.Post, new { id = "FindPWDByEmail" }))
+
+   
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+
+        <div class="regSuccess retrievePW">
+            <p class="p0">找回密码</p>
+            <div class="recLinks">
+                <p>请您填写以下信息，密码会发送至您注册的邮件地址：</p>
+                <p>邮箱:<input type="text" name="email" class="txt" id="email" /></p>
+                <p>姓名:<input type="text" name="uname" class="txt" id="uname" /></p>
+               <p> <a href="javascript:document.getElementById('FindPWDByEmail').submit()" class="btn send" >发送</a></p>
+            
+            </div>
+        </div>
+  
+    }
+ 
+</div>
+<!-- //form -->
+
+ 

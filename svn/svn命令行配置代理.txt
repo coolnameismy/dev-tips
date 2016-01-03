@@ -1,0 +1,9 @@
+svn 命令行配置代理
+
+打开/Users/zteliuyw/.subversion
+找到[global]
+取消注释并修改你的代理服务器配置，例如：
+http-proxy-host = 10.45.40.148
+http-proxy-port = 8080
+
+注意：开头不能有任何空格，不然会报servers:144: Option expected错误

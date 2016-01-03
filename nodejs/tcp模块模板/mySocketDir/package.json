@@ -1,0 +1,15 @@
+{
+  "name": "mySocketModules",
+  "version": "0.0.1",
+  "description": "liuyanwei test",
+  "keywords": [
+    "test",
+    "database"
+  ],
+  "author": {
+    "name": "liuyanwei",
+    "email": "coolnameismy@hotmail.com"
+  },
+  "main": "./index.js"
+   
+}

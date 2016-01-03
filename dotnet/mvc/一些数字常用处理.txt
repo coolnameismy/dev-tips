@@ -1,0 +1,5 @@
+Int64.Parse(value.ToString());
+Math.Floor((double)value);//返回小于或等于指定数字的最大整数
+Math.Ceiling()  // 返回大于或等于指定数字的最小整数。
+int b = (int)a;//取整
+int c = (int)(a+0.5);//四舍五入

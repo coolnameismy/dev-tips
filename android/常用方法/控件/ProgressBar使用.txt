@@ -1,0 +1,62 @@
+====================不同状态和样式 
+<ProgressBar
+        android:id="@+id/progress1"
+        style="@android:style/Widget.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ProgressBar
+        android:id="@+id/progress_h"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ProgressBar
+        android:id="@+id/progress2"
+        style="@android:style/Widget.ProgressBar.Inverse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ProgressBar
+        android:id="@+id/progress3"
+        style="@android:style/Widget.ProgressBar.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ProgressBar
+        android:id="@+id/progress4"
+        style="@android:style/Widget.ProgressBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+==============================后台设置进度更新
+Handler handler = new Handler() {
+		@Override
+		public void handleMessage(Message msg) {
+
+			if (msg.what == 1) {
+				progress.setProgress(status);
+			}
+		}
+
+	};
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_test);
+
+		// user code
+		progress = (ProgressBar) this.findViewById(R.id.progress_h);
+		new Thread() {
+			public void run() {
+				while (status < 100) {
+					try {
+						Thread.sleep(100);
+						status++;
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+					handler.sendEmptyMessage(1);
+				}
+			};
+		}.start();
+
+	}

@@ -1,0 +1,14 @@
+Ole Automation Procedures 开启
+
+以下示例显示了如何查看 OLE Automation Procedures 的当前设置。
+EXEC sp_configure 'Ole Automation Procedures';
+GO
+以下示例显示了如何启用 OLE Automation Procedures。
+sp_configure 'show advanced options', 1;
+GO
+RECONFIGURE;
+GO
+sp_configure 'Ole Automation Procedures', 1;
+GO
+RECONFIGURE;
+GO

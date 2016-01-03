@@ -1,0 +1,90 @@
+linux 常用命令
+
+=================剪切板=================
+echo "test" | pbcopy
+cat testfile > pbcopy
+pbpaste
+pbpaste > testfile
+
+=================日期=================
+date 查看日期 ，常用参数+%y--%m+%d
+cal 查看日期
+uptime 系统运行时间
+
+=================关机开机=================
+
+shutdown -h关闭计算机 -r重启
+示例：
+shutdown -h now 
+shutdoun -h +10
+shutdown -h 23:00
+
+bc 计算机
+man 帮助手册
+
+
+=================文件操作=================
+chmod 修改文件权限 示例：chmod 777 filename
+cd 切换目录
+pwd 显示当前路径
+mkdir 创建目录
+rmdir 删除目录
+cp 复制档案和目录 cp 来源 目标 -i 询问
+
+rm 删除文件 -f强制删除 -i交互删除  -r递归删除
+mv 移动，更名目录
+
+echo输入 常用参数  echo “xxxx” >> filename
+cat 显示文件
+head 常用参数 -n -f
+tail 常用参数 -n -f
+more ,less
+
+du 文件占用大小
+
+acroread 查看pdf
+soffice office编辑
+
+
+find 查找文件
+
+
+
+
+=================命令历史=================
+history 调出命令历史记录
+history N 打印N条记录
+hisory -C 删除历史记录
+！！ 重新永兴上条命令 !n 运行第n条记录 !-n运行倒数第n条记录
+
+
+==================任务控制================
+jobs  列出jobs
+bg,fg
+exit
+
+ps 列出进程
+kill 结束进程
+
+sleep 睡眠 例如 sleep 10 && echo "sleep 10"
+watch 任务重复执行
+at
+
+
+=======权限控制======
+mac 设置root权限 sudo passwd root
+进入root权限 su
+退出root权限 exit
+
+
+
+
+
+
+
+
+
+
+
+
+

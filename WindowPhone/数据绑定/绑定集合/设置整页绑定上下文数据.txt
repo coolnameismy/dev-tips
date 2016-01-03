@@ -1,0 +1,3 @@
+<phone:PhoneApplicationPage.DataContext>
+	<local:Peple></local:Peple>
+</phone:PhoneApplicationPage.DataContext>

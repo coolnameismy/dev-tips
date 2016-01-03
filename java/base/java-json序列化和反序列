@@ -1,0 +1,24 @@
+java-json序列化和反序列
+ 
+1：引入jar包 json-lib和其依赖包
+
+=====================示例=================================
+
+JSONObject jsonObject = new JSONObject();
+jsonObject.put(key, value);
+jsonString = jsonObject.toString();
+
+List<Person> personsList = new ArrayList<Person>();
+Person person1 = new Person(001, "ZhangSan", "Beijing");
+Person person2 = new Person(002, "LiSi", "Tianjin");
+Person person3 = new Person(003, "WangWu", "Shanghai");
+
+personsList.add(person1);
+personsList.add(person2);
+personsList.add(person3);
+
+return personsList;
+
+=====================引用=================================
+http://www.cnblogs.com/mengdd/archive/2013/06/17/3141402.html
+

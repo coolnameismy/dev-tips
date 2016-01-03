@@ -1,0 +1,4 @@
+说明：保存功能仅ie浏览器可用
+
+<a href="javascript:doSaveAs();">保存本食谱</a>
+<a href="javascript:print();" class="link_p12_a">打印此页</a>

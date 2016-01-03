@@ -1,0 +1,66 @@
+  public static void SnycRedisData(CarModel gps)
+        {
+             if (redisClient == null)
+             {
+                 redisClient = new RedisClient("221.226.150.180", 6379);
+
+             }
+             Type t = gps.GetType();
+             foreach(var field in t.GetFields())
+             {
+                 try
+                 {
+                      //存入数据至redis
+                     string fieldValue = t.InvokeMember(field.Name, System.Reflection.BindingFlags.GetField, null, gps, null).ToString();;
+                     redisClient.HSet(gps.carNo + "_" + gps.carColor,
+                     System.Text.Encoding.Default.GetBytes(field.Name),
+                     System.Text.Encoding.Default.GetBytes(fieldValue));
+                     //发布数据更新通知
+                     redisClient.Publish("GpsInfoChangeNofitication", System.Text.Encoding.Default.GetBytes(gps.carNo + "_" + gps.carColor));
+                 }
+                 catch(Exception e)
+                 {
+                     Console.WriteLine(e.ToString());
+                 }
+                
+        }
+
+
+        //读写属性Property和字段Field方法二  
+        static void GetPFMethodTwo(string a, int b)  
+        {  
+            Console.WriteLine("/n/t/t读写属性Property和字段Field方法二/n");  
+  
+            //调用Assembly的Load方法，载入Human程序集  
+            Assembly am = Assembly.Load("Human");  
+  
+            //获取Person类的Type对象 (  
+            //Type类：表示类型声明，Type为Reflection 功能的根，也是访问元数据的主要方式。   
+            Type tp = am.GetType("Human.Person", false, false);  
+  
+            //调用类Activator的CreateInstance方法，该方法可创建参数类型的实例  
+            object obj = Activator.CreateInstance(tp);  
+  
+            //获取指定属性的PropertyInfo类型对象p   
+            //PropertyInfo类：发现属性 (Property) 的属性 (Attribute) 并提供对属性 (Property) 元数据的访问。  
+            PropertyInfo p = tp.GetProperty("Name");  
+  
+            //写入属性  
+            p.SetValue(obj, a, null);  
+  
+            //读取属性  
+            string name = (string)p.GetValue(obj, null);  
+            Console.WriteLine("Person类的Name属性值为：{0}", name);  
+  
+  
+            //获取指定属性的PropertyInfo类型对象p   
+            //FieldInfo 类：发现字段(Field)属性 (Attribute) 并提供对字段元数据的访问权。  
+            FieldInfo f = tp.GetField("_age");  
+  
+            //写入_age字段  
+            f.SetValue(obj, b);  
+  
+            //读取_age字段  
+            int age = (int)f.GetValue(obj);  
+            Console.WriteLine("Person类的_age字段值为：{0}", age);  
+        }  

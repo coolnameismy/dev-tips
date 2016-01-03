@@ -1,0 +1,22 @@
+git配置多个ssh.txt
+
+1:生成ssh
+
+命令：ssh-keygen -t rsa -C 'xxx@mail.com' "filename"
+说明：生成ssh，并重命名文件，这是配置多个ssh文件需要的
+
+2：注册ssh
+
+命令：ssh-add ～/.ssh/id_rsa_second
+说明：默认SSH只会读取id_rsa，所以为了让SSH识别新的私钥，需要将其添加到SSH agent
+
+3:测试连接，这里以oschina为例：
+ssh -T git@git.oschina.net，若返回：Welcome to Git@OSC, yourname!  则测试成功。
+
+4：若git操作时候还需要输入用户名密码，则检查git仓库地址
+
+打开git项目的文件夹，找到.git/config文件，并打开。检查url，是否是git开头，有可能是http开头的，
+url = https://git.oschina.net/xxxxx/xxxx.git
+把他改成
+url = git@git.oschina.net:xxxxx/xxxx.git
+ 

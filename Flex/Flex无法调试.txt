@@ -1,0 +1,19 @@
+
+有时会出现无法调试的问题。所以可以重新安装flashplayer_11_ax_debug即可
+
+安装若遇到错误提示:您尝试安装的Adobe@ Flash@ Player 版本不是最新版本，请访问Player 下载中心获取最新，最安全的版本。
+可以通过删除注册表flashplayer信息解决：
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+打开运行中输入regedit，在注册表中找到 HKEY_LOCAL_MACHINE\SOFTWARE\Macromedia\FlashPlayer\SafeVersions 
+SafeVersions里面存在的是Flash player的版本信息，因此删除掉比较高的版本信息就oK了。
+
+系统是64位的解决办法：
+
+打开运行中输入regedit
+
+在注册表中找到 HKEY_LOCAL_MACHINE\SOFTWARE\Macromedia\FlashPlayer\SafeVersions 
+SafeVersions里面存在的是Flash player的版本信息
+
+注册表中找到[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Macromedia\FlashPlayer\SafeVersions],删除掉你要安装的版本信息
+
+正常卸载低版本的activex后删除C:\Windows\SysWOW64\ 下的Macromed 目录，和C:\Windows\System32\下的Macromed目录 ，重新安装即可。

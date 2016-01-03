@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" minWidth="955" minHeight="600"  creationComplete="generateCollection()">
+			  
+	
+	
+	
+	
+	
+	
+	
+	<fx:Script>
+		<![CDATA[
+			import mx.binding.utils.BindingUtils;
+			import mx.collections.ArrayCollection;
+			
+			[Bindable]
+			private var db:ArrayCollection;
+			
+			private function generateCollection():void{
+				var arrayData:Array = new Array();
+				var o1:Object = new Object();
+				o1.name = "banana";
+				o1.cost = "1.92";
+				arrayData.push(o1);
+				var o2:Object = new Object();
+				o2.name = "adsds";
+				o2.cost = "3.92";
+				arrayData.push(o2);
+				var o3:Object = new Object();
+				o3.name = "qwef";
+				o3.cost = "1.92";
+				arrayData.push(o3);
+				
+				db = new ArrayCollection(arrayData);
+			}
+			
+			private function multiDisplay(item:Object):String{
+				return item.name + item.cost;
+			}
+		]]>
+	</fx:Script>
+	<s:layout>
+		<s:BasicLayout/>
+	</s:layout>
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	<s:List x="49" y="28" dataProvider="{db}" labelFunction="multiDisplay"></s:List>
+	
+	
+	
+</s:Application>

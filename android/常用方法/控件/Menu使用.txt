@@ -1,0 +1,32 @@
+public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		//getMenuInflater().inflate(R.menu.main, menu);
+
+		SubMenu language = menu.addSubMenu("language");
+		language.setHeaderIcon(R.drawable.ic_launcher);
+		language.add(0,0, 0, "c");
+		language.add(0,1, 0, "c++");
+		language.add(0,2, 0, "c#");
+		language.add(0,3, 0, "JAVA");
+		SubMenu person = menu.addSubMenu("person");
+		person.setHeaderIcon(R.drawable.user_icon_01);
+		person.add(1,4, 0, "liu");
+		person.add(1,5, 0, "zhang");
+		person.add(1,6, 0, "wang");
+		person.add(1,7, 0, "li");
+		
+		return super.onCreateOptionsMenu(menu);
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		 switch(item.getItemId()){
+		   case 1: showMessage("id is : 1");break;
+		   case 2: showMessage("id is : 2");break;
+		   case 3: showMessage("id is : 3");break;
+		   case 4: showMessage("id is : 4");break;
+		   case 5: showMessage("id is : 5");break;
+		   default:  showMessage("id is : default");
+		 }
+		 return true;
+	}

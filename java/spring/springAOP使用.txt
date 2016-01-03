@@ -1,0 +1,27 @@
+spring AOP 使用
+
+1:注解的规范
+@Component 是一个泛化的概念，仅仅表示一个组件 (Bean) ，可以作用在任何层次。
+@Service 通常作用在业务层，但是目前该功能与 @Component 相同。
+@Constroller 通常作用在控制层，但是目前该功能与 @Component 相同。
+
+2:属性注入
+
+public class UserController {
+
+    @Resource(name = "IUserService")
+    IUserService service;
+}
+
+//目标1
+@Service("IUserService")
+public class UserService implements IUserService {
+
+    @Resource(name = "IUserDao")
+    IUserDao userDao;
+}
+
+//目标2
+@Component("IUserDao")
+public class UserDao implements IUserDao {
+}

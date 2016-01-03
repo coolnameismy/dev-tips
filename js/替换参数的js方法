@@ -1,0 +1,15 @@
+替换参数的js方法
+
+var _ = function (c) {
+        if (1 == arguments.length) {
+            return c
+        }
+        var b = Array.prototype.slice.call(arguments, 1);
+        return c.replace(/\{(\d+)\}/g, function (e, d) {
+            return b[d]
+        })
+    } 
+
+ //例如：
+ var tpl = "<a href="javascript:;" map="a" rel="{1}" py="{2}" title="{0}">{0}</a>";
+ _(tpl,a,b,c);

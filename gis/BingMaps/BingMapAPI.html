@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+   <head>
+      <title></title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+      <script type="text/javascript" src="http://dev.ditu.live.com/mapcontrol/mapcontrol.ashx?v=6.2"></script>
+
+      <script type="text/javascript">
+          var map = null;
+
+          var LA = new VELatLong(39.9493, 116.3975);
+
+          var pinPoint = null;
+          var pinPixel = null;
+
+          function GetMap() {
+              map = new VEMap('myMap');
+              map.LoadMap(LA, 14, VEMapStyle.Road, false, VEMapMode.Mode2D, true,1);
+
+              AddPin();
+          }
+
+          function getInfo() {
+              var info;
+
+              if (map.IsBirdseyeAvailable()) {
+                  var be = map.GetBirdseyeScene();
+
+                  info = "ID: " + be.GetID() + "\n";
+                  info += "orientation: " + be.GetOrientation() + "\n";
+                  info += "height: " + be.GetHeight() + "\n";
+                  info += "width: " + be.GetWidth() + "\n";
+
+                  var pixel = be.LatLongToPixel(map.GetCenter(), map.GetZoomLevel());
+
+                  info += "LatLongToPixel: " + pixel.x + ", " + pixel.y + "\n";
+
+                  // Check to see if the current birdseye view contains the pushpin pixel point.
+                  info += "contains pixel " + pinPixel.x + ", " + pinPixel.y + ": " +
+                          be.ContainsPixel(pinPixel.x, pinPixel.y, map.GetZoomLevel()) + "\n";
+
+                  // Check to see if the current view contains the pushpin LatLong.
+                  info += "contains latlong " + pinPoint + ": " + be.ContainsLatLong(pinPoint) + "\n";
+
+                  // This method may return null, depending on the selected view and map style.
+                  info += "latlong: " + map.PixelToLatLong(pixel);
+
+                  alert(info);
+              }
+              else {
+                  var center = map.GetCenter();
+
+                  info = "Zoom level:\t" + map.GetZoomLevel() + "\n";
+                  info += "Latitude:\t" + center.Latitude + "\n";
+                  info += "Longitude:\t" + center.Longitude;
+
+                  alert(info);
+              }
+          }
+
+          function AddPin() {
+              // Add a new pushpin to the center of the map.
+              pinPoint = map.GetCenter();
+              pinPixel = map.LatLongToPixel(pinPoint);
+              map.AddPushpin(pinPoint);
+          }
+      </script>
+   </head>
+   <body onload="GetMap();">
+      <div id='myMap' style="position:relative; width:400px; height:400px;"></div>
+       <input id="btnGetInfo" type="button" value="Get Scene Information" name="getinfo" onclick="getInfo();">
+       <br/>
+        (zoom out 5 clicks to get latitude/longitude and zoom level)
+   </body>
+</html>

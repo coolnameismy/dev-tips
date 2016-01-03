@@ -1,0 +1,99 @@
+npm 设置代理
+
+npm config set proxy=http://10.45.40.148:8080
+npm config set registry=http://registry.npmjs.org
+
+查看默认设置
+ npm config list -l
+
+ ==================================================; cli configs
+long = true
+user-agent = "npm/2.5.1 node/v0.12.0 darwin x64"
+
+; default values
+access = null
+always-auth = false
+bin-links = true
+browser = null
+ca = null
+cache = "/Users/zteliuyw/.npm"
+cache-lock-retries = 10
+cache-lock-stale = 60000
+cache-lock-wait = 10000
+cache-max = null
+cache-min = 10
+cafile = undefined
+cert = null
+color = true
+depth = null
+description = true
+dev = false
+editor = "vi"
+engine-strict = false
+fetch-retries = 2
+fetch-retry-factor = 10
+fetch-retry-maxtimeout = 60000
+fetch-retry-mintimeout = 10000
+force = false
+git = "git"
+git-tag-version = true
+global = false
+globalconfig = "/usr/local/etc/npmrc"
+globalignorefile = "/usr/local/etc/npmignore"
+group = 20
+heading = "npm"
+https-proxy = null
+ignore-scripts = false
+init-author-email = ""
+init-author-name = ""
+init-author-url = ""
+init-license = "ISC"
+init-module = "/Users/zteliuyw/.npm-init.js"
+init-version = "1.0.0"
+json = false
+key = null
+link = false
+local-address = undefined
+loglevel = "warn"
+; long = false (overridden)
+message = "%s"
+node-version = "0.12.0"
+npat = false
+onload-script = null
+optional = true
+parseable = false
+prefix = "/usr/local"
+production = false
+proprietary-attribs = true
+proxy = null
+rebuild-bundle = true
+registry = "https://registry.npmjs.org/"
+rollback = true
+save = false
+save-bundle = false
+save-dev = false
+save-exact = false
+save-optional = false
+save-prefix = "^"
+scope = ""
+searchexclude = null
+searchopts = ""
+searchsort = "name"
+shell = "/bin/bash"
+shrinkwrap = true
+sign-git-tag = false
+spin = true
+strict-ssl = true
+tag = "latest"
+tmp = "/var/folders/6b/23yj52nd40x4g86wxlz_nry80000gn/T"
+umask = 18
+unicode = true
+unsafe-perm = true
+usage = false
+user = 0
+; user-agent = "npm/{npm-version} node/{node-version} {platform} {arch}" (overridden)
+userconfig = "/Users/zteliuyw/.npmrc"
+version = false
+versions = false
+viewer = "man"
+

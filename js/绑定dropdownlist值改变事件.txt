@@ -1,0 +1,9 @@
+//20130207用于Linkmed_inquiry项目 
+//绑定下拉菜单取值
+    $(function () {
+        $("#ddl").change(function () {       
+            var value = $(this).val();
+            $("#result").text(value);
+
+        });
+    });

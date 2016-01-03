@@ -1,0 +1,18 @@
+1:类中单独建立一个内部类
+internal class Singletoner{}
+2：静态成员继承至自己
+private static var _instance:CarHistoryTrackPlayer;
+3：静态获取实例的方法
+	public static function getInstance():CarHistoryTrackPlayer{
+			if(!_instance){
+				_instance = new CarHistoryTrackPlayer(new Singletoner());
+			}
+			return _instance;
+		}
+4：构造函数声明中加入参数Singlertoner，并若该参数为空就抛出异常
+
+
+public function CarHistoryTrackPlayer(singletoner:Singletoner)
+{
+	if(!singletoner){throw new Error('Please use Resource.getInstance() to get instance!');}				
+|			

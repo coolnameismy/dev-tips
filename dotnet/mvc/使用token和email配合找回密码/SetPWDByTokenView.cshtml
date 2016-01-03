@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "FindPWDByToken";
+}
+<div class="wrap breadcrumbs">
+
+    <a href="/NewLifescan/Home">首页</a>
+    <span class="gt">&gt;</span>
+    <span>找回密码</span>
+
+</div>
+<!-- //breadcrumbs -->
+<div class="wrap form">
+@using (Html.BeginForm("SetPWDByToken", "Account", FormMethod.Post, new { id = "SetPWDByToken" }))
+           {
+            @Html.AntiForgeryToken()
+		<div class="regSuccess retrievePW">
+			<p class="p0">找回密码</p>
+			<div class="recLinks">
+                <p>请设置您的新密码</p>
+                <p>输入密码:<input type="password" name="Password" class="txt" id="Password" /></p>
+                <p>确认密码:<input type="password" name="ConfirmPassword" class="txt" id="ConfirmPassword" /></p>
+                <p><input type="hidden" value="@ViewBag.token"  name="Token" id="Token"/></p>
+                <p><a href="javascript:document.getElementById('SetPWDByToken').submit()" class="btn send">确认修改</a></p>
+               @* <p><a class="btn send" href="#"><span>发送</span></a></p>*@
+            </div>
+		</div>
+          }
+	</div>
+	<!-- //form -->
+

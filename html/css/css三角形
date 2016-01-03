@@ -1,0 +1,73 @@
+css三角形 triangle
+ 
+1.利用 border 属性实现三角形
+	
+正三角{
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-bottom: 5px solid red;
+}
+倒三角{
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid red;
+}
+左三角{
+	width: 0px;
+	height: 0px;
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-right: 10px solid red;
+}
+
+2:利用字符
+<div class="triangle-character">◆</div>
+.triangle-character {
+    position:absolute;
+    left:30px;
+    overflow:hidden;
+    width:26px;
+    height:26px;
+    font:normal 26px "宋体"; // 字符的大小和字体也有关系哦！
+}
+3：利用css3 旋转
+ <div class="triangle-css3 transform ie-transform-filter"></div>
+.triangle-css3 {
+    position:absolute;
+    bottom:-8px;
+    bottom:-6px;
+    left:30px;
+    overflow:hidden;
+    width:13px;
+    height:13px;
+    background:#E9FBE4;
+    border-bottom:1px solid #C9E9C0;
+    border-right:1px solid #C9E9C0;
+}
+.transform {
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+/*ie7-9*/
+.ie-transform-filter {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(
+        M11=0.7071067811865475,
+        M12=-0.7071067811865477,
+        M21=0.7071067811865477,
+        M22=0.7071067811865475,
+    SizingMethod='auto expand')";
+    filter: progid:DXImageTransform.Microsoft.Matrix(
+        M11=0.7071067811865475,
+        M12=-0.7071067811865477,
+        M21=0.7071067811865477,
+        M22=0.7071067811865475,
+    SizingMethod='auto expand');
+}
+
+

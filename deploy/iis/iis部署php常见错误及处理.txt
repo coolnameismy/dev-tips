@@ -1,0 +1,17 @@
+iis部署php常见错误及处理
+
+
+一：php-cgi 进程意外终止
+1：进入php安装目录，输入php -v，检查php是否可以正常运行，若报计算机丢失msvcr110.dll的错误，则需要解决msvcr110.dll丢失的问题
+
+2:打开"开始-运行-输入regsvr32 msvcr110.dll，看是否正常工作
+
+3：若还出现“没有找到 msvcr110.dll，因此这个应用程序未能正常启动”
+重新安装Visual C++ Redistributable for Visual Studio 2012 Update 4，要选对对应的版本
+下载地址：http://www.microsoft.com/zh-cn/download/confirmation.aspx?id=30679&cffa64c5-a636-96fc-e97a-0e907fcc4c04=True
+
+
+二：一直弹出xx模块找不到的情况
+php.ini查看：extension_dir 是否正确配置到了php/ext文件夹
+
+ 

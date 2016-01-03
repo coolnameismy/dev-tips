@@ -1,0 +1,49 @@
+mysql设置字符集
+
+1,检查默认安装的mysql的字符集
+ 
+mysql> show variables like '%char%';
++--------------------------+--------------------------------------------------------+
+| Variable_name            | Value                                                  |
++--------------------------+--------------------------------------------------------+
+| character_set_client     | utf8                                                   |
+| character_set_connection | utf8                                                   |
+| character_set_database   | latin1                                                 |
+| character_set_filesystem | binary                                                 |
+| character_set_results    | utf8                                                   |
+| character_set_server     | latin1                                                 |
+| character_set_system     | utf8                                                   |
+| character_sets_dir       | /usr/local/mysql-5.5.23-osx10.6-x86_64/share/charsets/ |
++--------------------------+--------------------------------------------------------+
+8 rows in set (0.00 sec)
+
+
+2，关闭mysqld后台进程
+
+3，修改mysql配置文件/etc/my.cnf
+ 
+sudo cp /usr/local/mysql/support-files/my-medium.cnf /etc/my.cnf
+sudo vi /etc/my.cnf
+
+[client]部分加入：
+default-character-set=utf8
+[mysqld]部分加入：
+character-set-server=utf8
+
+修改完成后 按住ctrl键再连按两次z键 退出MySQL终端，然后重新启动mysql服务和终端
+
+4，检查结果：
+ 
+mysql> show variables like '%char%';
++--------------------------+--------------------------------------------------------+
+| Variable_name            | Value                                                  |
++--------------------------+--------------------------------------------------------+
+| character_set_client     | utf8                                                   |
+| character_set_connection | utf8                                                   |
+| character_set_database   | utf8                                                   |
+| character_set_filesystem | binary                                                 |
+| character_set_results    | utf8                                                   |
+| character_set_server     | utf8                                                   |
+| character_set_system     | utf8                                                   |
+| character_sets_dir       | /usr/local/mysql-5.5.23-osx10.6-x86_64/share/charsets/ |
++--------------------------+--------------------------------------------------------+

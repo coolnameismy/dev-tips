@@ -1,0 +1,8 @@
+.git
+app:存放源代码，或叫做src
+---bower_components：存放依赖包目录
+
+node_modules:nodejs第三方模块
+test：测试代码
+---e2e ：集成测试
+---unit：单元测试

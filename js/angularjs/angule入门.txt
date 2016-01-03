@@ -1,0 +1,5 @@
+angule 入门
+基本用法：
+ng-app
+ng-model=“yourName”
+{{ yourName }}

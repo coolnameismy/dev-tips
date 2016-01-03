@@ -1,0 +1,2 @@
+Random rand = new Random(Guid.NewGuid().GetHashCode());  
+int aa = rand.Next(0, 99); 

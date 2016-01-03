@@ -1,0 +1,6 @@
+System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+sw.Start();
+Health health = new Health();
+List<KeyWordElement> KeyWordSortList =  health.GetKeyWordSortList();
+sw.Stop();
+ViewBag.sw = sw.ElapsedMilliseconds;

@@ -1,0 +1,446 @@
+位置
+
+C:\Windows\System32\drivers\etc
+
+让google更快
+203.208.46.176 0-focus-opensocial.googleusercontent.com
+         
+203.208.46.176 3hdrrlnlknhi77nrmsjnjr152ueo3soc-a-calendar-opensocial.googleusercontent.com
+         
+203.208.46.176 accounts.google.com
+         
+203.208.46.176 ajax.googleapis.com
+         
+203.208.46.176 android.l.google.com
+         
+203.208.46.176 a-oz-opensocial.googleusercontent.com
+         
+203.208.46.176 apis.google.com
+         
+203.208.46.176 appengine.google.com
+         
+203.208.46.176 bks0.books.google.com
+         
+203.208.46.176 bks1.books.google.com
+         
+203.208.46.176 bks2.books.google.com
+         
+203.208.46.176 bks3.books.google.com
+         
+203.208.46.176 bks4.books.google.com
+         
+203.208.46.176 bks5.books.google.com
+         
+203.208.46.176 bks6.books.google.com
+         
+203.208.46.176 bks7.books.google.com
+         
+203.208.46.176 bks8.books.google.com
+         
+203.208.46.176 bks9.books.google.com
+         
+203.208.46.176 blogsearch.google.cn
+         
+203.208.46.176 blogsearch.google.com.hk
+         
+203.208.46.176 books.google.com
+         
+203.208.46.176 browserchannel-docs.l.google.com
+         
+203.208.46.176 browserchannel-spreadsheets.l.google.com
+         
+203.208.46.176 browsersync.google.com
+         
+203.208.46.176 cache.pack.google.com
+         
+203.208.46.176 calendar.google.com
+         
+203.208.46.176 chatenabled.mail.google.com
+         
+203.208.46.176 checkout.google.com
+         
+203.208.46.176 chrome.google.com
+         
+203.208.46.176 clients1.google.com
+         
+203.208.46.176 clients1.googleusercontent.com
+         
+203.208.46.176 clients2.google.com
+         
+203.208.46.176 clients2.googleusercontent.com
+         
+203.208.46.176 clients3.google.com
+         
+203.208.46.176 clients3.googleusercontent.com
+         
+203.208.46.176 clients4.google.com
+         
+203.208.46.176 clients4.googleusercontent.com
+         
+203.208.46.176 clients5.google.com
+         
+203.208.46.176 clients5.googleusercontent.com
+         
+203.208.46.176 clients6.google.com
+         
+203.208.46.176 clients6.googleusercontent.com
+         
+203.208.46.176 clients7.google.com
+         
+203.208.46.176 clients7.googleusercontent.com
+         
+203.208.46.176 code.google.com
+         
+203.208.46.176 csi.gstatic.com
+         
+203.208.46.176 desktop.google.com
+         
+203.208.46.176 desktop2.google.com
+         
+203.208.46.176 ditu.google.cn
+         
+203.208.46.176 ditu.google.com
+         
+203.208.46.176 dl.google.com
+         
+203.208.46.176 docs.google.com
+         
+203.208.46.176 earth.google.com
+         
+203.208.46.176 encrypted.google.com
+         
+203.208.46.176 encrypted.google.com.hk
+         
+203.208.46.176 encrypted-tbn0.google.com
+         
+203.208.46.176 encrypted-tbn1.google.com
+         
+203.208.46.176 encrypted-tbn2.google.com
+         
+203.208.46.176 encrypted-tbn3.google.com
+         
+203.208.46.176 feedback.googleusercontent.com
+         
+203.208.46.176 finance.google.com
+         
+203.208.46.176 fonts.googleapis.com
+         
+203.208.46.176 g0.gstatic.com
+         
+203.208.46.176 gg.google.com
+         
+203.208.46.176 ghs.google.com
+         
+203.208.46.176 ghs.l.google.com
+         
+203.208.46.176 google.com
+         
+203.208.46.176 google.com.hk
+         
+203.208.46.176 googlecl.googlecode.com
+         
+203.208.46.176 googlehosted.l.googleusercontent.com
+         
+203.208.46.176 id.google.cn
+         
+203.208.46.176 id.google.com
+         
+203.208.46.176 id.google.com.hk
+         
+203.208.46.176 images.google.com
+         
+203.208.46.176 images.google.com.hk
+         
+203.208.46.176 images0-focus-opensocial.googleusercontent.com
+         
+203.208.46.176 images1-focus-opensocial.googleusercontent.com
+         
+203.208.46.176 images2-focus-opensocial.googleusercontent.com
+         
+203.208.46.176 images3-focus-opensocial.googleusercontent.com
+         
+203.208.46.176 images4-focus-opensocial.googleusercontent.com
+         
+203.208.46.176 images5-focus-opensocial.googleusercontent.com
+         
+203.208.46.176 images6-focus-opensocial.googleusercontent.com
+         
+203.208.46.176 images-lso-opensocial.googleusercontent.com
+         
+203.208.46.176 images-oz-opensocial.googleusercontent.com
+         
+203.208.46.176 images-pos-opensocial.googleusercontent.com
+         
+203.208.46.176 investor.google.com
+         
+203.208.46.176 khms0.google.com
+         
+203.208.46.176 khms1.google.com
+         
+203.208.46.176 labs.google.com
+         
+203.208.46.176 large-uploads.l.google.com
+         
+203.208.46.176 lh1.ggpht.com
+         
+203.208.46.176 lh1.googleusercontent.com
+         
+203.208.46.176 lh2.ggpht.com
+         
+203.208.46.176 lh2.googleusercontent.com
+         
+203.208.46.176 lh3.ggpht.com
+         
+203.208.46.176 lh3.googleusercontent.com
+         
+203.208.46.176 lh4.ggpht.com
+         
+203.208.46.176 lh4.googleusercontent.com
+         
+203.208.46.176 lh5.ggpht.com
+         
+203.208.46.176 lh5.googleusercontent.com
+         
+203.208.46.176 lh6.ggpht.com
+         
+203.208.46.176 lh6.googleusercontent.com
+         
+203.208.46.176 m.google.com
+         
+203.208.46.176 mail.google.com
+         
+203.208.46.176 mail-attachment.googleusercontent.com
+         
+203.208.46.176 maps.google.cn
+         
+203.208.46.176 maps.google.com
+         
+203.208.46.176 maps.gstatic.cn
+         
+203.208.46.176 maps.gstatic.com
+         
+203.208.46.176 maps-api-ssl.google.com
+         
+203.208.46.176 mt0.google.cn
+         
+203.208.46.176 mt0.google.com
+         
+203.208.46.176 mt1.google.cn
+         
+203.208.46.176 mt1.google.com
+         
+203.208.46.176 mt2.google.cn
+         
+203.208.46.176 mt2.google.com
+         
+203.208.46.176 mt3.google.cn
+         
+203.208.46.176 mt3.google.com
+         
+203.208.46.176 mts0.google.com
+         
+203.208.46.176 mts1.google.com
+         
+203.208.46.176 music.google.com
+         
+203.208.46.176 music.googleusercontent.com
+         
+203.208.46.176 music-streaming.l.google.com
+         
+203.208.46.176 mw2.google.com
+         
+203.208.46.176 news.google.cn
+         
+203.208.46.176 news.google.com
+         
+203.208.46.176 news.google.com.hk
+         
+203.208.46.176 newsfeed-dot-latest-dot-rovio-ad-engine.appspot.com
+         
+203.208.46.176 nt0.ggpht.com
+         
+203.208.46.176 nt1.ggpht.com
+         
+203.208.46.176 nt2.ggpht.com
+         
+203.208.46.176 nt3.ggpht.com
+         
+203.208.46.176 oauth.googleusercontent.com
+         
+203.208.46.176 ode25pfjgmvpquh3b1oqo31ti5ibg5fr-a-calendar-opensocial.googleusercontent.com
+         
+203.208.46.176 pack.google.cn
+         
+203.208.46.176 pack.google.com
+         
+203.208.46.176 picasa.google.com
+         
+203.208.46.176 picasaweb.google.com
+         
+203.208.46.176 picasaweb.google.com.hk
+         
+203.208.46.176 places.google.com
+         
+203.208.45.200plus.google.com
+         
+203.208.46.176 plus.google.com.hk
+         
+203.208.46.176 plusone.google.com
+         
+203.208.46.176 pop.gmail.com
+         
+203.208.46.176 profiles.google.com
+         
+203.208.46.176 project-slingshot-gp.appspot.com
+         
+203.208.46.176 r3269-dot-latest-dot-project-slingshot-gp.appspot.com
+         
+203.208.46.176 s1.googleusercontent.com
+         
+203.208.46.176 s2.googleusercontent.com
+         
+203.208.46.176 s3.googleusercontent.com
+         
+203.208.46.176 s4.googleusercontent.com
+         
+203.208.46.176 s5.googleusercontent.com
+         
+203.208.46.176 s6.googleusercontent.com
+         
+203.208.46.176 safebrowsing.clients.google.com
+         
+203.208.46.176 safebrowsing-cache.google.com
+         
+203.208.46.176 sandbox.google.com
+         
+203.208.46.176 scholar.google.cn
+         
+203.208.46.176 scholar.google.com
+         
+203.208.46.176 scholar.google.com.hk
+         
+203.208.46.176 scholar.l.google.com
+         
+203.208.46.176 services.google.com
+         
+203.208.46.176 sites.google.com
+         
+203.208.46.176 sketchup.google.com
+         
+203.208.46.176 spreadsheets.google.com
+         
+203.208.46.176 ssl.google-analytics.com
+         
+203.208.46.176 ssl.gstatic.com
+         
+203.208.46.176 suggestqueries.google.com
+         
+203.208.46.176 t.doc-0-0-sj.sj.googleusercontent.com
+         
+203.208.46.176 t0.gstatic.com
+         
+203.208.46.176 t1.gstatic.com
+         
+203.208.46.176 t2.gstatic.com
+         
+203.208.46.176 t3.gstatic.com
+         
+203.208.46.176 talkgadget.google.com
+         
+203.208.46.176 talkx.l.google.com
+         
+203.208.46.176 themes.googleusercontent.com
+         
+203.208.46.176 toolbar.google.com
+         
+203.208.46.176 toolbar.google.com.hk
+         
+203.208.46.176 toolbarqueries.clients.google.com
+         
+203.208.46.176 toolbarqueries.google.com.hk
+         
+203.208.46.176 tools.google.com
+         
+203.208.46.176 translate.google.cn
+         
+203.208.46.176 translate.google.com
+         
+203.208.46.176 translate.google.com.hk
+         
+203.208.46.176 translate.googleapis.com
+         
+203.208.46.176 uploadsj.clients.google.com
+         
+203.208.46.176 v8mq9slfbk1dglresapkg0i5f8pm64lc-a-calendar-opensocial.googleusercontent.com
+         
+203.208.46.176 video.google.cn
+         
+203.208.46.176 video.google.com
+         
+203.208.46.176 video.google.com.hk
+         
+203.208.46.176 voice.google.com
+         
+203.208.46.176 wave.google.com
+         
+203.208.46.176 webcache.googleusercontent.com
+         
+203.208.46.176 wenda.google.com.hk
+         
+203.208.46.176 www.gmail.com
+         
+203.208.46.180 www.google.com
+         
+203.208.46.176 www.google.com.hk
+         
+203.208.46.176 www.googleadservices.com
+         
+203.208.46.176 www.google-analytics.com
+         
+203.208.46.176 www.googleapis.com
+         
+203.208.46.176 www.googlelabs.com
+         
+203.208.46.176 www.gstatic.com
+         
+203.208.46.176 www-calendar-opensocial.googleusercontent.com
+         
+203.208.46.176 www-opensocial.googleusercontent.com
+         
+203.208.46.176 www-oz-opensocial.googleusercontent.com
+         
+203.208.46.176 bt26mravu2qpe56n8gnmjnpv2inl84bf-a-oz-opensocial.googleusercontent.com
+         
+203.208.46.176 rbjhe237k979f79d87gmenp3gejfonu9-a-oz-opensocial.googleusercontent.com
+         
+203.208.46.176 k6v18tjr24doa89b55o3na41kn4v73eb-a-oz-opensocial.googleusercontent.com
+         
+203.208.46.176 8kubpeu8314p2efdd7jlv09an9i2ljdo-a-oz-opensocial.googleusercontent.com
+         
+203.208.46.176 adstvca8k2ooaknjjmv89j22n9t676ve-a-oz-opensocial.googleusercontent.com
+         
+203.208.46.176 ob7f2qc0i50kbjnc81vkhgmb5hsv7a8l-a-oz-opensocial.googleusercontent.com
+         
+203.208.46.176 53rd6p0catml6vat6qra84rs0del836d-a-oz-opensocial.googleusercontent.com
+         
+203.208.46.176 u807isd5egseeabjccgcns005p2miucq-a-oz-opensocial.googleusercontent.com
+         
+203.208.46.176 r70rmsn4s0rhk6cehcbbcbfbs31pu0va-a-oz-opensocial.googleusercontent.com
+         
+203.208.46.176 59cbv4l9s05pbaks9v77vc3mengeqors-a-oz-opensocial.googleusercontent.com
+         
+203.208.46.176 i8brh95qor6r54nkl52hidj2ggcs4jgm-a-oz-opensocial.googleusercontent.com
+         
+203.208.46.176 upt14k1i2veesusrda9nfotcrbp9d7p5-a-oz-opensocial.googleusercontent.com
+         
+203.208.46.176 debh8vg7vd93bco3prdajidmm7dhql3f-a-oz-opensocial.googleusercontent.com
+         
+203.208.46.176 4fjvqid3r3oq66t548clrdj52df15coc-a-oz-opensocial.googleusercontent.com
+         
+203.208.46.176 hsco54a20sh11q9jkmb51ad2n3hmkmrg-a-oz-opensocial.googleusercontent.com
+         
+203.208.46.176 qhie5b8u979rnch1q0hqbrmbkn9estf7-a-oz-opensocial.googleusercontent.com
+         
+203.208.46.176 e6ha3snmi09c57cs4h4dnoa006cgfjfu-a-oz-opensocial.googleusercontent.com
+         
+203.208.46.176 66fl6oqbdsqf5fjl032t5iulimtqjhpa-a-oz-opensocial.googleusercontent.com

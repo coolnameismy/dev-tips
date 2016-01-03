@@ -1,0 +1,85 @@
+
+
+function MapBase(map)
+{
+    this._map = map;
+    //私有方法和属性
+    //设置地图级别
+    this.setMapZoom = function (zoom) {
+        this._map.setZoom(zoom);
+    }
+
+}
+//共有方法和属性
+MapBase.prototype =
+{
+
+    //设置地图中心点
+    setMapCenter: function (lng, lat) {
+        map.centerAt(new esri.geometry.Point(lng, lat));
+    }
+   
+}
+//静态方法
+MapBase.info = function () {
+    console.log("thie is map base function")
+}
+
+
+
+//js 类的继承
+
+/*
+ 方式1:继承第一种方式：对象冒充 
+
+
+function Child(username, password) {
+    //通过以下3行实现将Parent的属性和方法追加到Child中，从而实现继承 
+    //第一步：this.method是作为一个临时的属性，并且指向Parent所指向的对象， 
+    //第二步：执行this.method方法，即执行Parent所指向的对象函数 
+    //第三步：销毁this.method属性，即此时Child就已经拥有了Parent的所有属性和方法 
+    this.method = MapBase;
+    this.method(map);//最关键的一行 
+    delete this.method;
+    
+    this.ChildInfo = function () {
+        console.log("thie is ChildInfo")
+    }
+    
+}
+*/
+
+/*
+ 方式2:　call()方法方式 
+  call方法是Function类中的方法 
+  call方法的第一个参数的值赋值给类(即方法)中出现的this 
+  call方法的第二个参数开始依次赋值给类(即方法)所接受的参数 
+
+
+function Child(map) {
+    MapBase.call(this, map);
+    //可以实现自己逻辑，或扩展自己的方法和属性
+} 
+*/
+
+/*
+ 方式3:　apply()方法方式 
+  A:apply方法是Function类中的方法 
+  B、第二个参数为数组类型，这个数组中的每个元素依次赋值给类(即方法)所接受的参数  
+
+
+function Child(map) {
+    MapBase.apply(this, new Array(map));
+    //可以实现自己逻辑，或扩展自己的方法和属性
+} 
+ */
+
+/*
+ 方式4:prototype方式 
+  
+
+function Child(map) {
+    this.prototype =  new MapBase(map);
+    //可以实现自己逻辑，或扩展自己的方法和属性
+}
+ */

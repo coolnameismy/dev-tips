@@ -1,0 +1,22 @@
+</system.webServer>
+<security>
+        <requestFiltering>
+          <!--定义最大上传文件大小-->
+          <requestLimits maxAllowedContentLength ="2000000000"/>
+            <fileExtensions>
+                <add fileExtension=".flv" allowed="true" />
+            </fileExtensions>
+        </requestFiltering>
+    </security>
+  </system.webServer>
+
+
+
+
+
+
+
+<!--定义最大上传文件大小-->
+    <httpRuntime useFullyQualifiedRedirectUrl="true" executionTimeout="120" maxRequestLength="1024000"/>
+  </system.web>
+

@@ -1,0 +1,2 @@
+Mime 类型：video/x-flv
+文件扩展名：.flv

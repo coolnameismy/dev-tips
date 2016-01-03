@@ -1,0 +1,68 @@
+mac 配置开发环境
+
+=============开发环境总体=============
+1：安装Xcode
+2：安装jdk 6，7
+
+=============开发系统设置=============
+1:finder - 服务 - 服务偏好设置 - 开启 文件路径和文件右键在终端中打开
+
+
+=============软件管理=============
+1:HomeBrew
+GitHub地址： https://github.com/mxcl/homebrew/wiki/installation
+官网：http://brew.sh/
+安装：
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+删除：
+rm -rf /usr/local/Cellar /usr/local/.git && brew cleanup
+
+
+
+2:MacPorts
+安装: Mac OS X Package (.pkg) Installer
+访问官方网站: http://www.macports.org/install.php
+http://distfiles.macports.org/MacPorts/MacPorts-2.1.1-10.7-Lion.pkg
+
+=============代码管理环境=============
+1：svn和git （安装xcode就有了）
+2：好用的客户端
+
+
+=============办公环境=============
+1：office
+2：邮箱和oa系统
+
+
+=============ios环境=============
+1：xcode
+2：pod
+
+=============android环境=============
+1：bundle 和相关sdk
+2：或者使用android studio
+
+
+=============java环境=============
+1：copy edcilpse 到应用程序目录
+2：安装jdk 6，7
+3：copy tomcat 目录
+
+=============数据库环境=============
+1：安装mysql
+2：安装oracle 客户端
+
+=============前端=============
+1：安装sublime 和配置插件(lifestyle,emmet,pretty json)
+2：安装webstorm
+3：安装nodejs环境 配置常用的组件- bower，scss，coffeescript
+
+
+=============dotnet环境=============
+
+
+=============php环境=============
+
+
+=============设计环境=============
+

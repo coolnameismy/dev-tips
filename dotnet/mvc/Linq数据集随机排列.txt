@@ -1,0 +1,1 @@
+   АэИз             store = db.HowToBuy.OrderBy(i => Guid.NewGuid());

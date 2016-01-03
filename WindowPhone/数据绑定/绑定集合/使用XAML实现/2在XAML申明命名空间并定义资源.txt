@@ -1,0 +1,6 @@
+  xmlns:local="clr-namespace:PhoneApp2;assembly=PhoneApp2"
+
+   <phone:PhoneApplicationPage.Resources>
+        <local:Peple x:Name="myPeple" Name="liuyanwei"/> 
+    </phone:PhoneApplicationPage.Resources>
+    

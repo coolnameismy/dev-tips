@@ -1,0 +1,7 @@
+配置使用的账户名和密码，以及服务器stmp地址
+ <appSettings>
+    <add key="LifeScanMailFrom" value="liuyw@66new.cn" />
+	<add key="LifeScanMailPassword" value="weiZIPP1" />
+	<add key="LifeScanMailTo" value="106445371@qq.com" />
+	<add key="SMTPServer" value="smtp.exmail.qq.com"></add>
+</appSettings>

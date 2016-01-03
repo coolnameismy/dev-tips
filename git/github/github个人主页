@@ -1,0 +1,14 @@
+创建主页：
+1:在github网站上 创建Create a repository ，起名username.github.io,例如 coolnameismy.github.io
+2找到合适的目录clone项目，git clone https://github.com/username/username.github.io
+3创建文件
+cd username.github.io
+~$echo "Hello World" > index.html
+
+git add --all
+~$git commit -m "Initial commit"
+~$git push -u origin master
+
+4 完成，访问http://username.github.io
+
+一般使用jekyll 去搭建网站，参考jekyll使用

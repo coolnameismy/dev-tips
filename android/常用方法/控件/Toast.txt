@@ -1,0 +1,14 @@
+//简单的toast使用
+/*Toast toast = Toast.makeText(this, "this is toast", Toast.LENGTH_LONG);
+toast.show();*/
+//声明toast
+Toast toast = new Toast(this);
+//设置显示位置
+toast.setGravity(Gravity.CENTER, 0, 0);
+//自定义toast视图
+ImageView image = new ImageView(this);
+image.setImageResource(R.drawable.ic_launcher);
+toast.setView(image);
+//设置显示时间
+toast.setDuration(Toast.LENGTH_SHORT);
+toast.show();

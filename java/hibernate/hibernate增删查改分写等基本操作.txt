@@ -1,0 +1,128 @@
+hibernate增删查改分写等基本操作
+
+================================================================================
+1：添加：
+
+--使用实体增加
+@Override
+public boolean add(Plant plant) {
+    Session context = DatabaseHelper.context();
+    context.beginTransaction();
+    try {
+        context.save(plant);
+        context.getTransaction().commit();
+    }catch (Exception e){
+        e.printStackTrace();
+        return false;
+    }
+    finally {
+        context.close();
+    }
+    return true;
+}
+--使用字段增加
+@Override
+public boolean add(String name) {
+    Session context = DatabaseHelper.context();
+    context.beginTransaction();
+    try {
+    	Plant plant = new plant();
+    	plant.setName(name);
+        context.save(plant);
+        context.getTransaction().commit();
+    }catch (Exception e){
+        e.printStackTrace();
+        return false;
+    }
+    finally {
+        context.close();
+    }
+    return true;
+}
+================================================================================
+2 编辑
+--使用实体增加
+@Override
+public boolean edit(Plant plant) {
+    Session context = DatabaseHelper.context();
+    try {
+        context.beginTransaction();
+        context.update(plant);
+        context.getTransaction().commit();
+    }catch (Exception e){
+        e.printStackTrace();
+        return false;
+    }
+    finally {
+        context.close();
+    }
+    return  true;
+}
+--使用字段修改
+@Override
+public boolean edit(int plantId) {
+    Session context = DatabaseHelper.context();
+    try {
+     	Plant plant = context.load(Plant.class,plantId);
+        context.beginTransaction();
+		plant.setName("newname");
+        context.getTransaction().commit();
+    }catch (Exception e){
+        e.printStackTrace();
+        return false;
+    }
+    finally {
+        context.close();
+    }
+    return  true;
+}
+================================================================================
+3：删除
+ @Override
+    public boolean delete(int plantId) {
+        Session context = DatabaseHelper.context();
+        try {
+            context.beginTransaction();
+            Plant user =  (Plant)context.load(Plant.class, plantId);
+            context.delete(user);
+            context.getTransaction().commit();
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+        finally {
+            context.close();
+        }
+        return true;
+    }
+================================================================================
+查询：
+
+--sql语句查询
+ Session context = DatabaseHelper.context();
+//String sql = "select * from tb_user where id ="+ id ;
+String sql = "select * from tb_user where tb_user.id = :id";
+System.out.println(sql);
+List list = context.createSQLQuery(sql).setInteger("id", id)
+        .setResultTransformer(Transformers.aliasToBean(TbUserModel.class))
+        .list();
+return list;
+--Cirteria查询，like，分页
+Session context = DatabaseHelper.context();
+Criteria criteria = context.createCriteria(Plant.class);
+criteria.add(Restrictions.eq("userId",userId));
+criteria.setFirstResult((page - 1) * size);
+criteria.setMaxResults(size);
+if(!StringHelper.isNullOrEmpty(key)) criteria.add(Restrictions.like("plantName","%" +key+"%"));
+
+return criteria.list();
+--查询单条记录
+
+Session context = DatabaseHelper.context();
+Plant plant = (Plant)context.get(Plant.class,plantId);
+if (plant!=null){
+    return  plant;
+}
+return null;
+
+================================================================================

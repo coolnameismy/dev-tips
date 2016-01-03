@@ -1,0 +1,21 @@
+git 比较差异
+
+比较分支：
+$ git diff <branchName1>
+$ git diff <branchName1>..<branchName2>
+
+常规比较
+
+$ git diff =====================  working <=> index 差别 (没有add的部分)
+$ git diff --cached =====================  index <=> head 差别 (没有commit的部分)
+$ git diff HEAD =====================  working <=> head 差别
+$ git diff --stat =====================  列表显示参数
+
+查看状态
+git status
+
+查看已提交
+git show 58a21ee9a1f0b71dcf4daa224c7870001e52334e
+
+查看文件每一行的作者
+git blame [filesname]

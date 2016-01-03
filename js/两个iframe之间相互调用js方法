@@ -1,0 +1,5 @@
+两个iframe之间相互调用js方法
+//使用js调用
+window.parent.window.document.getElementById("iframe_content").contentWindow.show();
+//使用jquery调用
+$(window.parent.document).contents().find("#iframe_content")[0].contentWindow.show();

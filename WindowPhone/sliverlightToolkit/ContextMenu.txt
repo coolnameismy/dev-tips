@@ -1,0 +1,9 @@
+<!--xaml中使用ContextMenu示例-->
+<Button Content="ContextMenu示例" HorizontalAlignment="Left" VerticalAlignment="Top" Height="86" Width="456">
+	<toolkit:ContextMenuService.ContextMenu>
+		<toolkit:ContextMenu VerticalOffset="100" IsZoomEnabled="True" Name="contextMenu">
+			<toolkit:MenuItem Header="add"></toolkit:MenuItem>
+			<toolkit:MenuItem Header="delete"></toolkit:MenuItem>
+		</toolkit:ContextMenu>
+	</toolkit:ContextMenuService.ContextMenu>
+</Button>

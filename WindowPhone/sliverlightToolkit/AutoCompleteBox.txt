@@ -1,0 +1,28 @@
+  //AutoCompleteBox的使用
+        private void loadAutoCompleteBox()
+        {
+            // <!--<toolkit:AutoCompleteBox Name="MyAutoCompleteBox" Height="80"></toolkit:AutoCompleteBox>-->
+            AutoCompleteBox MyAutoCompleteBox = new AutoCompleteBox();
+            MyAutoCompleteBox.Height = 80;
+
+            ContentPanel.Children.Add(MyAutoCompleteBox);
+            List<string> list = new List<string>();
+            list.Add("liuyanwei");
+            list.Add("huanhuan");
+            list.Add("liuyanwqi");
+            list.Add("songjie");
+            MyAutoCompleteBox.ItemsSource = list;
+            MyAutoCompleteBox.ItemFilter += SearchFilter;
+        }
+        // //AutoCompleteBox 过滤选项
+        private bool SearchFilter(string search,object value)
+        {
+            if (value != null)
+            {
+                if (value.ToString().Contains("liu"))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }

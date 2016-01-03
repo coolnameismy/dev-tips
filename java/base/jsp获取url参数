@@ -1,0 +1,16 @@
+jsp获取url参数
+
+String path = request.getContextPath();  
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";  
+String remoteAddress=request.getRemoteAddr();  
+String servletPath=request.getServletPath();  
+String realPath=request.getRealPath("/");  
+String remoteUser=request.getRemoteUser();  
+String requestURI=request.getRequestURI();  
+out.println("path:"+path+"<br>");  
+out.println("basePath:"+basePath+"<br>");  
+out.println("remoteAddr:"+remoteAddress+"<br>");  
+out.println("servletPath:"+servletPath+"<br>");  
+out.println("realPath:"+realPath+"<br>");  
+out.println("remoteUser:"+remoteUser+"<br>");  
+out.println("requestURI:"+requestURI+"<br>");  

@@ -1,0 +1,47 @@
+1：js代码
+
+ //搜索按钮
+    href = $(".BtnSearch").attr("href");
+    $(".BtnSearch").removeAttr("href");
+    $(".BtnSearch").click(function ()
+    {
+        Keyword = $(".Keyword").val();
+       
+        location.href = href + "?Keyword=" + Keyword;
+    })
+
+2：布局页
+ @RenderSection("Search",false)
+
+3：分布视图
+
+
+<div class="search" style="margin-top:0;">
+	<span style="float:left;">搜索：</span>
+	<input type="text" class="Keyword" style="float:left;margin-top: 3px;"> 
+	@Html.ActionLink("搜索","Search",null,new{@class ="BtnSearch"})
+ 
+</div>
+
+4：css
+/*搜索按钮*/
+.search {
+     float: right;
+    
+     margin-right:20px;
+     margin-top: 4px;
+}
+.BtnSearch {
+    text-indent: -9999em;
+    background-image: url('AdminImg/btn_search.gif');
+    background-repeat: no-repeat;
+    width: 53px;
+    height: 23px;
+    /*line-height: 32px;*/
+    display: block !important;
+    float: left;
+    margin-left:5px;
+    margin-top:4px;
+    float:right;
+}
+	

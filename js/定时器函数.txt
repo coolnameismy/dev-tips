@@ -1,0 +1,8 @@
+ <script>
+         $(function () {        
+             setTimeout(function () {
+                  //doSthing
+                 });
+             }, 1000);
+         })
+	</script>

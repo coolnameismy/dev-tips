@@ -1,0 +1,51 @@
+spring 配置：
+==========================================================================================
+取消spring拦截静态文件
+方式一：springconfig文件配置 这样配置必须加上<mvc:annotation-driven/>
+ <!-- 配置静态资源，直接映射到对应的文件夹，不被DispatcherServlet处理，3.04新增功能，需要重新设置spring-mvc-3.0.xsd -->
+	<mvc:resources mapping="/img/**" location="/img/"/> 
+	<mvc:resources mapping="/css/**" location="/css/"/> 
+	<mvc:resources mapping="/app/**" location="/app/"/> 
+	<mvc:resources mapping="/frm/**" location="/frm/"/> 
+	<mvc:resources mapping="/*.html" location="/*.html"/>
+	<mvc:resources mapping="/*.jsp" location="/*.jsp"/>
+	<mvc:resources mapping="/modules/**" location="/modules/"/>
+	<mvc:resources mapping="/test/**" location="/test/"/>
+	<mvc:annotation-driven/>
+方式二： 
+<mvc:default-servlet-handler/> 或者
+<servlet-mapping>
+          <servlet-name>default</servlet-name>
+          <url-pattern>*.css</url-pattern>
+          <url-pattern>*.js</url-pattern>
+          <url-pattern>*.ico</url-pattern>
+          <url-pattern>*.swf</url-pattern>
+          <url-pattern>*.gif</url-pattern>
+          <url-pattern>*.jpeg</url-pattern>
+          <url-pattern>*.bmp</url-pattern>
+          <url-pattern>*.psd</url-pattern>
+          <url-pattern>*.jpg</url-pattern>
+          <url-pattern>*.png</url-pattern>
+          <url-pattern>*.htm</url-pattern>
+          <url-pattern>*.html</url-pattern>
+          <url-pattern>*.crx</url-pattern>
+          <url-pattern>*.xpi</url-pattern>
+          <url-pattern>*.exe</url-pattern>
+          <url-pattern>*.ipa</url-pattern>
+          <url-pattern>*.apk</url-pattern>
+          <url-pattern>*.htc</url-pattern>
+      </servlet-mapping>
+
+要配置多个，每种文件配置一个
+要写在DispatcherServlet的前面， 让 defaultServlet先拦截请求，这样请求就不会进入Spring了，我想性能是最好的吧
+
+==========================================================================================
+
+转发与重定向
+可以通过redirect/forward:url方式转到另一个Action进行连续的处理。
+可以通过redirect:url 防止表单重复提交 。
+写法如下：
+return "forward:/order/add";
+return "redirect:/index.jsp";
+
+

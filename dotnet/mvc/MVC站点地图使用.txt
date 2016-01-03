@@ -1,0 +1,65 @@
+1：在布局页中加入代码
+  <div class="breadcrumbsWrap">
+          <div class="breadcrumbs">
+                <div class="Controller">@Html.ViewContext.RouteData.Values["controller"]</div>
+                 <div class="Action" >@Html.ViewContext.RouteData.Values["action"]</div>
+          </div>         
+           @RenderSection("Search",false)
+         
+   </div>
+   
+ 2：使用JS代码替换html中的Controller和Action JS内容如下
+	//站点地图
+    Controller = $(".breadcrumbs .Controller").html();
+    Action = $(".breadcrumbs .Action").html();
+
+    switch (Action.toLowerCase()) {
+        case "index": level2 = "列表"; break;
+        case "edit": level2 = "编辑"; break;
+        case "delete": level2 = "删除"; break;
+        case "details": level2 = "详细"; break;
+        case "search": level2 = "搜索"; break;
+        default: level2 = "";
+    }
+    switch (Controller.toLowerCase()) {
+        case "guideexpertcrud": level1 = "专家讲堂"; break;
+        case "guidehealthcrud": level1 = "健康指南"; break;
+        case "howtobuycrud": level1 = "如何购买"; break;
+        case "newscrud": level1 = "新闻维护"; break;
+        case "qacrud": level1 = "在线问答"; break;
+        case "recipecrud": level1 = "食谱维护"; break;
+        case "servicecrud": level1 = "客户服务"; break;
+        case "slides": level1 = "首页维护"; break;
+        case "userrd": level1 = "用户维护"; break;
+        default: level1 = ""; 
+    }
+    //alert(level2+"," + level1);
+	//自定义出现内容
+    $(".breadcrumbs").html("<p>糖尿病资讯网</p> > <p class='level1'>" + level1 +
+        "</p> ><p class='level2'> "+ level2 +"</p> "); 
+		
+3:css
+/*面包屑样式*/
+.breadcrumbsWrap
+{
+   height: 32px;
+   line-height: 32px;
+   background-color:rgb(232, 238, 244);
+   font-family: 微软雅黑;
+  
+}
+.breadcrumbs {
+  float: left;
+}
+
+.breadcrumbs p {
+    display: inline;
+    line-height: 32px;
+    margin-left: 10px;
+}
+.breadcrumbs .level1{
+    
+}
+.breadcrumbs .level2 {
+    font-weight: bold;
+}		

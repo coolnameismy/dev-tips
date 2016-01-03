@@ -1,0 +1,22 @@
+<phone:PhoneApplicationPage.ApplicationBar >
+       
+        <shell:ApplicationBar   Mode="Default" Opacity="1.0" IsMenuEnabled="True" IsVisible="True" BackgroundColor="Blue" ForegroundColor="AntiqueWhite">
+
+            <shell:ApplicationBarIconButton IconUri="/ApplicationBarDemo/Assets/appbar.add.rest.png" Text="Ìí¼Ó" Click="appbar_buttonChoose_Click" />
+            <shell:ApplicationBarIconButton IconUri="/ApplicationBarDemo/Assets/appbar.delete.rest.png" Text="É¾³ý" Click="appbar_buttonChoose_Click" />
+            <shell:ApplicationBarIconButton IconUri="/ApplicationBarDemo/Assets/appbar.save.rest.png" Text="±£´æ" Click="appbar_buttonChoose_Click" />
+            <shell:ApplicationBarIconButton IconUri="/ApplicationBarDemo/Assets/appbar.download.rest.png" Text="ÏÂÔØ" Click="appbar_buttonChoose_Click" />
+
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="menu item 1" Click="ApplicationBarMenuItem_Click" />
+                <shell:ApplicationBarMenuItem Text="menu item 2" Click="ApplicationBarMenuItem_Click" />
+                <shell:ApplicationBarMenuItem Text="menu item 3" Click="ApplicationBarMenuItem_Click" />
+                <shell:ApplicationBarMenuItem Text="menu item 4" Click="ApplicationBarMenuItem_Click" />
+                <shell:ApplicationBarMenuItem Text="menu item 5" Click="ApplicationBarMenuItem_Click" />
+                <shell:ApplicationBarMenuItem Text="menu item 6" Click="ApplicationBarMenuItem_Click" />
+                <shell:ApplicationBarMenuItem Text="menu item 7" Click="ApplicationBarMenuItem_Click" />
+            </shell:ApplicationBar.MenuItems> 
+
+        </shell:ApplicationBar>
+
+    </phone:PhoneApplicationPage.ApplicationBar>

@@ -1,0 +1,67 @@
+1：建立适配器视图（每行的样式）
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/thum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+              android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/blueviolet"
+            android:textSize="12sp" >
+        </TextView>
+          <TextView
+            android:id="@+id/text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textColor="@color/blueviolet"
+            android:textSize="18sp" >
+        </TextView>
+    </LinearLayout>
+
+</LinearLayout>
+
+2：建立适配器
+//数据
+  ListView list1 = (ListView)findViewById(R.id.list1);
+        String[] name = {"liu","wang","li","dsad","fdsf","fdfewer"};
+        String[] age = {"30","23","15","46","51","7"};
+        int[] imageIds = {R.drawable.user_icon_01,R.drawable.user_icon_02,R.drawable.user_icon_03};
+        List<Map<String, Object>> listItems = new ArrayList<Map<String,Object>>();
+        for(int i=0;i<imageIds.length;i++){
+        	Map<String, Object> item = new HashMap<String, Object>();
+        	item.put("name", name[i]);
+        	item.put("age", age[i]);
+        	item.put("thum", imageIds[i]);
+        	listItems.add(item);
+        }
+//适配器
+ SimpleAdapter adapter = new SimpleAdapter(this, 
+											listItems, 
+											R.layout.list_item,
+											new String[]{"name","age","thum"}, 
+											new int[]{R.id.text1,R.id.text2,R.id.thum});
+list1.setAdapter(adapter);
+
+3:监听点击事件
+   list1.setOnItemClickListener(new OnItemClickListener(){
+        	@Override
+        	public void onItemClick(AdapterView<?> parent, View view, int position,
+        			long id) {
+        		System.out.println(name[position]);
+        	}
+        	
+        });

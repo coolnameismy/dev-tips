@@ -1,0 +1,1 @@
+<img src="~/images/icon_print_16x16.gif" alt="打印本页" width="16" height="16" align="absmiddle" /><a href="javascript:print();" class="link_p12_a">打印此页</a><a href="#" class="link_p12_707070"></a></td>

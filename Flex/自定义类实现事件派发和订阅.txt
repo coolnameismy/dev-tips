@@ -1,0 +1,70 @@
+  继承 EventDispatcher类
+
+  1:让自定义类继承自EventDispatcher，就可以进行时间发送了 ，这是最方便最快捷的方式。
+
+ 
+    import flash.events.Event;  
+    import flash.events.EventDispatcher;  
+    public class SampleDispatcher1 extends EventDispatcher  
+    {     
+        public static var ACTION:String ="action";  
+          
+        public function doSomething():void{  
+          
+            this.dispatchEvent(new Event(SampleDispatcher1.ACTION));  
+        }  
+          
+    }  
+
+
+   2:实现IEventDispatcher接口
+
+    我们的这个自定义类可能是引文本身已经继承了其他类，无法再继承EventDiapathcer，而我们恰恰希望它呢能够实现EventDispatcher类的所有功能
+
+由于   IEventDispatcher需要实现五个接口---addEventListener、dispatcherEvent、hasEventListener、willTrigger、removeListener所以我们的类也必须实现着五个接口。
+
+package  
+{  
+    import flash.events.Event;  
+    import flash.events.EventDispatcher;  
+    import flash.events.IEventDispatcher;  
+    public class SampleDispatcher2 implements IEventDispatcher  
+    {     
+        public var _dispatcher:EventDispatcher;  
+        public static const ACTION:String="ohyeah";  
+        public function SampleDispatcher2()  
+        {  
+            initSender();  
+        }  
+          
+        public function initSender():void{  
+            _dispatcher=new EventDispatcher(this);  
+          
+        }  
+        public function addEventListener(type:String, listener:Function, useCapture:Boolean=false, priority:int=0, 		useWeakReference:Boolean=false):void  
+        {  
+            _dispatcher.addEventListener(type,listener,useCapture,priority,useWeakReference);  
+        }  
+          
+        public function removeEventListener(type:String, listener:Function, useCapture:Boolean=false):void  
+        {  
+            _dispatcher.removeEventListener(type,listener,useCapture);  
+        }  
+          
+        public function dispatchEvent(event:Event):Boolean  
+        {  
+            return _dispatcher.dispatchEvent(event);  
+        }  
+          
+        public function hasEventListener(type:String):Boolean  
+        {  
+            return _dispatcher.hasEventListener(type);  
+        }  
+          
+        public function willTrigger(type:String):Boolean  
+        {  
+            return _dispatcher.willTrigger(type);  
+        }  
+          
+    }  
+}  

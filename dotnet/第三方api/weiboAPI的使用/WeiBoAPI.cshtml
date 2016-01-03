@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "WeiBoAPI";
+}
+
+<h2>WeiBoAPI</h2>
+ <fieldset>
+    <legend>test</legend>
+    @ViewBag.test
+</fieldset>
+<fieldset>
+    <legend>AccessToken</legend>
+    @ViewBag.AccessToken
+</fieldset>
+<fieldset>
+    <legend>User</legend>
+    @ViewBag.User
+</fieldset>
+<fieldset>
+    <legend>获取最新微薄</legend>
+    @ViewBag.NearestNews
+</fieldset>
+<fieldset>
+    <legend>UserTimeline.tolist</legend>
+   @ViewBag.UserTimeline
+    <table>
+        <thead>
+            <tr>
+                <td>User + Name</td>
+                <td>Test</td>
+                <td>Source</td>
+            </tr>
+        </thead>
+   
+    @foreach (var item in ((NetDimension.Weibo.Interface.Entity.StatusInterface)ViewBag.UserTimeline).HomeTimeline().Statuses.ToList())
+    {
+       <tr>
+           <td>@item.User.ID <p>@item.User.Name</p></td>
+             <td>@item.Text</td>
+           @*<td>@Html.Raw(item.Source)</td>*@
+           <td><a href="http://huati.weibo.com/k/%E8%BF%90%E5%8A%A8%E6%8C%87%E5%8D%97%E9%92%88?from=501&order=time&filter=all">11</a></td>
+       </tr>
+    }
+   </table>
+</fieldset>
+<fieldset hidden="hidden">
+    <legend>Mentions</legend>
+    @ViewBag.Mentions
+</fieldset>UserTimeline
+<fieldset>
+    <legend>UserTimeline</legend>
+    @ViewBag.UserTimeline
+</fieldset>
+<fieldset>
+    <legend>firstText</legend>
+    @ViewBag.firstText
+</fieldset>

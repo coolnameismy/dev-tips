@@ -1,0 +1,22 @@
+magento常见问题.txt
+
+1:开启错误显示
+进入 Magento 的根目录, 将 /errors/local.sample.xml 修改为 /errors/local.xml ， 此时刷新你的页面，错误信息将被直接显示出来了
+
+2：邮件形式报错
+/errors/local.xml 修改:
+<action>print</action>
+
+//修改为
+<action>email</action>
+<email_address></email_address>
+//填写你的邮件
+<email_address>shawn0828@hotamil.com</email_address>
+
+3:Could not determine temp directory, please specify a cache_dir manually
+解决办法是修改/lib/Zend/Cache/Backend/File.php 这个文件，将第91行的'cache_dir' => null,改为 'cache_dir' => "var/cache/",(得保证这个文件夹存在，且有权限)这样此报错就可以消除了。
+
+4:安装magento的方式
+-使用 magento connect
+系统打开magento connect，输入key，然后安装
+-手动安装

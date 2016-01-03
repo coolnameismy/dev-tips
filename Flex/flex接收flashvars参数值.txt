@@ -1,0 +1,58 @@
+flex接收flashvars的方法和flash不一样,在as3中是用“root.loaderInfo.parameters”或“stage.loaderInfo.parameters”来取得传递的参数，而在flex中则要用“Application.application.parameters”来取得。看下面的代码，我们将利用“Application.application.parameters”的方法来取得flashvars传递过来的两个参数：myName和myHometown。
+
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" creationComplete="initVars()">
+     <mx:Script><![CDATA[
+         // Declare bindable properties in Application scope.
+         [Bindable]
+         public var myName:String;
+         [Bindable]
+         public var myHometown:String;
+        
+         // Assign values to new properties.
+         private function initVars():void {
+             myName = Application.application.parameters.myName;
+             myHometown = Application.application.parameters.myHometown;
+         }
+     ]]></mx:Script>
+    
+     <mx:VBox>
+     <mx:HBox>
+         <mx:Label text="Name: "/>
+         <mx:Label text="{myName}" fontWeight="bold"/>
+     </mx:HBox>
+     <mx:HBox>
+         <mx:Label text="Hometown: "/>
+         <mx:Label text="{myHometown}" fontWeight="bold"/>
+     </mx:HBox>
+     </mx:VBox>
+</mx:Application>
+下面是网页代码:
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>julabs flex接收flashvar参数值</title>
+</head>
+<body>
+<div>  
+ <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,79,0"
+width="600"
+height="400"
+id="FlashMovie"
+align="middle">
+<param name="allowScriptAccess" value="sameDomain" />
+<param name="FlashVars" value="myName=julabs&amp;myHometown=china" />
+<param name="movie" value="demo20.swf" />
+<param name="quality" value="high" />
+<param name="bgcolor" value="#ffffff" />
+<embed src="demo20.swf" FlashVars="myName=julabs&amp;myHometown=china" quality="high" bgcolor="#ffffff" width="600" height="400" NAME="FlashMovie" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" swLiveConnect="true" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+</object>
+</div>      
+</body>
+</html>
+
+其中需要注意的是如果你想在火狐和Opera中也能正常使用这项功能的话一定要在网页中的flash代码中使用“embed”标签，并且一定要在“embed”标签加入“FlashVars”参数的值，否则在火狐和Opera中就取得不到“FlashVars”所传递的值。

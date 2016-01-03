@@ -1,0 +1,23 @@
+jquery toggle 使用
+//左侧二级菜单点击事件绑定
+$(".depth2>div").toggle(function(){
+    var arrow = $(this).find(".triangle");
+    arrow.removeClass("triangle");
+    arrow.addClass("expand");
+    //alert("open");
+    arrow.parent().next().show();
+},function(){
+    var arrow = $(this).find(".expand");
+    arrow.removeClass("expand");
+    arrow.addClass("triangle");
+    //alert("close");
+    arrow.parent().next().hide();
+});
+
+//$(".triangle").click(function(){
+//    var target = $(this).parent().next();
+//    var triangle = this;
+//    target.toggle();
+//
+//  //alert($(this).parent().next().html())  ;
+//})

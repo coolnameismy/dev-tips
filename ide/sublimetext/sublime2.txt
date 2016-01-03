@@ -1,0 +1,1 @@
+1：显示中文gb码。需要安装：ConvertToUTF8

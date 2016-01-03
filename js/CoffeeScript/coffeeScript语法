@@ -1,0 +1,74 @@
+coffeeScript语法
+
+优点：
+不需要定义变量
+不需要写；
+
+
+============变量定义============
+
+
+a= 10
+b=[10,20,"123"]
+c = 
+msg:"ok"
+status:1
+data:
+ name:12,
+ age:10
+
+d =
+msg:"ok"
+data:[
+ {
+  name:liu
+  age:20
+ },{
+  name:li
+  age:30 
+ }
+]
+ 
+=======函数定义==============
+add = (i1,i2)-> ii+2
+//带默认值的方法
+add = (i1,i2=20)-> ii+2
+get = (array) -> 
+ temp = array[1]
+ temp
+
+
+=======条件判断==============
+alert "i am full" if isfull
+
+if !isfull and istime
+   alert "must eating"
+else
+   alert "i full"
+ 
+if full then alert "i am full" else "i am hunger"
+
+switch day
+  when "Mon" then go work
+  when "Tue" then go relax
+  when "Thu" then go iceFishing
+  when "Fri", "Sat"
+    if day is bingoDay
+      go bingo
+      go dancing
+  when "Sun" then go church
+  else go work
+=======遍历============
+nums = [1,2,3,4,5,6,75,43,435,35,]
+shownum = (num)->alert 'num is:' + num
+
+num for num in nums
+num for num in [1..20] when num>10
+num for num in nums when num>10
+num for num in nums when num isnt 10
+shownum num for num in nums when num == 1
+shownum(num) while num[i]>10
+
+
+
+

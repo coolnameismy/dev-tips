@@ -1,0 +1,17 @@
+using System.Windows.Threading;
+
+public Clock()
+        {
+            //get time now!
+            OnTimerTick(null, null);
+
+            //Set Timer
+            DispatcherTimer tmr = new DispatcherTimer();
+            tmr.Interval = TimeSpan.FromSeconds(0.1);
+            tmr.Tick += OnTimerTick;
+            tmr.Start();
+        }
+        void OnTimerTick(object sender,EventArgs args)
+        {
+
+        }

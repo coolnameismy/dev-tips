@@ -1,0 +1,71 @@
+ECShop网站搭建
+
+1. 系统需求
+
+操作平台不限，推荐使用linux，以获得更好的性能
+可提供web服务的服务器，推荐web服务器使用apache
+PHP版本等于或大于4.1.0，支持MySQL数据库，推荐使用 4.4 或者 5.1 系列的最新版本 [可选方案：支持GD库，就可使用自动生成商品缩略图功能]
+MySQL (3.23 或者更高版本)，推荐使用 4.1 或者 5.0 系列的最新版本
+2.快速安装
+
+你可以通过下面的步骤进行快速的安装。
+
+2.1 下载ECSHOP软件包
+请到 http://www.ecshop.com 下载最新的ECSHOP软件包。
+2.2 解压缩ECSHOP软件包，并上传到服务器
+ECSHOP软件包使用普通解压缩软件(如WinRAR)就可解压缩。将解压缩文件上传到服务器指定目录，该目录要求在浏览器中能够访问。
+2.3 修改目录权限
+文件上传到服务器后，需要更改几个目录权限才能保证ECSHOP的正常运行
+
+data/ 目录及其所有子目录
+temp/ 目录及其所有子目录
+cert/ 目录
+includes/ 目录及其所有子目录
+images/ 目录及其所有子目录
+themes/ 目录及其所有子目录
+以上目录、文件在网站运行过程中会被动态更新，因此需确保可以向以上目录、文件写写入数据。可以使用以下方法：
+
+你可以使用ftp软件将以上目录及其子目录、文件属性设置为777
+linux平台下你有shell权限则通过执行chmod来修改目录权限。
+windows平台下，一般默认就可读写，不用设置
+2.4 开始安装
+在浏览器中 访问http://你的网址/，根据页面提示填写参数。安装程序将自动完成config.php文件配置。 
+填写参数时注意以下几点：
+
+若不清楚mysql服务器地址，用户名，密码，数据库名可向虚拟空间提供商咨询。
+填写管理员信息时设置一个安全且不易忘记的密码。
+安装完成后，在浏览器中访问 http://你的网址/admin/ 页面，输入正确的用户名和密码就可对你的电子商城进行更加详尽的设置。
+
+ ====常见问题===
+ 1：配置网站时报错：
+ PHP Strict Standards: Non-static method cls_image::gd_version() should not be called statically in D:\webroot\liuyanwei\ECShop\ECShop_V2.7.3_UTF8_release1106\ecshop\install\includes\lib_installer.php on line 31 PHP Strict Standards: Non-static method cls_image::gd_version() should not be called statically in D:\webroot\liuyanwei\ECShop\ECShop_V2.7.3_UTF8_release1106\ecshop\install\includes\lib_installer.php on line 31
+
+ 解决办法：
+ 找到ncludes/cls_image.php中的678行 
+ 将function gd_version()改成static function gd_version()
+
+
+2:启动首页报错
+Only variables should be passed by reference 
+
+原因：ECShop 推荐环境是php5.2一下，而PHP5.3版本开始，array_shift不支持函数返回
+解决办法：
+$tag_tmp = (explode(' ', $tag));
+$tag_sel = array_shift($tag_tmp);
+//$tag_sel = array_shift(explode(' ', $tag));
+
+3：启动首页报错
+PHP Deprecated: preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead in D:\webroot\liuyanwei\ECShop\ECShop_V2.7.3_UTF8_release1106\ecshop\includes\cls_template.php on line 300 
+
+原因：
+preg_replace() 函数中用到的修饰符 /e 在 PHP5.5.x 中已经被弃用了。
+如果你的PHP版本恰好是PHP5.5.X，那你的ECSHOP肯定就会报类似下面这样的错误：
+Deprecated: preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead in......
+
+解决办法：
+其实从刚才的错误提示信息中我们也能看出一二，它提示我们使用 preg_replace_callback 来代替 preg_replace。
+打开文件 includes/cls_template.php ，找到
+return preg_replace("/{([^\}\{\n]*)}/e", "\$this->select('\\1');", $source);
+替换为
+return preg_replace_callback("/{([^\}\{\n]*)}/", function($r) { return $this->sel ect($r[1]); }, $source);
+

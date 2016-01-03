@@ -1,0 +1,42 @@
+Markdown语法
+
+----------------------------“，”表示或者
+
+# h1, ##h2 ###h3 ...
+
+-,*,+ li列表
+
+数字   ol列表
+
+> BLOCKQUOTES
+
+Tab，四个空格,`` 代码段code
+```具体语言代码段 例如
+```php
+<?php 
+ 	
+?>
+```
+
+* * *,***,*****,- - - <hr>
+
+![图标](src)  img标签
+[text](href)，<> a标签
+
+[链接引用标签]: 链接地址 "链接标题" 
+示例：
+代码地址戳[这里][6]
+
+[1]: /2013/04/23/deploy-jeklly-blog.html
+[2]: http://jekyllrb.com/docs/structure/
+[3]: http://jekyllrb.com/docs/templates/
+[4]: http://docs.shopify.com/themes/liquid-basics
+[5]: http://jekyllrb.com/docs/variables/
+[6]: https://github.com/suyan/suyan.github.io
+
+
+
+
+
+
+ 

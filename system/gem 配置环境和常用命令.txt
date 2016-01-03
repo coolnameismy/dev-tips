@@ -1,0 +1,12 @@
+gem 配置环境和常用命令.txt
+
+//查看版本
+gem —-version 
+//更新
+gem update
+//查看gem资源地址
+gem sources
+
+//修改资源地址
+gem sources -r https://rubygems.org         //删除  
+gem sources -a http://ruby.taobao.org/     //增加

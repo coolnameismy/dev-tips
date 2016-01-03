@@ -1,0 +1,24 @@
+ using Microsoft.Phone.Tasks;
+
+ //选择电话联系人
+        private void appbar_buttonChoose_Click(object sender, EventArgs e)
+        {
+          
+            PhoneNumberChooserTask phoneNumberChooserTask = new PhoneNumberChooserTask();
+            phoneNumberChooserTask.Show();
+            phoneNumberChooserTask.Completed += OnCompleted;
+
+        }
+        //选择电话联系人完成后
+        private void OnCompleted(object sender, PhoneNumberResult args)
+        {
+             
+            //创建一个电话任务
+            PhoneCallTask phoneCallTask = new PhoneCallTask();
+            //设置拨号时显示
+            phoneCallTask.DisplayName = "拨打电话给：" + args.DisplayName;
+            //设置拨号的号码
+            phoneCallTask.PhoneNumber = args.PhoneNumber;
+            //切换至拨号任务
+            phoneCallTask.Show();
+        }

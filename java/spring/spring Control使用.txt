@@ -1,0 +1,48 @@
+spring Control使用
+  
+
+@Controller
+@RequestMapping("/news")
+public class TestController {
+
+	// http://localhost:8080/springMVC/news/list/1
+	@RequestMapping("/list/{categoryid}")
+	public String List(HttpServletRequest request) {
+		request.setAttribute("name", "list");
+		return "news/list";
+	}
+
+	// http://localhost:8080/springMVC/news/list/details/1
+	@RequestMapping("/list/details/{categoryid}")
+	public String Details(HttpServletRequest request) {
+		Person liuyanwei = new Person();
+		liuyanwei.setAge("20");
+		liuyanwei.setName("liuyanwei");
+		request.setAttribute("name", "details");
+		request.setAttribute("person", liuyanwei);
+		return "news/details";
+	}
+
+	// http://localhost:8080/springMVC/news/show
+	// model传值 推荐！
+	@RequestMapping("/show")
+	public String Show(Model model) {
+		Person liuyanwei = new Person();
+		liuyanwei.setAge("20");
+		liuyanwei.setName("liuyanwei");
+		model.addAttribute("person", liuyanwei);
+		return "news/details";
+	}
+
+	// 页面向controller传递对象
+	@RequestMapping(value = "/add")
+	public String Add(Person person, Model model) {
+		model.addAttribute("person", person);
+		return "news/details";
+	}
+	//前台对应表单
+	<form name="form" action="/springMVC/news/add" method="post">
+		<input type="text" name="name" /> <input type="text" name="age" /> <input
+			type="submit" />
+	</form>
+}

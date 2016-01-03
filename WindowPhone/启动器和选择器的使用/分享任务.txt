@@ -1,0 +1,13 @@
+ //社交账号分享任务
+        private void ShareMedia_Click(object sender, RoutedEventArgs e)
+        {
+            //ShareMediaTask task = new ShareMediaTask();
+            //task.FilePath = "Assets/AlignmentGrid.png";
+            //task.Show();
+
+            ShareLinkTask task = new ShareLinkTask();
+            task.LinkUri = new Uri("http://www.baidu.com");
+            task.Message = "welcome";
+            task.Title = "baidu";
+            task.Show();
+        }

@@ -1,0 +1,31 @@
+投影坐标系：
+1）对应的坐标系类：
+wgs102100 = new esri.SpatialReference({
+              "wkid": 102100
+            });
+2) 对应的点类：
+new WebMercatorMapPoint(119.905355,31.72032)
+
++=================================================+
+地理坐标系：
+
+1）对应的坐标系类：
+wgs4326 = new esri.SpatialReference({
+              "wkid": 4326
+            });
+2) 对应的点类：
+new esri.geometry.Point(119.905355,31.72032);//lng, lat
+
+
+==============================================================
+两种坐标系之前的转换
+1）
+//地理坐标系点转换墨卡托点
+var latlng = new  Point(parseFloat(p.lng), parseFloat(p.lat), wgs);//4326
+var webMercator = webMercatorUtils.geographicToWebMercator(latlng);
+2）
+//墨卡托转换地理坐标系点
+webMercatorToGeographic(geometry)
+3）其他
+lngLatToXY(long, lat)	Number[]	Translates the given latitude and longitude values to Web Mercator.
+xyToLngLat(x, y)	Number[]	Translates the given Web Mercator coordinates to Longitude and Latitude.

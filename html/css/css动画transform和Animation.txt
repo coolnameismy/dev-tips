@@ -1,0 +1,138 @@
+css动画 transform和Animation.txt
+
+1:css图片旋转示例
+
+.selectCommunity .quick>li>a{
+	height: 100px;
+	display: block;
+	width: 100px;
+	
+}
+
+.selectCommunity .quick>li:nth-child(1) a{	
+	border-radius: 50px;
+	background: url(http://localhost:8080/ccs_web/css/img/smartCity.png) 50% 50% no-repeat;
+	background-color: #2c97dd !important;
+}
+
+.quick>li>a:hover{
+	 animation: spin .59s linear infinite;
+	 -webkit-animation: spin .59s linear infinite;
+    -moz-animation: spin .59s linear infinite;
+    -ms-animation: spin .59s linear infinite;
+    -o-animation: spin .59s linear infinite;
+}
+
+ @-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg); }
+
+  to {
+    -webkit-transform: rotate(359deg); } }
+
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg); }
+
+  to {
+    -moz-transform: rotate(359deg); } }
+
+@-o-keyframes spin {
+  from {
+    -o-transform: rotate(0deg); }
+
+  to {
+    -o-transform: rotate(359deg); } }
+
+@-ms-keyframes spin {
+  from {
+    -ms-transform: rotate(0deg); }
+
+  to {
+    -ms-transform: rotate(359deg); } }
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } 
+}
+
+2：原理:
+
+Transition 显示属性的变化
+img:hover{
+    height: 450px;
+    width: 450px;
+}
+
+img{
+    transition: 1s;
+    //还可以指定变化的属性
+    transition: 1s height;
+
+    //先变换高度1s后delay1s然后再变化width1s
+    transition: 1s height, 1s 1s width;
+
+    //加速动画效果 linear：匀速 ease-in：加速 ease-out：减速 ）cubic-bezier函数：自定义速度模式
+    transition: 1s ease;
+
+    //cubic-bezier函数：自定义速度模式,有个bezier参数的小工具 http://cubic-bezier.com/
+    transition: 1s height cubic-bezier(.83,.97,.05,1.44);
+}
+
+
+
+CSS Animation
+div:hover {
+  animation: 1s rainbow;
+
+  /*
+ 	 
+  	（1）none：默认值，回到动画没开始时的状态。
+	（2）backwards：让动画回到第一帧的状态。
+	（3）both: 根据animation-direction（见后）轮流应用forwards和backwards规则。
+	 (4) forwards：表示让动画停留在结束状态
+   */
+  animation: 1s rainbow forwards;
+
+  //重复状态选项：animation-direction normal：正常重复 alternate：交替重复  reverse：翻转重复、alternate-reverse：交替翻转重复
+  animation: 1s rainbow 3 normal;
+  //简写
+  animation: 1s 1s rainbow linear 3 forwards normal;
+  //完整形式
+  animation-name: rainbow;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-delay: 1s;
+   animation-fill-mode:forwards;
+  animation-direction: normal;
+  animation-iteration-count: 3;
+  //steps(分布过渡)
+  animation: 1s rainbow infinite steps(10);
+}
+
+@keyframes rainbow {
+  0% { background: #c00; }
+  50% { background: orange; }
+  100% { background: yellowgreen; }
+  from {}
+  to{}
+}
+
+//暂停继续
+div {
+    animation: spin 1s linear infinite;
+    animation-play-state: paused;
+}
+
+div:hover {
+  animation-play-state: running;
+}
+
+浏览器前缀
+@-webkit-keyframes
+@-webkit-keyframes
+@-moz-keyframes
+@-o-keyframes
+@-ms-keyframes

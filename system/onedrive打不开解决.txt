@@ -1,0 +1,7 @@
+在C盘windows/system32/drivers/etc/hosts下，用记事本打开hosts。
+2
+在最后加入
+134.170.108.26 onedrive.live.com  
+134.170.109.48 skyapi.onedrive.live.com
+3
+然后“保存”就可以了。赶紧试一下吧。

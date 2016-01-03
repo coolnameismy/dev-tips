@@ -1,0 +1,86 @@
+jqeruy使用自己定义的样式和html进行验证
+
+1:编辑好前台html，和验证错误出现和隐藏时的html和css，js等，写好showLoginMessage方法
+2:重写jquery.validate的两个方法
+ errorPlacement: function(error, element) {
+    //error是封装好的jquery元素
+    var msg = error.html();
+    showLoginMessage(msg);
+},
+success:function(){
+    showLoginMessage("");
+}
+
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+示例：
+/**
+ * Created by liuyanwei on 15/2/6.
+ */
+ 
+$(function () {
+
+
+    //登陆验证
+    $(".contentfrom").validate({
+        debug:true,
+        rules: {
+
+            username: {
+                required: true,
+                minlength: 6
+            },
+            pwd: {
+                required: true,
+                minlength: 6
+            },
+            code: {
+                required: true,
+                minlength: 6,
+                number:true
+            }
+        },
+        messages: {
+
+            username: {
+                required: "请输入用户名",
+                minlength: jQuery.format("用户名不能小于{0}个字符")
+            },
+            pwd: {
+                required: "请输入密码",
+                minlength: jQuery.format("密码不能小于{0}个字符")
+            },
+            code: {
+                required: "请输入正确的验证码",
+                minlength: "请输入正确的验证码",
+                number:"验证码为数字"
+
+            }
+        },
+        errorPlacement: function(error, element) {
+            //error是封装好的jquery元素
+            var msg = error.html();
+            showLoginMessage(msg);
+        },
+        success:function(){
+            showLoginMessage("");
+        }
+
+    });
+
+})
+    //登陆框错误提示
+    var showLoginMessage = function(msg){
+        if(msg.length!=0){
+            //显示错误
+            $(".contentfrom .validate").removeClass("hidden");
+            $(".loginfrom  .modal-content").css("height","460px");
+            $(".contentfrom .validate p").html(msg);
+        }
+        else{
+            //隐藏错误
+            $(".contentfrom .validate").addClass("hidden");
+            $(".loginfrom  .modal-content").css("height","420px");
+            $(".contentfrom .validate p").html("");
+        }
+
+    }

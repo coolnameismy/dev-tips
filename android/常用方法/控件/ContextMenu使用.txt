@@ -1,0 +1,11 @@
+1：在OnCreate中注册
+ registerForContextMenu(findViewById(R.id.textView1));
+2：重写activity的onCreateContextMenu方法
+	public void onCreateContextMenu(ContextMenu menu, View v,
+			ContextMenuInfo menuInfo) {
+		menu.add(0,0, 0, "c");
+		menu.add(0,1, 0, "c++");
+		menu.add(0,2, 0, "c#");
+		menu.add(0,3, 0, "JAVA");
+	}
+3：重写onContextItemSelected方法

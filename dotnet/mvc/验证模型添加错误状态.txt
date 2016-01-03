@@ -1,0 +1,11 @@
+if (Membership.ValidateUser(Request.Form["UserId"], Request.Form["PWD"]))
+               
+		 {
+			 model.UserId = Request.Form["UserId"];
+		 }
+
+		 else
+		 {
+			 ModelState.AddModelError("", "提供的用户名或密码不正确。");
+			 return View(model);
+		 }

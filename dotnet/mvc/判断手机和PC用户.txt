@@ -1,0 +1,105 @@
+1:mvc 判断方法
+（1）string strUserAgent = Request.UserAgent.ToString().ToLower();
+02
+  
+03
+if (strUserAgent != null){
+04
+  
+05
+  if (Request.Browser.IsMobileDevice == true || strUserAgent.Contains("iphone") ||
+06
+  strUserAgent.Contains("blackberry") || strUserAgent.Contains("mobile") ||
+07
+  strUserAgent.Contains("windows ce") || strUserAgent.Contains("opera mini") ||
+08
+  strUserAgent.Contains("palm")){
+09
+     Response.Redirect("DefaultMobile.aspx");
+10
+  }
+11
+}
+12
+  
+13
+（2）((System.Web.HttpBrowserCapabilitiesBase)Request.Browser).IsMobileDevice;
+14
+  
+15
+（3）public static boolean choose(String userAgent){      
+16
+                Agent.indexOf("WapI") > -1 || // Ericsson WapIDE 2.0 
+17
+                userAgent.indexOf("MC21") > -1 || // Ericsson MC218 
+18
+                userAgent.indexOf("AUR") > -1 || // Ericsson R320 
+19
+                userAgent.indexOf("R380") > -1 || // Ericsson R380 
+20
+                userAgent.indexOf("UP.B") > -1 || // UP.Browser 
+21
+                userAgent.indexOf("WinW") > -1 || // WinWAP browser 
+22
+                userAgent.indexOf("UPG1") > -1 || // UP.SDK 4.0 
+23
+                userAgent.indexOf("upsi") > -1 || //another kind of UP.Browser 
+24
+                userAgent.indexOf("QWAP") > -1 || // unknown QWAPPER browser 
+25
+                userAgent.indexOf("Jigs") > -1 || // unknown JigSaw browser 
+26
+                userAgent.indexOf("Java") > -1 || // unknown Java based browser 
+27
+                userAgent.indexOf("Alca") > -1 || // unknown Alcatel-BE3 browser (UP based) 
+28
+                userAgent.indexOf("MITS") > -1 || // unknown Mitsubishi browser 
+29
+                userAgent.indexOf("MOT-") > -1 || // unknown browser (UP based) 
+30
+                userAgent.indexOf("My S") > -1 ||// unknown Ericsson devkit browser 
+31
+                 userAgent.indexOf("WAPJ") > -1 ||//Virtual WAPJAG www.wapjag.de 
+32
+                userAgent.indexOf("fetc") > -1 ||//fetchpage.cgi Perl script from www.wapcab.de 
+33
+                userAgent.indexOf("ALAV") > -1 || //yet another unknown UP based browser 
+34
+                userAgent.indexOf("Wapa") > -1 || //another unknown browser (Web based "Wapalyzer") 
+35
+                userAgent.indexOf("Oper") > -1){
+36
+       return true;
+37
+   } else{
+38
+       return false;
+39
+   }
+40
+  
+41
+（4）if (HttpContext.Current.Request.Headers["user-agent"] != null && HttpContext.Current.Request.Headers["user-agent"].ToLower().ToString().IndexOf("mozilla") != -1){
+42
+                  HttpContext.Current.Response.Redirect("http://www. "); //PC
+43
+         }else{
+44
+                HttpContext.Current.Response.Redirect("http://wap "); //Mobile ClientTypeTesting.
+45
+         }
+
+
+
+-==================================================================================================================================================================================================
+
+js判断方法
+   var ua = /iphone|android/i.test(navigator.userAgent.toLowerCase());
+        //alert(ua);
+        if (ua) {
+            //alert("mobile");      
+        }
+        else {
+            //alert("pc");
+            window.location = "http://www.jjmc.com.cn";
+        }

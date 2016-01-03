@@ -1,0 +1,10 @@
+1：view添加点击事件
+
+step 1:继承接口 android.view.View.OnClickListener 
+例如：public class MainActivity extends Activity implements android.view.View.OnClickListener {
+
+step 2:实现方法
+@Override
+public void onClick(View v){
+	Log.i("MainActivity","onClick"); 
+}

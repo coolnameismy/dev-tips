@@ -1,0 +1,66 @@
+@{
+    JNJWeb.Models.Health health = new JNJWeb.Models.Health();
+    Random rd = new Random();
+    IEnumerable<JNJWeb.Models.KeyWordElement> KeyWordSortList = health.GetKeyWordSortList().OrderByDescending(i => i.Count).Take(15);  
+}
+<form class="wikiSearch" action="">
+    <!-- 以下为热门搜索标签,字体大小直接采用行内,此注释可删除 -->
+    <div class="fl wikiHots">
+        @foreach (var item in KeyWordSortList.OrderByDescending(i => i.Count))
+        {
+
+            int styleType = 0;
+            styleType = rd.Next(1, 6);
+            string html = "";
+            switch (styleType)
+            {
+                case 1: html = "<a href='/HealthSearch/" + item.KeyWordName + "'>" + item.KeyWordName + "</a> "; break;
+                case 2: html = "<a href='/HealthSearch/" + item.KeyWordName + "' style='font-size:14px;'>" + item.KeyWordName + "</a> "; break;
+                case 3: html = "<a href='/HealthSearch/" + item.KeyWordName + "'' style='font-size:20px;'>" + item.KeyWordName + "</a> "; break;
+                case 4: html = "<a href='/HealthSearch/" + item.KeyWordName + "' style='font-size:16px;'>" + item.KeyWordName + "</a> "; break;
+                case 5: html = "<a href='/HealthSearch/" + item.KeyWordName + "' style='font-size:14px;'><strong>" + item.KeyWordName + "</strong></a> "; break;
+                case 6: html = "<a href='/HealthSearch/" + item.KeyWordName + "'><strong>" + item.KeyWordName + "</strong></a> "; break;
+            }
+                                 
+            @Html.Raw(html) 
+        }
+    </div>
+    <!-- 以上为热门搜索标签,字体大小直接采用行内,此注释可删除 -->
+    <div class="fr">
+        <input class="searchTxt" type="text" placeholder="请输入健康词典" onkeypress="return clickButton(event,'submit')"/>
+        <input class="searchBtn" type="button" id="submit"/>
+    </div>
+</form>
+<script type="text/javascript">
+function clickButton(e, buttonid)
+			{ 
+				//监控回车按钮代码
+						var bt = document.getElementById(buttonid);
+						if(navigator.appName.indexOf("Netscape")>(-1))
+						{ 
+						    if (e.keyCode == 13)
+						    { 
+							    bt.click(); 
+							    return false; 
+						    } 
+					    } 
+				    if (navigator.appName.indexOf("Microsoft Internet Explorer")>(-1))
+					    { 
+						    if (event.keyCode == 13)
+						    { 
+						         bt.click(); 
+							    return false; 
+						    } 
+					    } 
+				     
+			} 
+			
+    $(function () {
+        $("#submit").click(function () {
+           // alert("");
+            keyword = $(".searchTxt").val();
+            window.location = "/HealthSearch/" + keyword;
+             
+        })
+    });
+</script>

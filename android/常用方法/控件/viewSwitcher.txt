@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<set xmlns:android="http://schemas.android.com/apk/res/android">  
+    <!-- 设置从右边拖进来的动画  
+    android:duration指定动画持续时间  -->  
+    <translate  
+        android:fromXDelta="100%p"  
+        android:toXDelta="0"  
+        android:duration="@android:integer/config_mediumAnimTime" />  
+</set>  
+
+<?xml version="1.0" encoding="utf-8"?>  
+<set xmlns:android="http://schemas.android.com/apk/res/android">  
+    <!-- 设置从左边拖出去的动画   
+    android:duration指定动画持续时间 -->  
+    <translate  
+        android:fromXDelta="0"  
+        android:toXDelta="-100%p"  
+        android:duration="@android:integer/config_mediumAnimTime" />  
+</set>  
+
+
+=================================
+ViewSwitcher viewSwitcher;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_test);
+
+		// user code
+		 
+	    viewSwitcher = (ViewSwitcher) findViewById(R.id.viewSwitcher);
+		viewSwitcher.setFactory(new ViewFactory()
+		{
+			public View makeView() {
+				
+				return  LayoutInflater.from(TestActivity.this).inflate(R.layout.activity_main,null);
+			}
+		});
+
+	}
+	public void next(View view){
+		viewSwitcher.setInAnimation(this,R.layout.anim_slide_left);
+		viewSwitcher.setOutAnimation(this,R.layout.anim_slide_right);
+		viewSwitcher.showNext();
+	}
+	

@@ -1,0 +1,12 @@
+  //mediaPlayer任务
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MediaPlayerLauncher task = new MediaPlayerLauncher();
+
+            task.Location = MediaLocationType.Install;//文件存在于安装目录中
+            //设置播放器控件
+            task.Controls = MediaPlaybackControls.All;
+            task.Controls = MediaPlaybackControls.Pause | MediaPlaybackControls.Stop;
+            task.Media = new Uri("Assets/NOKIA現場方大同Wonderful Tonight.mp4",UriKind.Relative);
+            task.Show();
+        }

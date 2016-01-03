@@ -1,0 +1,18 @@
+1：申明命名空间
+ xmlns:local="clr-namespace:PhoneApp2;assembly=PhoneApp2"
+2：定义资源和类转换
+ <phone:PhoneApplicationPage.Resources>
+        <localConverter:MyConverter  x:Key="Converter1"/>
+        <local:Clock x:Key="clock"> </local:Clock>
+ </phone:PhoneApplicationPage.Resources>
+3：绑定至控件
+
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28" DataContext="{StaticResource clock}">
+            <!--<TextBlock x:Name="ApplicationTitle" Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="三种绑定类型" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>-->
+            <TextBlock FontSize="25" Height="43" HorizontalAlignment="Left" Text="当前时间："  Width="185" />
+            <TextBlock FontSize="25" Height="43" HorizontalAlignment="Left"  Name="textBlockHour" Text="{Binding Hour}"  Width="185" />
+            <TextBlock FontSize="25" Height="43" HorizontalAlignment="Left"  Name="textBlockMinute" Text="{Binding Min}"  Width="185" />
+            <TextBlock FontSize="25" Height="43" HorizontalAlignment="Left"  Name="textBlockSecond" Text="{Binding Second}"  Width="185" />
+         
+        </StackPanel>

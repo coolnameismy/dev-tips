@@ -1,0 +1,32 @@
+1：父页面获取子页面元素的方法
+  <script>
+		  //定义全局变量或方法，子页面可以访问
+          var hello = 'hello';
+          function getHelloWorld() {
+              alert('hello world');
+          }
+		  //父页面获取子页面元素的方法
+          $(function () {
+              $('iframe').load(function () { //确保子页面完成加载
+                  alert($('#left').contents().find('#token_left').val());
+                // alert($('.c_div', window.frames["if1"].document).html());//另一方法
+              });
+
+          });
+    </script>
+
+  $(function () {
+              $('iframe').load(function () { //确保子页面完成加载
+                  alert($('#left').contents().find('#token_left').val());
+                // alert($('.c_div', window.frames["if1"].document).html());//另一方法
+              });
+
+          });
+		  
+2：子页面获取父页面的方法
+
+	 alert(window.parent.hello); // 方法1：调用父级页面的元素 
+     parent.getHelloWorld();//方法2：调用父级页面的元素
+	 alert($('#h1', window.parent.document).html()); //方法3 使用$('#id', window.parent.document)方法
+
+3： 说明：chrome由于本地安全策略，静态页面会报错，架设服务器就好了

@@ -1,0 +1,3 @@
+@Html.ViewContext.RouteData.Values["id"]
+@Html.ViewContext.RouteData.Values["action"]
+@Html.ViewContext.RouteData.Values["controller"]

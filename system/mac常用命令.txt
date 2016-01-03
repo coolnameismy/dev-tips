@@ -1,0 +1,11 @@
+
+文件显示：defaults write com.apple.finder AppleShowAllFiles -bool true
+文件隐藏：defaults write com.apple.finder AppleShowAllFiles -bool false
+
+设置环境变量:
+ cd ~
+touch .bash_profile
+open -e .bash_profile 
+export PATH=${PATH}:/usr/local/mysql/bin
+//立即生效 source ~/.bash_profile
+//查看环境变量 echo $PATH

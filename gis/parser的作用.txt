@@ -1,0 +1,86 @@
+dojo Parser是一个可选的模块，它用来把DOM中的拥有特殊属性的node转换为Digits。特殊属性我们是
+
+指dojoType属性。DOM中的一些node上的任何“Class”(或者对象，比如通过dojo.declare创建的对象)
+
+，都可以通过使用dojo.Type属性来初始化，并创建一个widget。
+
+这种方式创建的“Class”不局限于Dijit,还可以是通过dojo.declare创建的对象。
+
+Loading the Parser
+
+要在页面上包含Dojo parser，需要模块：dojo.parser.
+
+dojo.require("dojo.parser");
+Running the Parser
+
+
+有两种方式来运行dojo.parser：手动或者onLoad之前
+要手动招待parser,简单调用函数:parser:
+
+dojo.parser.parse();
+这将会扫描整个DOM中的所有dojoType属性，并创建相应的新的结点实例。
+自动运行Parser:
+如果在你调入dojo的script块中指定 djConfig="parseOnLoad:true" ，则dojo将自动运行Parser
+Setting the parser behavior
+
+parseOnLoad:falser是默认值，parseOnLoad:true是可选项，它将在parsing之后调用addOnLoad函数。
+初始化一个Node
+在HTML中结点的属性都是字符串形式，但是当Parser在实例化一个node时，它通过dojoType属性实例化一个“Class”的原型时，
+它会用它认为最合适的类型来确定属性值的类型，因此你希望传递给parser的所有属性应该设置一个相应的空类型，以供parser确定该属性的具体的数据类型。
+Empty values of types are as follows:
+0 = an integer
+"" = a string
+null = an object
+[] = an array
+源结点的专用成员（那些以 underscore (_) 开始的）不会被映射。
+
+ 
+
+For example, given the class:
+
+dojo.declare("my.custom.type", null, {
+  name: "",
+  value: 0,
+  objectVal: null,
+  anotherObject: null,
+  arrayVal: [],
+  typedArray: null,
+  _privateVal: 0
+});
+And HTML node:
+
+<div dojoType="my.custom.type" name="nm" value="5" objectVal="{a: 1, b:'c'}"
+       anotherObject="namedObj" arrayVal="a,b,c,1,2" typedArray="['a','b','c',1,2]"
+       _privateVal="5" anotherValue="more"></div>
+The parser would create an object and pass it paramaters of:
+
+{
+  name: "nm",                                 // Just a simple string
+  value: 5,                                   // Typed to an integer
+  objectVal: {a: 1, b:'c'},                   // Typed to an object
+  anotherObject: dojo.getObject("namedObj"),  // For strings, try getting the object via dojo.getObject
+  arrayVal: ["a","b","c","1","2"],            // When typing to an array, all entries are strings
+  typedArray: ["a", "b", "c", 1, 2]           // To get a "typed" array, treat it like an object instead
+}
+注意：_privateVal没有被传递，因为它是private，anotherValue也没有被传递，因为它在类的原形中不存在。
+当parser完成parsing后，会自动调用所有结点的startup()函数（如果该函数存在的话，对于digit widgets来说）
+
+Examples
+
+Load some HTML content from a remote URL, and convert the nodes decorated with dojoType's into widgets:
+
+dojo.xhrGet({
+  url: "widgets.html",
+  load: function(data){
+      dojo.byId("container").innerHTML = data;
+      dojo.parser.parse("container");
+  }
+});
+Delay page-level parsing until after some custom code (having set parseOnLoad:false):
+
+dojo.require("dojo.parser");
+dojo.addOnLoad(function(){
+     // do something();
+     dojo.parser.parse();
+});
+ 

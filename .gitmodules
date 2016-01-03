@@ -1,0 +1,3 @@
+[submodule "ios-tips"]
+	path = ios-tips
+	url = https://github.com/coolnameismy/ios-tips.git

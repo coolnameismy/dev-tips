@@ -1,0 +1,26 @@
+把fragment添加到activity
+方式1：在activity的layoutxml文件中声明fragment
+<?xmlversion="1.0"encoding="utf-8"?>
+<LinearLayoutxmlns:android="http://schemas.android.com/apk/res/android"
+   android:orientation="horizontal"
+   android:layout_width="match_parent"
+   android:layout_height="match_parent">
+   <fragmentandroid:name="com.example.news.ArticleListFragment"
+           android:id="@+id/list"
+           android:layout_weight="1"
+           android:layout_width="0dp"
+          android:layout_height="match_parent"/>
+   <fragmentandroid:name="com.example.news.ArticleReaderFragment"
+           android:id="@+id/viewer"
+           android:layout_weight="2"
+           android:layout_width="0dp"
+          android:layout_height="match_parent"/>
+</LinearLayout>
+
+方法二：在代码中添加fragment到一个ViewGroup
+FragmentManagerfragmentManager =getFragmentManager()
+FragmentTransactionfragmentTransaction =fragmentManager.beginTransaction();
+ExampleFragmentfragment =newExampleFragment();
+fragmentTransaction.add(R.id.fragment_container,fragment);
+fragmentTransaction.commit();
+

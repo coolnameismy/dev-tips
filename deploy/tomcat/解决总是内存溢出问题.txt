@@ -1,0 +1,5 @@
+在tomcat的bin目录下找到catalina.sh
+找到echo "Using CATALINA_BASE:   $CATALINA_BASE"这一行
+在上面加入
+JAVA_OPTS="-server -XX:PermSize=64M -XX:MaxPermSize=256m"
+调节里面的参数

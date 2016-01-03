@@ -1,0 +1,5 @@
+
+方法一：
+ <TextBlock FontSize="25" Height="43" HorizontalAlignment="Left"  Text="{Binding Name,Source={StaticResource myPeple}}"  Width="185" />
+方法二：
+ <TextBlock FontSize="25" Height="43" HorizontalAlignment="Left"  Text="{Binding Name}" DataContext="{StaticResource myPeple}" Width="185" />

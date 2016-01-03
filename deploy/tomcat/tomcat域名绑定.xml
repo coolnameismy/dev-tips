@@ -1,0 +1,7 @@
+tomcat域名绑定
+
+<Host appBase="webapps" autoDeploy="true" name="localhost" unpackWARs="true">
+改为
+
+<Host name="www.abc.com" debug="0" appBase="webapps" unpackWARs="true" autoDeploy="true" xmlValidation="false" xmlNamespaceAware="false">      <Context docBase="baidu" path=""  reloadable="true" >
+</Host>

@@ -1,0 +1,92 @@
+# Copyright (c) 1993-2009 Microsoft Corp.
+#
+# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
+#
+# This file contains the mappings of IP addresses to host names. Each
+# entry should be kept on an individual line. The IP address should
+# be placed in the first column followed by the corresponding host name.
+# The IP address and the host name should be separated by at least one
+# space.
+#
+# Additionally, comments (such as these) may be inserted on individual
+# lines or following the machine name denoted by a '#' symbol.
+#
+# For example:
+#
+#      102.54.94.97     rhino.acme.com          # source server
+#       38.25.63.10     x.acme.com              # x client host
+
+# localhost name resolution is handled within DNS itself.
+#	127.0.0.1       localhost
+#	::1             localhost
+
+#134.170.108.26 onedrive.live.com  
+#134.170.109.48 skyapi.onedrive.live.com
+ 
+#Google主页
+203.208.46.146 www.google.com
+#这行是为了方便打开Android开发官网 现在好像不VPN也可以打开
+74.125.113.121 developer.android.com
+#更新的内容从以下地址下载
+203.208.46.146 dl.google.com
+203.208.46.146 dl-ssl.google.com
+74.125.229.174     appengine.google.com
+74.125.128.199     appengine.google.com
+74.125.128.139     appengine.google.com
+
+# Google Begin
+74.125.31.31      google.com google.com.hk www.google.com www.google.com.hk
+74.125.31.32      mail.google.com mail.google.com.hk gmail.com www.gmail.com gmail.com.hk www.gmail.com.hk
+74.125.31.33      accounts.google.com accounts.youtube.com csi.gstatic.com
+74.125.31.34      plus.google.com plus.google.com.hk plus.url.google.com
+74.125.31.35      encrypted.google.com encrypted.google.com.hk
+74.125.31.36      lh1.googleusercontent.com doc-04-as-docs.googleusercontent.com
+74.125.31.37      lh2.googleusercontent.com doc-0k-as-docs.googleusercontent.com doc-08-as-docs.googleusercontent.com
+74.125.31.38      lh3.googleusercontent.com googleads.g.doubleclick.net ad.doubleclick.net
+74.125.31.39      lh4.googleusercontent.com www.googleadservices.com
+74.125.31.40      lh5.googleusercontent.com dl-ssl.google.com
+74.125.31.41      lh6.googleusercontent.com
+74.125.31.42      images1-focus-opensocial.googleusercontent.com
+74.125.31.43      images2-focus-opensocial.googleusercontent.com
+74.125.31.44      images3-focus-opensocial.googleusercontent.com
+74.125.31.45      images4-focus-opensocial.googleusercontent.com
+74.125.31.46      images5-focus-opensocial.googleusercontent.com
+74.125.31.47      images6-focus-opensocial.googleusercontent.com
+74.125.31.48      s1.googleusercontent.com
+74.125.31.49      s2.googleusercontent.com
+74.125.31.50      s3.googleusercontent.com
+74.125.31.51      s4.googleusercontent.com
+74.125.31.52      s5.googleusercontent.com
+74.125.31.53      s6.googleusercontent.com
+74.125.31.54      lh1.ggpht.com lh1.google.com
+74.125.31.56      lh2.ggpht.com lh2.google.com
+74.125.31.57      lh3.ggpht.com lh3.google.com
+74.125.31.58      lh4.ggpht.com lh4.google.com
+74.125.31.59      lh5.ggpht.com lh5.google.com
+74.125.31.60      lh6.ggpht.com lh6.google.com
+74.125.31.61      picasaweb.google.com docs.google.com apis.google.com 0.docs.google.com
+74.125.31.62      safebrowsing-cache.google.com safebrowsing.clients.google.com
+74.125.31.63      gg.google.com ssl.gstatic.com
+74.125.31.64      talkgadget.google.com  profiles.google.com
+74.125.31.65      mail-attachment.googleusercontent.com chatenabled.mail.google.com
+74.125.31.66      chrome.google.com clients1.google.com clients2.google.com clients3.google.com clients4.google.com
+74.125.31.68      maps-api-ssl.google.com writely.google.com spreadsheets.google.com maps.google.com
+74.125.31.69      dl.google.com talkx.l.google.com
+74.125.31.72      webcache.googleusercontent.com 0-focus-opensocial.googleusercontent.com
+74.125.31.73      encrypted-tbn0.google.com encrypted-tbn1.google.com encrypted-tbn2.google.com
+74.125.31.74      encrypted-tbn3.google.com encrypted-tbn4.google.com encrypted-tbn5.google.com
+74.125.31.75      encrypted-tbn6.google.com encrypted-tbn7.google.com encrypted-tbn8.google.com encrypted-tbn9.google.com
+74.125.31.76      ssl.google-analytics.com chatenabled.mail.google.com
+74.125.31.77      images-pos-opensocial.googleusercontent.com images-oz-opensocial.googleusercontent.com
+74.125.31.78      plusone.google.com www.gstatic.com gstatic.com
+74.125.31.79      clients1.googleusercontent.com clients2.googleusercontent.com clients3.googleusercontent.com clients4.googleusercontent.com
+74.125.31.81      www.schemer.com sites.google.com services.google.com tools.google.com
+74.125.31.82      mts0.google.com mts1.google.com mts2.google.com
+74.125.31.83      mts3.google.com mts4.google.com mts5.google.com
+74.125.31.84      khms0.google.com khms1.google.com khms2.google.com
+74.125.31.85      khms3.google.com khms4.google.com khms5.google.com
+74.125.31.86      code.google.com appengine.google.com groups.google.com maps.gstatic.com
+74.125.31.87      drive.google.com goo.gl upload.docs.google.com cache.pack.google.com news.google.com
+74.125.31.88      0.drive.google.com 1.drive.google.com 2.drive.google.com
+74.125.31.90      3.drive.google.com 4.drive.google.com 5.drive.google.com video.google.com
+# Google End

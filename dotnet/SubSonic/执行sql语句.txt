@@ -1,0 +1,9 @@
+        string strsql = @"select t.keyid,sum(decode(location,1,1,0)) 定位,sum(decode(location,0,1,0)) 不定位 from lbs.t_msg_recv_his t where  t.keyid='13322222222' and t.MSG_TIME_NEW>to_date('20131111','yyyymmdd') and t.MSG_TIME_NEW<to_date('20131112','yyyymmdd') group by t.keyid ";
+                  
+        DataTable dt;
+        QueryCommand qc = new QueryCommand(strsql.ToString(), null);
+
+        dt = DataService.GetDataSet(qc).Tables[0];
+
+        GridView1.DataSource = dt;
+        GridView1.DataBind();

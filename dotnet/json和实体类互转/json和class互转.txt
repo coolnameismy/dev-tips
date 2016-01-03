@@ -1,0 +1,25 @@
+using Codeplex.Data;
+
+ class test
+    {
+        public string today_announce { get; set; }
+        public string today_announce_2 { get; set; }
+        public string today_announce_3 { get; set; }
+        public string today_announce_4 { get; set; }
+    }
+
+    string json = "{\"today_announce\":1,\"today_announce_2\":2,\"today_announce_3\":3,\"today_announce_4\":4}";
+    //转换为class类test
+    test test1 = DynamicJson.Parse(json);
+    //test类转回为jason
+    json = DynamicJson.Serialize(test1);
+
+
+//方法2 Newtonsoft.Json（Json.net）用法
+
+            Book bk = new Book() { BookID = "12111", PublishDate = DateTime.Parse("2012-2-1 22:12:11"), Price=433.12M};
+            Console.WriteLine(JsonConvert.SerializeObject(bk));
+
+            string jsonBook = "{'BookID':'123', 'PublishDate':'2011-1-2', 'Price':23.5}";
+            Book bk1 = JsonConvert.DeserializeObject<Book>(jsonBook);
+            Console.WriteLine(bk1.ToString());

@@ -1,0 +1,27 @@
+items = this.getResources().getStringArray(R.array.books);
+	    AlertDialog.Builder bulider = new AlertDialog.Builder(this).setTitle("simple alert")
+	    															.setIcon(R.drawable.ic_launcher)
+	    															//.setMessage("message ..................")
+	    															.setItems(items, new OnClickListener(){
+	    																@Override
+	    																public void onClick(DialogInterface dialog, int which) {
+	    																		Toast.makeText(TestActivity.this, items[which], Toast.LENGTH_SHORT).show();
+	    																}
+	    															})
+	    															.setPositiveButton("ok", new OnClickListener(){
+	    																@Override
+	    																public void onClick(DialogInterface dialog, int which) {
+	    																		Toast.makeText(TestActivity.this, "setPositiveButton", Toast.LENGTH_SHORT).show();
+	    																}
+	    															})
+	    															.setNegativeButton("cancel", new OnClickListener(){
+	    																@Override
+	    																public void onClick(DialogInterface dialog, int which) {
+	    																		Toast.makeText(TestActivity.this, "setNegativeButton", Toast.LENGTH_SHORT).show();
+	    																}
+	    															});
+	    bulider.create().show();
+
+
+
+//注意，setMessage和setItems不能同时使用

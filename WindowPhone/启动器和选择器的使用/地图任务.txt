@@ -1,0 +1,25 @@
+   //地图地址搜索
+        private void BingSearch_Click(object sender, RoutedEventArgs e)
+        { 
+            //bing地图 
+            //BingMapsTask task = new BingMapsTask();
+            //诺基亚地图
+            MapsTask task = new MapsTask();
+            string SearchTerm = textBox1.Text;      
+            task.SearchTerm = SearchTerm;
+            task.Show();
+        }
+        //地图导航任务
+        private void BingDirections_Click(object sender, RoutedEventArgs e)
+        {
+            //bing地图  
+            //BingMapsDirectionsTask task = new BingMapsDirectionsTask();
+            //诺基亚地图
+            MapsDirectionsTask task = new MapsDirectionsTask();
+            //设置起点和终点
+            LabeledMapLocation start = new LabeledMapLocation("start",new System.Device.Location.GeoCoordinate(32.098234,118.809681));
+            LabeledMapLocation end = new LabeledMapLocation("end",new System.Device.Location.GeoCoordinate(32.100226,118.805917));
+            task.Start = start;
+            task.End = end;
+            task.Show();
+        }

@@ -1,0 +1,21 @@
+			//using System.Xml;
+			
+			
+			string postStr = "";
+			Stream s = System.Web.HttpContext.Current.Request.InputStream;
+            byte[] b = new byte[s.Length];
+            s.Read(b, 0, (int)s.Length);
+            postStr = Encoding.UTF8.GetString(b);
+            if (!string.IsNullOrEmpty(postStr))
+            {
+                string textTpl = "";
+                ResponseMsg(postStr);
+                WriteLog("得到了输入的pststr");
+                WriteLog(postStr);
+                //xml读取流
+                XmlDocument px;
+               
+                    px = new XmlDocument();
+
+                    px.LoadXml(postStr);
+			}

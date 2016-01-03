@@ -1,0 +1,5 @@
+mac 键盘符号
+⌘——Command ()
+⌃ ——Control
+⌥——Option (alt)
+⇧——Shift

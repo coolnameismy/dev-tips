@@ -1,0 +1,37 @@
+cocoapods安装：
+1:更新ruby环境 $ gem update rails ＝＝＝＝＝＝＝＝＝ Mac OS X 10.5以上
+2:更新gem环境 ： gem update --system
+3:安装cocoapods：sudo gem install cocoapods
+4:pod setup
+
+
+
+=============cocoapods使用==========================
+
+－－－－－－－－－－－－配置项目依赖－－－－－－－－－－－－
+1:创建prdfile文件
+touch Podfile 
+2:输入项目依赖 vi Podfile
+platform :ios, "6.1"
+pod 'MBProgressHUD', '~> 0.8'
+pod 'MapBox', '~> 1.1.0'
+3:pod install 安装
+4:后续打开项目文件
+
+－－－－－－－－－－－－常用命令－－－－－－－－－－－－
+1:查看某个库是否存在 －－$ pod search AFNetworking
+2:更新pod －－$ pod update
+3：安装pod  -- $ pod install
+
+—————tip ————
+1：使用下面两条命令可以提高速度，原因是不检查spec仓库更新
+pod install --verbose --no-repo-update
+pod update --verbose --no-repo-update
+
+2：The `Supercitizen [Debug]` target overrides the `OTHER_LDFLAGS` build setting defined in `Pods/Target Support Files/Pods/Pods.debug.xcconfig'. This can lead to problems with the CocoaPods installation
+    - Use the `$(inherited)` flag, or
+    - Remove the build settings from the target.
+警告的处理：
+-（1）打开工程所在文件夹，找到.xcodeproj的文件，然后显示包内容，找到project.pbxproj文件
+-（2）用文本编辑器打开，然后查找`OTHER_LDFLAGS`这个东西，把有关这个东西的地方改成$(inherited)
+-(3) pod重写update一次

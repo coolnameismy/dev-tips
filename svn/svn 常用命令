@@ -1,0 +1,19 @@
+svn 常用命令
+
+add 
+commit
+update
+status
+log
+diff
+merge
+help
+
+批量删除文件——
+svn status|grep ! |awk '{print $2}'|xargs svn del
+语句释义是：首先svn status查看svn状态，列出所有改动，打!号的是已经删除的文件但是还未标记成从库中除去，grep !将这些文件单独抽离出来，再用awk '{print $2}'将抽离出来的文本结果处理，留下每一行的第二段文字，即后面的文件名，
+此处必须注意，svn status|grep !和后面的语句|awk '{print $2}'|xargs svn del之间，必须有一个空格，否则终端还是会认为这个!号是特殊符号，这个时候就可以直接递交给svn del命令了，使用xargs这个参数构造命令，将每一行的文本作为参数提供给svn del，结果就是所有列出的文件都执行了一遍del了
+
+批量添加文件——
+几乎一样，不同的是svn标记的符号不一养，使用的是问号!
+svn status|grep ? |awk '{print $2}'|xargs svn add

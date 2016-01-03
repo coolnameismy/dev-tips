@@ -1,0 +1,41 @@
+ie版本选择加载
+
+1. <!--[if !IE]><!--> 除IE外都可识别 <!--<![endif]-->
+2. <!--[if IE]> 所有的IE可识别 <![endif]-->
+3. <!--[if IE 5.0]> 只有IE5.0可以识别 <![endif]-->
+4. <!--[if IE 5]> 仅IE5.0与IE5.5可以识别 <![endif]-->
+5. <!--[if gt IE 5.0]> IE5.0以及IE5.0以上版本都可以识别 <![endif]-->
+6. <!--[if IE 6]> 仅IE6可识别 <![endif]-->
+7. <!--[if lt IE 6]> IE6以及IE6以下版本可识别 <![endif]-->
+8. <!--[if gte IE 6]> IE6以及IE6以上版本可识别 <![endif]-->
+9. <!--[if IE 7]> 仅IE7可识别 <![endif]-->
+10. <!--[if lt IE 7]> IE7以及IE7以下版本可识别 <![endif]-->
+11. <!--[if gte IE 7]> IE7以及IE7以上版本可识别 <![endif]-->
+<!--[if lte IE 6]>……<![endif]-->
+
+
+强制ie以版本解析
+<meta http-equiv="X-UA-Compatible" content="IE=9, IE=10">
+
+
+选择符前缀法
+*html 只在ie6起作用
+*+html 只在ie7起作用
+
+样式属性前缀法
+_   ===   只在ie6起作用，例如 _witdh:100px
+*   ===   只在ie7起作用，例如 *witdh:100px
+/*/ ... */ ===	 只在ie8起作用，例如:/*/background: orange;*/ 
+\9\0 === ie9 例如：background-color:red\9\0;
+\0  ===    ie8，ie9  例如：background-color:red\0;
+\9  === IE6，IE7，IE8，IE9 例如：background-color:red\9;
+
+zoom:1 可以出发 haslayout属性
+
+针对Chrome和Safari等Webkit核心浏览器的CSS hack
+@media screen and (-webkit-min-device-pixel-ratio:0) { /* Webkit内核兼容CSS */ }
+示例：
+ @media screen and (-webkit-min-device-pixel-ratio:0) { 
+ .font1 {color:#f00} .border1 {border:1px solid #f00;} .bg3 {background:#f00;} 
+ }
+

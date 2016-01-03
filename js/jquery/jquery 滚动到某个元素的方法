@@ -1,0 +1,11 @@
+jquery 滚动到某个元素的方法
+var previousSilder = function(){
+	   //alert("previous");
+	   $("html,body").animate({scrollTop:$(".silderThun").offset().top},300);
+}
+
+var nextSilder = function(){
+	 //alert("next");
+	 $("html,body").animate({scrollTop:$(".silderThun").offset().top},300);
+}
+

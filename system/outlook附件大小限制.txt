@@ -1,0 +1,9 @@
+突破Outlook2013附件大小限制
+分类： Office 2013-01-17 15:11 3866人阅读 评论(0) 收藏 举报
+使用Outlook2013时，发送邮件如果附件大小超过20M，会收到提示无法发送，超出附件上限的警告。在Outlook2010中，默认也有这个附件限制。考虑到我现在使用的并不是Exchange邮箱，没有被Exchange的策略所影响，所以尝试按照Outlook2010的提高方式进行修改：
+[HKEY_CURRENT_USER\Software\Microsoft\Office\15.0\Outlook\Preferences]
+在上边这个项下添加新dword（32位）值：
+"MaximumAttachmentSize"=dword:00000000
+添加新键值后重启Outlook，发送50M的附件成功！
+ 
+Office 2013 X64 的也是新建dword（32位）,本人机器上建64位的无效.改成32位就可以了

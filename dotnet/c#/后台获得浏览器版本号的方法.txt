@@ -1,0 +1,21 @@
+  System.Web.HttpBrowserCapabilities browser = Request.Browser;
+        if (browser.Browser != "IE")
+        {
+            isIE = false;
+            isIE8 = false;
+        }
+        else if (browser.Type == "IE8")
+        {
+            isIE = true;
+            isIE8 = true;
+        }
+        else
+        {
+            isIE = true;
+            isIE8 = false;
+        }
+
+        if (User.Identity == null || !User.Identity.IsAuthenticated)
+        {
+            return;
+        }

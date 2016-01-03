@@ -1,0 +1,30 @@
+根目录下的config
+<authentication mode="Forms">
+     <forms name=".aspxityninfo" loginUrl="Administrator/login.aspx" protection="All" timeout="30">
+    </forms>
+ </authentication> 
+<authorization>
+     <allow users="*" /> 
+    <!-- 允许所有用户 --> 
+    <!-- 
+        <allow users="[逗号分隔的用户列表]" roles="[逗号分隔的角色列表]"/> 
+        <deny users="[逗号分隔的用户列表]" roles="[逗号分隔的角色列表]"/> 
+    --> 
+</authorization>
+
+子目录下的config
+<configuration> 
+        <system.web> 
+        <!-- 身份验证 此节设置应用程序的身份验证策略。可能的模式是 "Windows"、 "Forms"、 "Passport" 和 "None" "None" 不执行身份验证。 "Windows" IIS 根据应用程序的设置执行身份验证 (基本、简要或集成 Windows)。在 IIS 中必须禁用匿名访问。 "Forms" 您为用户提供一个输入凭据的自定义窗体(Web 页)，然后 在您的应用程序中验证他们的身份。用户凭据标记存储在 Cookie 中。 "Passport" 身份验证是通过 Microsoft 的集中身份验证服务执行的， 它为成员站点提供单独登录和核心配置文件服务。 --> 
+        <!-- 授权 此节设置应用程序的授权策略。可以允许或拒绝不同的用户或角色访问 应用程序资源。通配符: "*" 表示任何人，"?" 表示匿名 (未经身份验证的)用户。 --> 
+
+        <authorization> 
+            <deny users="?" /> 
+            <!-- 允许所有用户 --> 
+            <!--
+                 <allow users="[逗号分隔的用户列表]" roles="[逗号分隔的角色列表]"/> 
+                <deny users="[逗号分隔的用户列表]" roles="[逗号分隔的角色列表]"/> 
+            --> 
+        </authorization> 
+    </system.web> 
+</configuration>

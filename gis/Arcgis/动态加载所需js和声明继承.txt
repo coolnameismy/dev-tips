@@ -1,0 +1,25 @@
+define([
+  "dojo/_base/declare",
+  "dojo/_base/array",
+  "esri/Color",
+  "dojo/_base/connect",
+
+  "esri/SpatialReference",
+  "esri/geometry/Point",
+  "esri/graphic",
+  "esri/symbols/SimpleMarkerSymbol",
+  "esri/symbols/TextSymbol",
+
+  "esri/dijit/PopupTemplate",
+  "esri/layers/GraphicsLayer"
+], function (
+  declare, arrayUtils, Color, connect,
+  SpatialReference, Point, Graphic, SimpleMarkerSymbol, TextSymbol,
+  PopupTemplate, GraphicsLayer
+) {
+    return declare([GraphicsLayer], {
+        constructor: function (options) {
+
+        }
+        }
+);

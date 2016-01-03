@@ -1,0 +1,6 @@
+注意,要使用管理员权限去打开cmd命令行
+
+
+进入安装工具目录：cd C:\Windows\Microsoft.NET\Framework\v4.0.30319
+安装:installutil.exe F:\Web\my_test\WindowsServiceTest\WindowsServiceTest\obj\Debug\WindowsServiceTest.exe
+卸载：installutil.exe /u F:\Web\my_test\WindowsServiceTest\WindowsServiceTest\obj\Debug\WindowsServiceTest.exe

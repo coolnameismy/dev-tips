@@ -1,0 +1,9 @@
+﻿HTTP错误 403.14-Forbidden Web 服务器被配置为不列出此目录的内容及Login on failed for "IIS APPPOOL\ASP.NET v4.0"，
+解决方案：
+(1)定位到.NET 的安装目录C:\Windows\Microsoft.NET\Framework\v4.0.30319，启动cmd控制台，将当前目录切换到.NET的安装目录，执行aspnet_regiis -i,将ASP.NET重新注册到IIS即可解决此错误
+(2) 查看
+
+ <system.webServer>
+	<modules runAllManagedModulesForAllRequests="true"/>
+	<modules runAllManagedModulesForAllRequests="true"></modules>
+ </system.webServer>

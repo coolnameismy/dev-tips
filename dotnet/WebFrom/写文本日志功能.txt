@@ -1,0 +1,27 @@
+  private void WriteLog(string strMemo)
+    {
+        string filename = Server.MapPath("/ContentShareSystem/Api/logs/log.txt");
+        if (!Directory.Exists(Server.MapPath("//ContentShareSystem/Api/logs//")))
+            Directory.CreateDirectory("//ContentShareSystem/Api/logs//");
+        StreamWriter sr = null;
+        try
+        {
+            if (!File.Exists(filename))
+            {
+                sr = File.CreateText(filename);
+            }
+            else
+            {
+                sr = File.AppendText(filename);
+            }
+            sr.WriteLine(strMemo);
+        }
+        catch
+        {
+        }
+        finally
+        {
+            if (sr != null)
+                sr.Close();
+        }
+    }

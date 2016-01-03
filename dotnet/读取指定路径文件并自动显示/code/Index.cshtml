@@ -1,0 +1,45 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>SiteMap</title>
+</head>
+<body>
+    <div>
+        <h1>SiteMap</h1>
+        <ul>
+            <li><a href="/Inquiry/ToSalers/Inquiry201301ToSalers">销售在线问卷页面</a></li>
+            <li><a href="/Inquiry/ToDoctors/Inquiry201301ToDoctors">医生在线问卷页面</a></li>
+            <li><a href="/Inquiry/ToPros/Inquiry201301ToPros">专业在线问卷页面</a></li>
+            <li id="menuSalers">@Html.ActionLink("Salers问卷统计", "ToSalers201301", "view")</li>
+            <li id="menuDoctors">@Html.ActionLink("Doctors问卷统计", "ToDoctors201301", "view")</li>
+            <li id="menuPros">@Html.ActionLink("Pros问卷统计", "ToPros201301", "view")</li>
+            <li>@Html.ActionLink("edm销售页面", "edm_sale", "Inquiry")</li>
+            <li>@Html.ActionLink("edm医生页面", "edm_sale", "Inquiry")</li>
+        </ul>
+    </div>
+     <div>
+        <ui>项目文档</ui>
+         @if (System.IO.Directory.Exists(Server.MapPath("~/")+ "Assets"))
+                 {
+                     foreach (string filename in System.IO.Directory.GetFiles(Server.MapPath("~/") + "Assets"))
+                     {
+                      
+                        if(filename.EndsWith(".pdf")){
+						<li><a href="@filename.Replace((Server.MapPath("~/")),"")" target="_blank">@filename.Replace((Server.MapPath("~/") + "Assets"),"")</a>
+							@*@(new System.IO.FileInfo(filename).Length)&nbsp;bytes*@
+                            @*获取文件大小*@
+						</li>}
+                     }
+                 }
+                else{
+                    
+                 }
+				
+    </div>
+</body>
+</html>

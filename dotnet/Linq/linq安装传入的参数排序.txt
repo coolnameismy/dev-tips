@@ -1,0 +1,1 @@
+shopInfoList = shopInfoList.OrderBy(r => GetPropertyValue(r, sort)).Skip(offset).Take(count).ToList();

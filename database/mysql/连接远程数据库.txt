@@ -1,0 +1,20 @@
+配置远程登录===============
+1：select user,host from user;
+2： mysql> update user set host='%' where user='root';
+   mysql> flush privileges;
+
+
+使用远程登录===============
+1:链接 mysql -h 61.147.124.16 -u liuyw -p
+
+2：显示数据库 show databases;
+
+3:使用数据库 use crown;
+
+4:显示表 show tables;
+
+5 导出数据 cmd下运行
+mysqldump -h localhost -u liuyw -p  mytable>e:\mytable.sql
+
+6：导入数据 mysql下运行
+source d:/MySQL.sql

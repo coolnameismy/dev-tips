@@ -1,0 +1,99 @@
+1嵌套运算符 
+
+1.1子: >
+li>ul>a
+<li>
+	<ul><a href=""></a></ul>
+</li>
+
+1.2兄弟: +
+div>div.page1+div.page2
+<div>
+	<div class="page1"></div>
+	<div class="page2"></div>
+</div>	
+
+1.3上升: ^
+div+div>p^div
+<div></div>
+ <div>
+ 	<p></p>
+ </div>
+ <div></div> 
+ 
+ 1.4 重复: *
+ul>li*2
+<ul>
+	<li></li>
+	<li></li>
+</ul>
+
+1.5 分组：()
+div>(ul>li*2)+ol>oi*2
+<div>
+	<ul>
+		<li></li>
+		<li></li>
+	</ul>
+	<ol>
+		<oi></oi>
+		<oi></oi>
+	</ol>
+</div>
+
+2属性运算符
+
+2.1 ID: #
+div#header
+<div id="header"></div>
+
+2.2 class: .
+div.header
+<div class="header"></div>
+
+2.3 自定义注解: [attr] 
+div[data-date]
+<div data-date=""></div>
+
+2.4 编号: $
+ul>li.li_$*5
+<ul>
+	<li class="li_1"></li>
+	<li class="li_2"></li>
+	<li class="li_3"></li>
+	<li class="li_4"></li>
+	<li class="li_5"></li>
+</ul>
+多个$连用
+ul>li_li$$$*5
+<ul>
+	<li_li001></li_li001>
+	<li_li002></li_li002>
+	<li_li003></li_li003>
+	<li_li004></li_li004>
+	<li_li005></li_li005>
+</ul>
+改变编号的基数和方向
+ul>li_li$$$@-*5
+<ul>
+	<li_li005></li_li005>
+	<li_li004></li_li004>
+	<li_li003></li_li003>
+	<li_li002></li_li002>
+	<li_li001></li_li001>
+</ul>
+在 $ 后面添加 @N 改变编号的基数
+ul>li_li$$$@10*5
+<ul>
+	<li_li010></li_li010>
+	<li_li011></li_li011>
+	<li_li012></li_li012>
+	<li_li013></li_li013>
+	<li_li014></li_li014>
+</ul>
+
+2.5 文本: {}
+div>p{输入文本信息}
+<div>
+	<p>输入文本信息</p>
+</div>

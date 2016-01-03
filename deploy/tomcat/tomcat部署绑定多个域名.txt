@@ -1,0 +1,19 @@
+tomcat部署绑定多个域名
+
+1：设置域名解析 ：过程省略
+
+2:打开tomcat\conf 下的server.xml
+
+3:配置：
+3.1 配置端口为80 
+ <Connector port="80" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="7443" />
+
+3.2 在原来host标签后面添加
+  <Host name="plantassistantapi.jumppo.com"  appBase="webapps/PlantAssistantApi"
+            unpackWARs="true" autoDeploy="true" />
+
+
+//注意appBase中指向的地址，需要在路径中添加ROOT目录，例如例子中，的部署项目路径为：
+C:\tomcat\webapps\PlantAssistantApi\ROOT
