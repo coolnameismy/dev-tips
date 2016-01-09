@@ -1,3 +1,0 @@
-补充一下，写多个布局的时候，配置文件一定要加上这段配置代码，不然有时可能会出问题
-    <supports-screens android:largeScreens="true"
-                android:normalScreens="true" android:anyDensity="true" />

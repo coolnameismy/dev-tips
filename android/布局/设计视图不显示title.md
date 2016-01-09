@@ -1,0 +1,1 @@
+上边选择theme的地方选择theme.Holo.Dialog

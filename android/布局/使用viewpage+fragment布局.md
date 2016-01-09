@@ -1,4 +1,9 @@
-1£º¶¨ÒåÊÊÅäÆ÷
+
+
+
+##	å®šä¹‰é€‚é…å™¨
+
+````java
 
 public class MyFragmentPagerAdaptert extends FragmentPagerAdapter {
 
@@ -15,7 +20,7 @@ public class MyFragmentPagerAdaptert extends FragmentPagerAdapter {
  
 
 	/*
-	 * »ñÈ¡×éÔªËØ
+	 * è·å–ç»„å…ƒç´ 
 	 * @see android.support.v4.app.FragmentPagerAdapter#getItem(int)
 	 */
 	@Override
@@ -48,7 +53,12 @@ public class MyFragmentPagerAdaptert extends FragmentPagerAdapter {
 //	}
 }
 
-2£º¶¨Òåfragment
+````
+
+
+##	2ï¼šå®šä¹‰fragment
+
+````java
 public class MyFragment extends Fragment {
 
 	Activity activity;
@@ -83,7 +93,12 @@ public class MyFragment extends Fragment {
 	}
 }
 
-3:Ò³ÃæÊ¹ÓÃ
+````
+
+
+##	3:é¡µé¢ä½¿ç”¨
+
+````java
 
 private void initFragment() {
 		 ArrayList<Fragment> fragments = new ArrayList<Fragment>();
@@ -99,3 +114,4 @@ private void initFragment() {
 		viewPager.setAdapter(adapter);
  
 	}
+````
