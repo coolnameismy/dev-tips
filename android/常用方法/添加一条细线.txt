@@ -1,9 +1,0 @@
- <View
-        android:id="@+id/title_bar_divider"
-        android:layout_width="fill_parent"
-        android:layout_height="0.5dip"
-        android:layout_below="@id/title_bar"
-        android:background="@color/detail_divider_day" />
-		
-		
- <color name="detail_divider_day">#ffb4b4b4</color>
