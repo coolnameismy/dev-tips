@@ -1,0 +1,42 @@
+
+````java
+
+ /**
+ * welcome 开场效果，透明度的动画
+ */
+private void rediectToMainActivity(){
+	//透明度变化值
+	AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f,1.0f);
+	//透明度变化时间
+	alphaAnimation.setDuration(2000);
+	//找到需要变化的view，这里是content
+	View view = (View)findViewById(android.R.id.content);
+	//开始
+	view.startAnimation(alphaAnimation);
+	//设置监听变化
+	alphaAnimation.setAnimationListener(new AnimationListener() {
+		
+		@Override
+		public void onAnimationStart(Animation animation) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void onAnimationRepeat(Animation animation) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void onAnimationEnd(Animation animation) {
+			// 变化完成后跳转到主页面
+			Intent intent = new Intent(Welcome.this, MainActivity.class);
+			startActivity(intent);
+			//阻止下一界面后退
+			finish();
+		}
+	 
+	});
+
+````
