@@ -4,4 +4,4 @@
 134.170.108.26 onedrive.live.com  
 134.170.109.48 skyapi.onedrive.live.com
 3
-然后“保存”就可以了。赶紧试一下吧。
+然后“保存”就可以了。
