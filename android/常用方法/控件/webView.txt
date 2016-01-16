@@ -1,10 +1,13 @@
-//ÖªÊ¶µã
-1£ºwebviewÊ¹ÓÃ
-2£ºwebview½ûÖ¹µ¯³öä¯ÀÀÆ÷´ò¿ªÒ³Ãæ
-3£ºÓëjs½»»¥£¬×¢²ájs·½·¨ webView.addJavascriptInterface ºÍ·½·¨×¢ÊÍ@JavascriptInterface
-4: android µ÷ÓÃjs·½·¨
-5£ºjsµ÷ÓÃandroid·½·¨ //android.test(); ×¢²áµÄÃû³Æ.×¢²áµÄ·½·¨
 
+//çŸ¥è¯†ç‚¹
+1ï¼šwebviewä½¿ç”¨
+2ï¼šwebviewç¦æ­¢å¼¹å‡ºæµè§ˆå™¨æ‰“å¼€é¡µé¢
+3ï¼šä¸jsäº¤äº’ï¼Œæ³¨å†Œjsæ–¹æ³• webView.addJavascriptInterface å’Œæ–¹æ³•æ³¨é‡Š@JavascriptInterface
+4: android è°ƒç”¨jsæ–¹æ³•
+5ï¼šjsè°ƒç”¨androidæ–¹æ³• //android.test(); æ³¨å†Œçš„åç§°.æ³¨å†Œçš„æ–¹æ³•
+
+
+````java
 
 WebView webView =  (WebView) findViewById(R.id.webView1);
 		WebSettings setting = webView.getSettings();
@@ -26,9 +29,11 @@ WebView webView =  (WebView) findViewById(R.id.webView1);
 	public void test(){
 		Toast.makeText(this, "test", Toast.LENGTH_SHORT).show();
 	}
-	//androidµ÷ÓÃjs·½·¨
+	//androidè°ƒç”¨jsæ–¹æ³•
 	public void calljs(View view){
-		String jsString = "javascript:hellojs('fromandroid')";  //´«µİ²ÎÊı
+		String jsString = "javascript:hellojs('fromandroid')";  //ä¼ é€’å‚æ•°
 		webView.loadUrl(jsString);
 		
 	}
+
+````

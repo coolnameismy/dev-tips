@@ -1,8 +1,9 @@
-<AutoCompleteTextView 
+````xml
+    <AutoCompleteTextView 
         android:id="@+id/AutoText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:completionHint="Ñ¡Ôñ¿ª·¢ÓïÑÔ"
+        android:completionHint="é€‰æ‹©å¼€å‘è¯­è¨€"
         android:dropDownHorizontalOffset="10dp"
         android:completionThreshold="1"
         />
@@ -11,23 +12,22 @@
         android:id="@+id/mAutoText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:completionHint="Ñ¡Ôñ¿ª·¢ÓïÑÔ"
+        android:completionHint="é€‰æ‹©å¼€å‘è¯­è¨€"
         android:dropDownHorizontalOffset="10dp"
         android:completionThreshold="1"
         />
+````xml
 
-
-
-=========================================================
-
-//»ñÈ¡×ÊÔ´ÎÄ¼ş¶¨ÒåµÄÊı×é
+````java
+        //è·å–èµ„æºæ–‡ä»¶å®šä¹‰çš„æ•°ç»„
         String[] items = this.getResources().getStringArray(R.array.books);
-        //×Ô¶¯Íê³ÉÎÄ¼ş
+        //è‡ªåŠ¨å®Œæˆæ–‡ä»¶
         AutoCompleteTextView autoText = (AutoCompleteTextView) findViewById(R.id.AutoText);
-    	ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.array_item,items);
-    	autoText.setAdapter(adapter);
-    	//¶àÖØ×Ô¶¯Íê³ÉÎÄ¼ş
-    	MultiAutoCompleteTextView mAutoText = (MultiAutoCompleteTextView) findViewById(R.id.mAutoText);
-    	mAutoText.setAdapter(adapter);
-    	//ÉèÖÃ·Ö¸ô·û
-    	mAutoText.setTokenizer(new MultiAutoCompleteTextView.CommaTokenizer());
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.array_item,items);
+        autoText.setAdapter(adapter);
+        //å¤šé‡è‡ªåŠ¨å®Œæˆæ–‡ä»¶
+        MultiAutoCompleteTextView mAutoText = (MultiAutoCompleteTextView) findViewById(R.id.mAutoText);
+        mAutoText.setAdapter(adapter);
+        //è®¾ç½®åˆ†éš”ç¬¦
+        mAutoText.setTokenizer(new MultiAutoCompleteTextView.CommaTokenizer());
+````        

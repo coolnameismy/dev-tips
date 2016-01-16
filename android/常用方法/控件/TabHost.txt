@@ -1,20 +1,26 @@
-Ç°Ì¨£º
-Ö±½ÓÍÏÈë¿Ø¼ş
+##	å‰å°ï¼š
 
-ºóÌ¨£º
-1£ºactivity ¼Ì³ĞTabActivity
-2£ºÉèÖÃtab±êÌâºÍÈİÆ÷
+ç›´æ¥æ‹–å…¥æ§ä»¶
+
+##	åå°ï¼š
+
+-	1ï¼šactivity ç»§æ‰¿TabActivity
+-	2ï¼šè®¾ç½®tabæ ‡é¢˜å’Œå®¹å™¨
+
+````java
+
 // user code
 TabHost tabhost = getTabHost();
 tabhost.addTab(
 	 tabhost.newTabSpec("tab1").
-	 setIndicator("ºô³öµç»°",getResources().getDrawable(R.drawable.ic_launcher)).setContent(R.id.tab1)
+	 setIndicator("å‘¼å‡ºç”µè¯",getResources().getDrawable(R.drawable.ic_launcher)).setContent(R.id.tab1)
 	 );
 tabhost.addTab(
 	 tabhost.newTabSpec("tab2").
-	 setIndicator("ºôÈëµç»°").setContent(R.id.tab2)
+	 setIndicator("å‘¼å…¥ç”µè¯").setContent(R.id.tab2)
 	 );
 tabhost.addTab(
 	 tabhost.newTabSpec("tab2").
-	 setIndicator("ÆäËû").setContent(R.id.tab3)
+	 setIndicator("å…¶ä»–").setContent(R.id.tab3)
 	 );
+````

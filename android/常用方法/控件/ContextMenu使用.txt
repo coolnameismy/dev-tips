@@ -1,6 +1,8 @@
-1£ºÔÚOnCreateÖĞ×¢²á
+````java
+
+1ï¼šåœ¨OnCreateä¸­æ³¨å†Œ
  registerForContextMenu(findViewById(R.id.textView1));
-2£ºÖØĞ´activityµÄonCreateContextMenu·½·¨
+2ï¼šé‡å†™activityçš„onCreateContextMenuæ–¹æ³•
 	public void onCreateContextMenu(ContextMenu menu, View v,
 			ContextMenuInfo menuInfo) {
 		menu.add(0,0, 0, "c");
@@ -8,4 +10,6 @@
 		menu.add(0,2, 0, "c#");
 		menu.add(0,3, 0, "JAVA");
 	}
-3£ºÖØĞ´onContextItemSelected·½·¨
+3ï¼šé‡å†™onContextItemSelectedæ–¹æ³•
+
+````

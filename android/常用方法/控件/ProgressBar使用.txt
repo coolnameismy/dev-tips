@@ -1,4 +1,8 @@
-====================不同状态和样式 
+
+涓嶅悓鐘舵�佸拰鏍峰紡 
+
+````xml
+
 <ProgressBar
         android:id="@+id/progress1"
         style="@android:style/Widget.ProgressBar"
@@ -26,7 +30,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-==============================后台设置进度更新
+````
+
+鍚庡彴璁剧疆杩涘害鏇存柊
+
+````java
+
 Handler handler = new Handler() {
 		@Override
 		public void handleMessage(Message msg) {
@@ -60,3 +69,5 @@ Handler handler = new Handler() {
 		}.start();
 
 	}
+
+````	

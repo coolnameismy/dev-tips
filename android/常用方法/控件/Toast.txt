@@ -1,14 +1,17 @@
-//简单的toast使用
+````java
+
+//绠�鍗曠殑toast浣跨敤
 /*Toast toast = Toast.makeText(this, "this is toast", Toast.LENGTH_LONG);
 toast.show();*/
-//声明toast
+//澹版槑toast
 Toast toast = new Toast(this);
-//设置显示位置
+//璁剧疆鏄剧ず浣嶇疆
 toast.setGravity(Gravity.CENTER, 0, 0);
-//自定义toast视图
+//鑷畾涔塼oast瑙嗗浘
 ImageView image = new ImageView(this);
 image.setImageResource(R.drawable.ic_launcher);
 toast.setView(image);
-//设置显示时间
+//璁剧疆鏄剧ず鏃堕棿
 toast.setDuration(Toast.LENGTH_SHORT);
 toast.show();
+````
