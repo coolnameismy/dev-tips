@@ -41,3 +41,40 @@ var MyText = React.createClass({
 ````
 {{__html: 'First &middot; Second'}}
 ````
+
+## 条件和分支
+
+jsx不能使用if-else分支，但可以使用条件表达式代替。
+
+如果一定要使用if-else，可以用if-eles生成变量在用{{绑定进去}}
+
+````
+  <View style={styles.container}>
+    {this.state.name==1?
+      <Text style={{fontSize:12,color:'#fff'}}> ' this.state.name==1? xxx : null 条件表达式为真' </Text>
+      :null
+    }
+  </View> 
+
+````
+
+##	循环遍历
+
+````
+var items = [0,1,2,3,4];
+//遍历构造数组，需要指定一个key否则会产生警告
+var dom = items.map(function(item) {
+        return (
+             <Text key={item} style={{fontSize:12,color:'#fff'}}> {item} </Text>
+            );
+         });
+
+````
+
+构造好dom后可以在render方法中使用
+
+````
+	<View style={{flex:1,flexDirection:'row',}}>{dom}</View>
+````
+
+

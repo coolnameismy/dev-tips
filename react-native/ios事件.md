@@ -36,7 +36,6 @@ click:function(){
 </Text>
 
 ````
-
  
  ## 事件传递参数
 
