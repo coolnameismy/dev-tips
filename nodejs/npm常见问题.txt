@@ -1,1 +1,3 @@
+
+##	window npm安装出错解决
 检查c：user\hp\appData\Roaming\npm 目录是否存在，若不存在新建一个mpm目录
