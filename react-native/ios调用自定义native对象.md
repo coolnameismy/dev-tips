@@ -100,6 +100,43 @@ MyNativeModule.a,MyNativeModule.b
 
 6：事件
 
+objc端
+````objc
+//1： #import "RCTEventDispatcher.h"
+//2：重置bridge的getset方法
+@synthesize bridge = _bridge;
+//3：定义一个方法发送事件，参数为事件名称和数据
+[self.bridge.eventDispatcher sendAppEventWithName:@"eventName" body:@{@"data":@"this is data"}];
+//4：在某个方法中发送事件，例如
+RCT_EXPORT_METHOD(Hello:(RCTResponseSenderBlock)callback){
+   callback(@[[NSNull null],[self Helloa]]);
+   [self afterHello];
+}
+
+````
+
+js端
+````js
+//导入 NativeAppEventEmitter
+var {
+  ...,
+  NativeAppEventEmitter,
+} = React;
+
+//订阅事件
+var subscription = NativeAppEventEmitter.addListener(
+	 'afterHello',
+	 (data) => {
+	 	console.log("afterHello");	
+		console.log(data);	
+	 } 
+ );
+````
+
+其他：
+
+事件除了有app事件以外，还有一种设备事件。objc端使用个````sendDeviceEventWithName````方法，js导入的模块为````DeviceEventEmitter````
+
 
 ## 注意点
 
