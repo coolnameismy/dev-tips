@@ -1,8 +1,10 @@
-mysql设置字符集
 
-1,检查默认安装的mysql的字符集
+
+## 1,检查默认安装的mysql的字符集
  
-mysql> show variables like '%char%';
+
+```` mysql> show variables like '%char%'; ````
+
 +--------------------------+--------------------------------------------------------+
 | Variable_name            | Value                                                  |
 +--------------------------+--------------------------------------------------------+
@@ -18,10 +20,11 @@ mysql> show variables like '%char%';
 8 rows in set (0.00 sec)
 
 
-2，关闭mysqld后台进程
+## 2，关闭mysqld后台进程
 
-3，修改mysql配置文件/etc/my.cnf
+## 3，修改mysql配置文件/etc/my.cnf
  
+````
 sudo cp /usr/local/mysql/support-files/my-medium.cnf /etc/my.cnf
 sudo vi /etc/my.cnf
 
@@ -29,12 +32,14 @@ sudo vi /etc/my.cnf
 default-character-set=utf8
 [mysqld]部分加入：
 character-set-server=utf8
+````
 
 修改完成后 按住ctrl键再连按两次z键 退出MySQL终端，然后重新启动mysql服务和终端
 
-4，检查结果：
+## 4，检查结果：
  
-mysql> show variables like '%char%';
+````  mysql> show variables like '%char%'; ````
+
 +--------------------------+--------------------------------------------------------+
 | Variable_name            | Value                                                  |
 +--------------------------+--------------------------------------------------------+

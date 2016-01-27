@@ -1,8 +1,0 @@
-
- 
-重建数据库
-D:\MongoDB\data>mongod --install --serviceName MongoDB --serviceDisplayName MongoDB --logpath D:\MongoDB\data.Log --dbpath D:\MongoDB\data --directoryperdb
-使用原有数据库启动服务
-
-D:\MongoDB\data>mongod --install --serviceName MongoDB --serviceDisplayName MongoDB --logpath D:\MongoDB\data.Log --dbpath D:\MongoDB\data 
- 
