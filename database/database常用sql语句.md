@@ -1,8 +1,6 @@
-database常用sql语句
+## 建表：
 
-
-
-建表：
+````sql
 // 关键字：varchar(20)，int(11) NOT NULL AUTO_INCREMENT date PRIMARY KEY (`id`) DEFAULT '0' ENGINE=MyISAM ENGINE=innodb
 CREATE DATABASE `test1` 
 CHARSET SET 'utf8 ' 
@@ -33,10 +31,12 @@ CREATE TABLE `tb_user` (
   PRIMARY KEY (`id`)  
 )DEFAULT CHARSET=utf8;  
 
-//查询
+````
+## 查询
 
 
-//插入
+## 插入
+````sql
 insert into tb_words (name,image,tips,categoryId) values('test1','test1.jpg','这个测试记录',1);
 insert into tb_words (name,image,tips,categoryId) values('test2','test2.jpg','这个测试记录',2);
 insert into tb_words (name,image,tips,categoryId) values('test3','test3.jpg','这个测试记录',3);
@@ -51,9 +51,11 @@ insert into tb_words (name,image,tips,categoryId) values('test11','test1.1jpg','
 insert into tb_words (name,image,tips,categoryId) values('test12','test1.j2pg','这个测试记录',12);
 insert into tb_words (name,image,tips,categoryId) values('test13','test1.jp3g','这个测试记录',13);
 
+````
 
+## 设置字符集合
 
-//设置字符集合
+````sql
 //查看所有支持的字符集  show charset;
 //显示系统字符集设置 show variables like '%char%';
 
@@ -70,15 +72,17 @@ set character_set_filesystem=utf8;
 alter database memorytrain character set utf8
 alter database memorytrain default character set 'charset'；
 
+````
 
-//查看结构
+## 查看结构
+
+````sql
 查看数据库编码：
 SHOW CREATE DATABASE db_name;
 查看表编码：
 SHOW CREATE TABLE tbl_name;
 查看字段编码：
 SHOW FULL COLUMNS FROM tbl_name;
-
-
+````
 
 

@@ -1,8 +1,12 @@
 
  
-ÖØ½¨Êý¾Ý¿â
+## é‡å»ºæ•°æ®åº“
+````sql
 D:\MongoDB\data>mongod --install --serviceName MongoDB --serviceDisplayName MongoDB --logpath D:\MongoDB\data.Log --dbpath D:\MongoDB\data --directoryperdb
-Ê¹ÓÃÔ­ÓÐÊý¾Ý¿âÆô¶¯·þÎñ
+````
 
+## ä½¿ç”¨åŽŸæœ‰æ•°æ®åº“å¯åŠ¨æœåŠ¡
+
+````sql
 D:\MongoDB\data>mongod --install --serviceName MongoDB --serviceDisplayName MongoDB --logpath D:\MongoDB\data.Log --dbpath D:\MongoDB\data 
- 
+ ````

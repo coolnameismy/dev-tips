@@ -1,20 +1,25 @@
-ÅäÖÃÔ¶³ÌµÇÂ¼===============
-1£ºselect user,host from user;
-2£º mysql> update user set host='%' where user='root';
+## é…ç½®è¿œç¨‹ç™»å½•
+````sql
+1ï¼šselect user,host from user;
+2ï¼š mysql> update user set host='%' where user='root';
    mysql> flush privileges;
+````
 
+##  ä½¿ç”¨è¿œç¨‹ç™»å½•
+````sql
 
-Ê¹ÓÃÔ¶³ÌµÇÂ¼===============
-1:Á´½Ó mysql -h 61.147.124.16 -u liuyw -p
+1:é“¾æ¥ mysql -h 61.147.124.16 -u liuyw -p
 
-2£ºÏÔÊ¾Êı¾İ¿â show databases;
+2ï¼šæ˜¾ç¤ºæ•°æ®åº“ show databases;
 
-3:Ê¹ÓÃÊı¾İ¿â use crown;
+3:ä½¿ç”¨æ•°æ®åº“ use crown;
 
-4:ÏÔÊ¾±í show tables;
+4:æ˜¾ç¤ºè¡¨ show tables;
 
-5 µ¼³öÊı¾İ cmdÏÂÔËĞĞ
+5 å¯¼å‡ºæ•°æ® cmdä¸‹è¿è¡Œ
 mysqldump -h localhost -u liuyw -p  mytable>e:\mytable.sql
 
-6£ºµ¼ÈëÊı¾İ mysqlÏÂÔËĞĞ
+6ï¼šå¯¼å…¥æ•°æ® mysqlä¸‹è¿è¡Œ
 source d:/MySQL.sql
+
+````
