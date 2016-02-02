@@ -55,7 +55,6 @@ gulp.task('default', function() {
 ---
 
 ````
-
 gulp-autoprefixer //浏览器前缀
 gulp-handlebars   //handlebars生产模板js
 gulp-imagemin     //图片压缩
@@ -213,6 +212,7 @@ gulp.task('watch',function(){
 **/*.js匹配所有文件夹层次下的js文件, 包括当前目录
 **/*.* 递归匹配所有文件
 !:排除文件夹，可以设置gulp的目标文件夹为一个数组，例如： ['**/*', '!./atom-shell.app', '!./atom-shell.app/**/*']. 这样就可以把app完全exclude掉了.
+
 ````
 
 ### 默认任务
