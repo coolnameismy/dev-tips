@@ -1,1 +1,9 @@
-你可以在主板BIOS设置里，找到Intel VT Feature之类的选项，将它的值改为Enabled，然后保存BIOS重启电脑即可。
+## 需要条件
+
+-	i5+ 或等同级支持虚拟化的cpu
+
+## 设置步骤
+-	你可以在主板BIOS设置里，找到Intel VT Feature之类的选项，将它的值改为Enabled，然后保存BIOS重启电脑即可。
+
+## 常见用途
+-	window8.0+ 64位操作系统，开启虚拟化才能开发window phone 8 应用程序
