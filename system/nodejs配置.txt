@@ -1,5 +1,0 @@
-nodejs配置
-mac 下载安装包直接安装
-
-nodejs必备包：
-1:bower 安装：－－ $ npm install -g bower
