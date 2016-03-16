@@ -31,8 +31,6 @@ git diff --cached 文件名
 常看文件历史
 git log --pretty=oneline foot.jsp 
 
-
-
 ＝＝＝＝＝常用命令：＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 git init                                                  # 初始化本地git仓库（创建新仓库）
 git config --global user.name "xxx"                       # 配置用户名
@@ -95,6 +93,8 @@ git fetch --prune                                         # 获取所有原创�
 git pull origin master                                    # 获取远程分支master并merge到当前分支
 git mv README README2                                     # 重命名文件README为README2
 git reset --hard HEAD                                     # 将当前版本重置为HEAD（通常用于merge失败回退）
+git reset --soft HEAD^                                    # 取消上一次的提交
+git reset --soft HEAD~n                                   # 取消前n次的提交
 git rebase
 git branch -d hotfixes/BJVEP933                           # 删除分支hotfixes/BJVEP933（本分支修改已合并到其他分支）
 git branch -D hotfixes/BJVEP933                           # 强制删除分支hotfixes/BJVEP933
@@ -121,4 +121,13 @@ git gc
 git fsck
 
 ==========================================================================================
+
+## 参考文章
+
 http://www.cnblogs.com/watson/p/3712370.html
+
+http://www.xuanfengge.com/github-cheats.html
+
+http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html
+
+http://www.xuanfengge.com/github-cheats.html
