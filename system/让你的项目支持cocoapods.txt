@@ -21,6 +21,8 @@ pod trunk push
 5.更新pod库
 pod setup
 
+6. --allow-warnings可以忽略警告，如果你项目里面有警告可以使用它进行忽略
+
 ==========================后续==========================
 
 补充 Claim your Pod
