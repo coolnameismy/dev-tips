@@ -1,30 +1,80 @@
-mac 配置开发环境
+#  mac 配置开发环境
+
+##	必要快捷键，系统配置（个人习惯）
+
+-	1：配置mac触摸板三指拖移 (偏好设置->辅助功能->鼠标与触摸板->触摸板选项->启动拖移)
+-	2：配置文件夹右键打开终端 （偏好设置->键盘->tabs选快捷键->左侧选择服务->勾选-右侧新建位于文件夹位置的终端标签）
+-	3：配置快捷键，设置输入法切换快捷键为crtl+空格， spotlight快捷键为cmd+空格
+-	4：配置终端，sublime主题样式
+
+推荐使用Solarized 配色方案 `git clone git://github.com/altercation/solarized.git` 下载后
+````
+solarized/osx-terminal.app-colors-solarized 下双击 Solarized Dark ansi.terminal 和 Solarized Light ansi.terminal 就会自动导入两种配色方案 Dark 和 Light 到 Terminal.app 
+
+如果你使用的是 iTerm2 的话，到 solarized/iterm2-colors-solarized 下双击 Solarized Dark.itermcolors 和 Solarized Light.itermcolors 两个文件就可以把配置文件导入到 iTerm 里
+
+vim主题
+
+$ cd solarized
+$ cd vim-colors-solarized/colors
+$ mkdir -p ~/.vim/colors
+$ cp solarized.vim ~/.vim/colors/
+
+$ vi ~/.vimrc
+syntax enable
+set background=dark
+colorscheme solarized
+
+ls颜色
+//安装插件
+brew install coreutils
+//修改配置
+$ vi ~/.bash_profile
+export CLICOLOR=1
+````
+
+
+##  必要的软件安装和配置
+
+### 1:xcode 
+
+apple store下载安装，并且打开启动一次，xcode会帮你自动配置很多mac开发环境，所以他必须首先安装。
+
+###	1:sublime 
+
+安装sublime，配置sublime主题，根据需求选择安装sublime插件
+
+
+### 程序安装工具，brew，port，node，gem
+
+HomeBrew
+
+````
+安装：
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+删除：
+rm -rf /usr/local/Cellar /usr/local/.git && brew cleanup
+````
+
+MacPorts
+
+````
+安装: Mac OS X Package (.pkg) Installer
+访问官方网站: http://www.macports.org/install.php
+http://distfiles.macports.org/MacPorts/MacPorts-2.1.1-10.7-Lion.pkg
+````
+
 
 =============开发环境总体=============
-1：安装Xcode
-2：安装jdk 6，7
-3：nodejs环境
-4：ruby环境
+1：安装jdk 6，7
+2：nodejs环境
+3：ruby环境
 
 =============开发系统设置=============
 1:finder - 服务 - 服务偏好设置 - 开启 文件路径和文件右键在终端中打开
 
 
 =============软件管理=============
-1:HomeBrew
-GitHub地址： https://github.com/mxcl/homebrew/wiki/installation
-官网：http://brew.sh/
-安装：
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-删除：
-rm -rf /usr/local/Cellar /usr/local/.git && brew cleanup
-
-
-
-2:MacPorts
-安装: Mac OS X Package (.pkg) Installer
-访问官方网站: http://www.macports.org/install.php
-http://distfiles.macports.org/MacPorts/MacPorts-2.1.1-10.7-Lion.pkg
 
 =============代码管理环境=============
 1：svn和git （安装xcode就有了）
