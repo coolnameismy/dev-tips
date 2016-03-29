@@ -2,8 +2,8 @@
 ## 配置用户信息
 
 ````
-git config --global user.name liuyanwei
-git config --global user.email liu.yanwei29@zte.com.cn
+git config --global user.name coolnameismy
+git config --global user.email coolnameismy@hotmail.com
 git config --global core.editor vim
 ````
 
@@ -35,7 +35,8 @@ $ git config -e --system        #打开系统配置
 
 ##  github ssh配置
 
--	1:生成ssh证书  ```` ssh-keygen -t rsa -C "your_email@youremail.com"  ````
+-	1:进入.ssh目录（或创建一个） ```` cd ~/.ssh ````，生成ssh证书  ```` ssh-keygen -t rsa -C coolnameismy@youremail.com  ````
+
 -	2:在github网站 https://github.com/settings/ssh 设置ssh证书 
 -	3：检查,配置完成后，可以检查是否配置成：如下列举Github的：
 
