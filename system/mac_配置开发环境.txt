@@ -40,9 +40,12 @@ export CLICOLOR=1
 
 apple store下载安装，并且打开启动一次，xcode会帮你自动配置很多mac开发环境，所以他必须首先安装。
 
-###	1:sublime 
-
+###	2:sublime 
 安装sublime，配置sublime主题，根据需求选择安装sublime插件
+
+### 3:有道词典
+
+### 4：qq，微信，chorme，搜狗拼音
 
 
 ### 程序安装工具，brew，port，node，gem
@@ -69,26 +72,11 @@ http://distfiles.macports.org/MacPorts/MacPorts-2.1.1-10.7-Lion.pkg
 1：安装jdk 6，7
 2：nodejs环境
 3：ruby环境
-
-=============开发系统设置=============
-1:finder - 服务 - 服务偏好设置 - 开启 文件路径和文件右键在终端中打开
-
-
-=============软件管理=============
-
-=============代码管理环境=============
-1：svn和git （安装xcode就有了）
-2：好用的客户端
-
-
-=============办公环境=============
-1：office
-2：邮箱和oa系统
-
+ 
 
 =============ios环境=============
-1：xcode
 2：pod
+
 
 =============android环境=============
 1：bundle 和相关sdk
@@ -97,7 +85,7 @@ http://distfiles.macports.org/MacPorts/MacPorts-2.1.1-10.7-Lion.pkg
 
 =============java环境=============
 1：copy edcilpse 到应用程序目录
-2：安装jdk 6，7
+2：安装jdk 6，7，8
 3：copy tomcat 目录
 
 =============数据库环境=============
@@ -107,7 +95,7 @@ http://distfiles.macports.org/MacPorts/MacPorts-2.1.1-10.7-Lion.pkg
 =============前端=============
 1：安装sublime 和配置插件(lifestyle,emmet,pretty json)
 2：安装webstorm
-3：安装nodejs环境 配置常用的组件- bower，scss，coffeescript
+3：安装nodejs环境 配置常用的组件 -bower，scss，coffeescript
 
 
 =============dotnet环境=============

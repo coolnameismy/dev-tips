@@ -35,3 +35,4 @@ pod update --verbose --no-repo-update
 -（1）打开工程所在文件夹，找到.xcodeproj的文件，然后显示包内容，找到project.pbxproj文件
 -（2）用文本编辑器打开，然后查找`OTHER_LDFLAGS`这个东西，把有关这个东西的地方改成$(inherited)
 -(3) pod重写update一次
+

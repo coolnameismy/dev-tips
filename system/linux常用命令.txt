@@ -45,9 +45,8 @@ du 文件占用大小
 acroread 查看pdf
 soffice office编辑
 
-
 find 查找文件
-
+which 找到软件安装位置
 
 
 

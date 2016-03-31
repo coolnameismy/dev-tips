@@ -1,9 +1,34 @@
 git配置多个ssh.txt
 
-1:生成ssh
+## 1:生成ssh
 
-命令：ssh-keygen -t rsa -C 'xxx@mail.com' "filename"
-说明：生成ssh，并重命名文件，这是配置多个ssh文件需要的
+命令：ssh-keygen -t rsa -f ~/.ssh/id_rsa.alibaba -C "xuanyan.lyw@alibaba-inc.com" 
+
+说明：生成ssh，并填写邮箱，-f 可以制定生成的文件名，否则会覆盖之前的ssh密钥
+
+
+## 配置
+
+````
+Host *.alibaba-inc.com
+    IdentityFile ~/.ssh/id_rsa.alibaba
+    User 玄彦
+````
+
+## 添加公钥到git后台（省略，不同平台方法不同）
+
+注意点，使用vim打开复制粘贴可能会出现换行符导致添加失败，错误提示为
+
+````
+Key is invalid
+Fingerprint has already been taken
+Fingerprint cannot be generated
+````
+
+换一个文本编辑器，入sublime打开在复制粘贴就好了。
+
+## 验证
+
 
 2：注册ssh
 
