@@ -41,6 +41,7 @@ tail 常用参数 -n -f
 more ,less
 
 du 文件占用大小
+grep 按关键字查找文件
 
 acroread 查看pdf
 soffice office编辑

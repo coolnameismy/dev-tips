@@ -28,9 +28,29 @@ colorscheme solarized
 ls颜色
 //安装插件
 brew install coreutils
+
+//生成颜色定义文件
+gdircolors --print-database > ~/.dir_colors
+
 //修改配置
 $ vi ~/.bash_profile
 export CLICOLOR=1
+alias grep='grep --color'
+alias egrep='egrep --color'
+alias fgrep='fgrep --color'
+
+if brew list | grep coreutils > /dev/null ; then
+  PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+  alias ls='ls -F --show-control-chars --color=auto'
+  eval `gdircolors -b $HOME/.dir_colors`
+fi
+
+````
+
+-	5:常用命令安装 tree trd
+````
+brew install tree
+npm install -g tldr
 ````
 
 
@@ -43,9 +63,13 @@ apple store下载安装，并且打开启动一次，xcode会帮你自动配置�
 ###	2:sublime 
 安装sublime，配置sublime主题，根据需求选择安装sublime插件
 
+emmet,ColorPicker,SideBarEnhancements,Alignment,JsFormat
+
+[推荐插件安装](http://dengo.org/archives/923)
+
 ### 3:有道词典
 
-### 4：qq，微信，chorme，搜狗拼音
+### 4：qq，微信，chorme，搜狗拼音d
 
 
 ### 程序安装工具，brew，port，node，gem
