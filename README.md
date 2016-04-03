@@ -5,14 +5,11 @@ dev-tips是一个开发中常见问题的收集和整理，包含.net,ios,androi
 
 欢迎大家star和[follow](https://github.com/coolnameismy)这个repo,希望大家也能把自己开发过程中遇到的一些问题整理并共享到repo中。
 
-## 依赖
+##  其他资源
 
-ios问题已经单独整理为[ios-tips](https://github.com/coolnameismy/ios-tips) 
-
-有些复杂的问题和开发技巧可以见 [刘彦玮的技术博客](http://liuyanwei.jumppo.com/)
-
-博客中的demo：[ios-demo](https://github.com/coolnameismy/demo) | [web前端demo](https://github.com/coolnameismy/demo-web)
-
+-  iOS问题已经单独整理为[iOS-tips](https://github.com/coolnameismy/ios-tips) 
+-  有些复杂的问题和开发技巧可以见 [刘彦玮的技术博客](http://liuyanwei.jumppo.com/)
+-  博客中的demo：[iOS-demo](https://github.com/coolnameismy/demo) | [web前端demo](https://github.com/coolnameismy/demo-web)
 
 ## 使用技巧
 
