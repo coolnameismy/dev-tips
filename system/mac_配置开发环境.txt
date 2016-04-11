@@ -130,3 +130,9 @@ http://distfiles.macports.org/MacPorts/MacPorts-2.1.1-10.7-Lion.pkg
 
 =============设计环境=============
 
+
+============更好的工具============
+
+##  homebrew-cask
+-  安装：brew tap phinze/homebrew-cask && brew install brew-cask  
+-  使用
