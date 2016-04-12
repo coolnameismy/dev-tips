@@ -19,11 +19,16 @@ var MainView = require("./View/MainView.ios.js")
 class helloworld extends Component {
   render() {
     return (
-        <NavigatorIOS
+       <NavigatorIOS
         style={{flex:1}}
+        barTintColor= '#EAF1F1'
+        titleTextColor = '#46625B'
+        translucent = {false}
+        shadowHidden = {false}
         initialRoute={{
-          title: '主页',
-          component: MainView
+          title: '发现',
+          component: DiscoveryListView,
+          passProps: { sourceUrl: 'http://dip.alibaba-inc.com/api/v2/services/schema/mock/22183?spm=a312q.7764190.0.0.OmhLe7' }
         }} />
     );
   }

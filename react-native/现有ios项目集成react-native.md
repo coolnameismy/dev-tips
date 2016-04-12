@@ -47,3 +47,7 @@ pod 'React', :path => '../node_modules/react-native', :subspecs => [
     ReactView * reactView = [[ReactView alloc] initWithFrame:CGRectMake(0, 40, CGRectGetWidth(self.view.bounds), 100)];
     [self.view addSubview:reactView];
 ````
+
+##  参考：
+
+- [React-Native 教程 1 ： 集成React-Native到现有的iOS项目中](http://www.chenghu.me/?p=1399)
