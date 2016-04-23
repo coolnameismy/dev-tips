@@ -93,6 +93,7 @@ git fetch --prune                                         # 获取所有原创�
 git pull origin master                                    # 获取远程分支master并merge到当前分支
 git mv README README2                                     # 重命名文件README为README2
 git reset --hard HEAD                                     # 将当前版本重置为HEAD（通常用于merge失败回退）
+git rest HEAD~n                                           # 撤销前n次提前信息，不撤销提交内容，修改后提交要加上 --force参数，因为本地log和远程不一致
 git reset --soft HEAD^                                    # 取消上一次的提交
 git reset --soft HEAD~n                                   # 取消前n次的提交
 git rebase
