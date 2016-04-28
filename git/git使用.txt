@@ -12,7 +12,7 @@ git remote add origin http://10.45.7.195/zhang.wenqing/zsmartcc_serviceportal_ht
 git push -u origan
 ======git 更新=========
 git fetch origin master
-git log -p master..origin/master
+git log -p master..origin/master 
 git merge origin/master
 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 git 分支使用
