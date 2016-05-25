@@ -1,38 +1,89 @@
-cocoapods安装：
-1:更新ruby环境 $ gem update rails ＝＝＝＝＝＝＝＝＝ Mac OS X 10.5以上
-2:更新gem环境 ： gem update --system
-3:安装cocoapods：sudo gem install cocoapods
-4:pod setup
+## cocoapods安装：
+
+- 1:更新ruby环境 $ gem update rails ＝＝＝＝＝＝＝＝＝ Mac OS X 10.5以上
+- 2:更新gem环境 ： gem update --system
+- 3:安装cocoapods：sudo gem install cocoapods
+- 4:pod setup
 
 
 
-=============cocoapods使用==========================
+##  cocoapods使用
 
 －－－－－－－－－－－－配置项目依赖－－－－－－－－－－－－
-1:创建prdfile文件
-touch Podfile 
-2:输入项目依赖 vi Podfile
+
+- 1:创建prdfile文件 pod init 
+- 2:编辑Podfile
+````
 platform :ios, "6.1"
 pod 'MBProgressHUD', '~> 0.8'
 pod 'MapBox', '~> 1.1.0'
-3:pod install 安装
-4:后续打开项目文件
+````
+
+- 3:pod install 安装 pod install or pod update 
+- 4:后续打开 .xcworkspace 文件
+
 
 －－－－－－－－－－－－常用命令－－－－－－－－－－－－
-1:查看某个库是否存在 －－$ pod search AFNetworking
-2:更新pod －－$ pod update
-3：安装pod  -- $ pod install
 
-—————tip ————
-1：使用下面两条命令可以提高速度，原因是不检查spec仓库更新
+- 1:查看某个库是否存在 －－$ pod search AFNetworking
+- 2:更新pod －－$ pod update
+- 3：安装pod  -- $ 
+
+
+##  常用的一些关键字词
+
+- platform ：指定平台，如ios
+- target: 指定项目target
+- xcodeproj: 指定工程
+- source：指定多个下载代码的源路径
+- path：指定源码下载路径
+- git：指定下载的路径是git仓库
+- #注释
+- tag:指定tag
+
+示例：
+
+````
+
+source 'git@gitlab.xxxx.com:alipods/specs.git'
+
+platform :ios, "7.0"
+# xcodeproj 'test/test'
+
+target "XXXapp" do
+    
+    pod 'aaa'
+    pod 'aaa', '~> 1.2'
+    pod 'aaa','4.0'
+    pod 'aaa', :path => 'LocalPods/SVProgressHUD.podspec'
+    pod 'TBConfigCenter',:git=> 'git@xxxx.git',:tag=>'x.x.x'
+
+end
+
+````
+
+
+## tip 
+
+### 1：使用下面两条命令可以提高速度，原因是不检查spec仓库更新
+
+````
 pod install --verbose --no-repo-update
 pod update --verbose --no-repo-update
+````
 
-2：The `Supercitizen [Debug]` target overrides the `OTHER_LDFLAGS` build setting defined in `Pods/Target Support Files/Pods/Pods.debug.xcconfig'. This can lead to problems with the CocoaPods installation
+### 2：警告：
+
+````
+The `Supercitizen [Debug]` target overrides the `OTHER_LDFLAGS` build setting defined in `Pods/Target Support Files/Pods/Pods.debug.xcconfig'. This can lead to problems with the CocoaPods installation
     - Use the `$(inherited)` flag, or
     - Remove the build settings from the target.
 警告的处理：
 -（1）打开工程所在文件夹，找到.xcodeproj的文件，然后显示包内容，找到project.pbxproj文件
 -（2）用文本编辑器打开，然后查找`OTHER_LDFLAGS`这个东西，把有关这个东西的地方改成$(inherited)
 -(3) pod重写update一次
+````
+
+
+
 
