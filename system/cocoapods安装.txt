@@ -36,7 +36,7 @@ pod 'MapBox', '~> 1.1.0'
 - target: 指定项目target
 - xcodeproj: 指定工程
 - source：指定多个下载代码的源路径
-- path：指定源码下载路径
+- path：指定源码下载路径，一般使用本地代码指定路径，会被放到Development Pods目录下
 - git：指定下载的路径是git仓库
 - #注释
 - tag:指定tag
