@@ -1,5 +1,7 @@
 ##  需要了解的内容
 
+
+
 ###   android蓝牙开发需要知道的事情
 
 -  Bluetooth4.0从 api18（Android4.3） 以上版本开始支持,支持中心模式,外设模式到api21以上才开始支持.
@@ -17,7 +19,7 @@
 
 ###  BluetoothAdapter
 
-BluetoothAdapter类的对象代表本地的蓝牙适配器,相当于iOS里面的CBCentralManager或CBPeripheralManager
+BluetoothAdapter类的对象代表本地的蓝牙适配器,相当于iOS里面的CBCentralManager或CBPeripheralManager，通过getDefaultAdapter()可以获取到系统BluetoothAdpter的单例
 
 主要作用：
 
@@ -146,6 +148,15 @@ private BluetoothAdapter.LeScanCallback mLeScanCallback =
 <!-- 获取已配对的蓝牙设备 -->
 Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices()
 ````
+
+
+
+##  常用方法
+
+- BluetoothAdapter.getDefaultAdapter(); 
+- adapter.getBondedDevices()
+- 
+
 
 ##  Android蓝牙开发常见的坑
 
