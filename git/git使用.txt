@@ -1,9 +1,12 @@
 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
  git初始化
  
-git config --global user.name T-bagwell
-git config --global user.email T-bagwell@chinaunix.net
+git config --global user.name 刘彦玮（玄彦）
+git config --global user.email coolnameismy@hotmail.com
 git config --global core.editor vim
+
+git config user.name 刘彦玮（玄彦）
+git config user.email coolnameismy@hotmail.com
 
 git init
 git add *
