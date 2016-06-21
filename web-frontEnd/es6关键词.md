@@ -18,3 +18,10 @@
     提取JSON数据
     函数参数的默认值
     输入模块的指定方法 //const { SourceMapConsumer, SourceNode } = require("source-map");
+
+
+## ES6新增方法
+
+字符串扩展
+
+- includes(), startsWith(), endsWith()
