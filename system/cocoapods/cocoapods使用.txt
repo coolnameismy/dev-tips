@@ -5,6 +5,8 @@
 - 3:安装cocoapods：sudo gem install cocoapods
 - 4:pod setup
 
+- 安装指定版本： sudo gem install cocoapods -v x.xx
+
 
 
 ##  cocoapods使用
