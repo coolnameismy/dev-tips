@@ -9,7 +9,9 @@
 －－切回主分支：git checkout master
 －－合并分支：git merge branceName
 
-4:删除分支 git branch -d branceName
+4:删除分支 
+- 本地分支:git branch -d branceName
+- 远程分支:git push origin :branceName
 
 5：创建远程分支 git push origin liudev
 6：查看远程分支 git branch -r
