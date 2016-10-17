@@ -9,6 +9,8 @@ git配置多个ssh.txt
 
 ## 配置
 
+~/.ssh/config 文件中
+
 ````
 Host *.alibaba-inc.com
     IdentityFile ~/.ssh/id_rsa.alibaba
