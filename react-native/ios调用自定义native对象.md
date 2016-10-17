@@ -4,7 +4,8 @@ MyNativeModule.h
 
 ````objc
 #import <UIKit/UIKit.h>
-#import "RCTBridge.h"
+#import "RCTBridgeModule.h"
+#import "RCTEventDispatcher.h"
 
 @interface MyNativeModule : NSObject<RCTBridgeModule>
 
@@ -103,7 +104,7 @@ MyNativeModule.a,MyNativeModule.b
 objc端
 ````objc
 //1： #import "RCTEventDispatcher.h"
-//2：重置bridge的getset方法
+//2：重置bridge的getset方法(需要在RCT_EXPORT_MODULE()之前)
 @synthesize bridge = _bridge;
 //3：定义一个方法发送事件，参数为事件名称和数据
 [self.bridge.eventDispatcher sendAppEventWithName:@"eventName" body:@{@"data":@"this is data"}];
