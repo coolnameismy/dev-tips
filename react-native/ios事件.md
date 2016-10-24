@@ -72,3 +72,61 @@ var xxx = React.createClass({
   },
  <xxx clicked={this.externalClicked}> </xxx>
 ````
+
+## 阻止冒泡
+
+e.stopPropagation();
+
+e.preventDefault();
+
+##  事件消息
+
+````
+
+var RCTDeviceEventEmitter = require('RCTDeviceEventEmitter');
+
+
+this.listener = RCTDeviceEventEmitter.addListener('viewDidAppear', this.onViewDidAppear.bind(this))
+this.listener = DeviceEventEmitter.addListener('keyboardWillShow', function(e: Event) {
+    // handle event.
+  });
+this.addListenerOn(DeviceEventEmitter,
+                      'keyboardWillShow',
+                      this.scrollResponderKeyboardWillShow);
+
+
+RCTDeviceEventEmitter.once('hardwareBackPress', this.hardwareBackPress.bind(this))
+//DeviceEventEmitter.emit('自定义名称',发送数据);
+DeviceEventEmitter.emit('taobaoBind',{taobaoBind:false,walletSum:0.00,couponNum:0});
+````
+
+
+0.26文档
+
+````
+//native 发送事件
+@synthesize bridge = _bridge;
+- (void)calendarEventReminderReceived:(NSNotification *)notification
+{
+  NSString *eventName = notification.userInfo[@"name"];
+  [self.bridge.eventDispatcher sendAppEventWithName:@"EventReminder"
+                                               body:@{@"name": eventName}];
+}
+
+//js 订阅
+var { NativeAppEventEmitter } = require('react-native');
+
+var subscription = NativeAppEventEmitter.addListener(
+  'EventReminder',
+  (reminder) => console.log(reminder.name)
+);
+...
+// 千万不要忘记忘记取消订阅, 通常在componentWillUnmount函数中实现。
+subscription.remove();
+
+````
+
+## 参考
+
+[ReactNative 学习笔记 Community- 组件，页面通讯](http://vivianking6855.github.io/rn-Community-post/)
+
