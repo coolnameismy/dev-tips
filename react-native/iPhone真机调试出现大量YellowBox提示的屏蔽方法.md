@@ -1,11 +1,19 @@
 iPhone 真机调试出现大量 YellowBox 提示的屏蔽方法
 
-修改方法：
+修改方法1：
 
 ````
 //注：这个 bug 在0.22 上好像已经消失了，所以作废
 React/Modules/RCTTiming.m 第 178 行，将 if (jsSchedulingOverhead < -0) 改为 if (jsSchedulingOverhead < -5)
 其实这个数字可以随便整
+````
+
+
+修改方法2：
+
+````
+    //更新react-native v0.34.1 ,去除YellowBox 提示时间差
+    NSTimeInterval jsSchedulingOverhead = MAX(-jsSchedulingTime.timeIntervalSinceNow, 0);
 ````
 
 ![](https://cloud.githubusercontent.com/assets/3316532/12423267/a30f6b3a-be98-11e5-8579-a8694ad5d2db.png)
