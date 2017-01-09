@@ -219,6 +219,7 @@ class Contacts extends React.Component {
 }
 
 export default Contacts;
+//import Contacts from 'xxxx';
 ````
 
 ##  mixins
