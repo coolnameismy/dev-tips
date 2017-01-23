@@ -7,7 +7,11 @@
 
 - 安装指定版本： sudo gem install cocoapods -v x.xx
 
+## cocoapods卸载
 
+- 1：找到位置然后卸载 which pod -》 sudo rm -rf /usr/local/bin/pod
+- 2：gem查找所有pod依赖并删除 gem list | grep cocoapods
+- 3：删除所有依赖 sudo gem uninstall xxx 
 
 ##  cocoapods使用
 
