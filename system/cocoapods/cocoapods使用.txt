@@ -3,7 +3,7 @@
 - 1:更新ruby环境 $ gem update rails ＝＝＝＝＝＝＝＝＝ Mac OS X 10.5以上
 - 2:更新gem环境 ： gem update --system
 - 3:安装cocoapods：sudo gem install cocoapods
-- 4:pod setup
+- 4:pod setup (如果失败可以先做清理 pod repo remove)
 
 - 安装指定版本： sudo gem install cocoapods -v x.xx
 
@@ -12,6 +12,19 @@
 - 1：找到位置然后卸载 which pod -》 sudo rm -rf /usr/local/bin/pod
 - 2：gem查找所有pod依赖并删除 gem list | grep cocoapods
 - 3：删除所有依赖 sudo gem uninstall xxx 
+````
+sudo gem uninstall cocoapods
+sudo gem uninstall cocoapods-core
+sudo gem uninstall cocoapods-deintegrate
+sudo gem uninstall cocoapods-downloader
+sudo gem uninstall cocoapods-plugins
+sudo gem uninstall cocoapods-repo-alirsync
+sudo gem uninstall cocoapods-repo-rsync
+sudo gem uninstall cocoapods-search
+sudo gem uninstall cocoapods-stats
+sudo gem uninstall cocoapods-trunk
+sudo gem uninstall cocoapods-try
+````
 
 ##  cocoapods使用
 
